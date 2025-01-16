@@ -7,6 +7,9 @@ const adminInvitation = require('~/routes/adminInvitation')
 const question = require('~/routes/question')
 const resourcesCategory = require('~/routes/resourcesCategory')
 const offer = require('~/routes/offer')
+const ping = require('~/routes/ping')
+
+router.use('/ping', ping)
 
 router.use('/auth', auth)
 router.use('/users', user)
