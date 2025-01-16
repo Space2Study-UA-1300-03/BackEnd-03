@@ -1,7 +1,9 @@
 const swaggerUi = require('swagger-ui-express')
+const swaggerJsdoc = require('swagger-jsdoc')
 const cookieParser = require('cookie-parser')
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 const {
   config: { CLIENT_URL }
@@ -9,7 +11,6 @@ const {
 const router = require('~/routes')
 const { createNotFoundError } = require('~/utils/errorsHelper')
 const errorMiddleware = require('~/middlewares/error')
-const swaggerSpec = require('~/initialization/swaggerOptions')
 
 const initialization = (app) => {
   app.use(express.json({ limit: '10mb' }))
@@ -24,8 +25,21 @@ const initialization = (app) => {
     })
   )
 
+  const swaggerOptions = {
+    definition: {
+      openapi: '3.1.0',
+      info: {
+        title: 'My API',
+        version: '1.0.0',
+        description: 'Документація для Express API'
+      }
+    },
+    apis: [path.join(__dirname, '../routes/*.js')]
+  }
+  const swaggerSpec = swaggerJsdoc(swaggerOptions)
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+
   app.use('/', router)
-  app.use('/api/#/', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
   app.use((_req, _res, next) => {
     next(createNotFoundError())

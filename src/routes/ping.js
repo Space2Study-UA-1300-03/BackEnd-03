@@ -1,7 +1,25 @@
-const router = require('express').Router()
+const express = require('express')
+const router = express.Router()
 
+/**
+ * @swagger
+ * /ping:
+ *   get:
+ *     summary: Responds with a pong message
+ *     responses:
+ *       200:
+ *         description: A JSON object with a pong message
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: pong
+ */
 router.get('/', (_req, res) => {
-  res.send({ message: 'pong' })
+  res.json({ message: 'pong' })
 })
 
 module.exports = router
