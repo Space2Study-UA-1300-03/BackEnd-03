@@ -29,9 +29,9 @@ const initialization = (app) => {
     definition: {
       openapi: '3.1.0',
       info: {
-        title: 'My API',
+        title: 'Space2Study-03',
         version: '1.0.0',
-        description: 'Документація для Express API'
+        description: 'Space2Study API'
       }
     },
     apis: [path.join(__dirname, '../routes/*.js')]

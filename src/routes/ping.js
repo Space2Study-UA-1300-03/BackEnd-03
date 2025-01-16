@@ -3,9 +3,14 @@ const router = express.Router()
 
 /**
  * @swagger
+ * tags:
+ *   - name: Utility
+ *     description: Server Health Check
+ *
  * /ping:
  *   get:
  *     summary: Responds with a pong message
+ *     tags: [Utility]
  *     responses:
  *       200:
  *         description: A JSON object with a pong message
