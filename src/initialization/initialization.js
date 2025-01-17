@@ -1,18 +1,17 @@
-const swaggerUi = require('swagger-ui-express')
-const swaggerJsdoc = require('swagger-jsdoc')
-const cookieParser = require('cookie-parser')
-const express = require('express')
-const cors = require('cors')
-const path = require('path')
+// const { createNotFoundError } = require('~/utils/errorsHelper')
+// const errorMiddleware = require('~/middlewares/error')
+// const router = require('~/routes')
 
-const {
-  config: { CLIENT_URL }
-} = require('~/configs/config')
-const router = require('~/routes')
-const { createNotFoundError } = require('~/utils/errorsHelper')
-const errorMiddleware = require('~/middlewares/error')
+import { swaggerSpec } from '#initialization/swagger.js'
+import swaggerUi from 'swagger-ui-express'
+import { config } from '#configs/config.js'
+import cookieParser from 'cookie-parser'
+import express from 'express'
+import cors from 'cors'
 
-const initialization = (app) => {
+export const initialization = (app) => {
+  const CLIENT_URL = config.all.CLIENT_URL
+
   app.use(express.json({ limit: '10mb' }))
   app.use(express.urlencoded({ extended: true }))
   app.use(cookieParser())
@@ -25,27 +24,13 @@ const initialization = (app) => {
     })
   )
 
-  const swaggerOptions = {
-    definition: {
-      openapi: '3.1.0',
-      info: {
-        title: 'Space2Study-03',
-        version: '1.0.0',
-        description: 'Space2Study API'
-      }
-    },
-    apis: [path.join(__dirname, '../routes/*.js')]
-  }
-  const swaggerSpec = swaggerJsdoc(swaggerOptions)
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
-  app.use('/', router)
+  // app.use('/', router)
 
-  app.use((_req, _res, next) => {
-    next(createNotFoundError())
-  })
+  // app.use((_req, _res, next) => {
+  //   next(createNotFoundError())
+  // })
 
-  app.use(errorMiddleware)
+  // app.use(errorMiddleware)
 }
-
-module.exports = initialization

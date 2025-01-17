@@ -3,7 +3,9 @@
     "baseUrl": "./",
     "paths": {
       "#src/*": ["src/*"],
-      "#configs/*": ["src/configs/*"]
+      "#configs/*": ["src/configs/*"],
+      "#initialization/*": ["src/initialization/*"],
+      "#logger/*": ["src/logger/*"]
     }
   }
 }
