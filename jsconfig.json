@@ -5,7 +5,9 @@
       "#src/*": ["src/*"],
       "#configs/*": ["src/configs/*"],
       "#initialization/*": ["src/initialization/*"],
-      "#logger/*": ["src/logger/*"]
+      "#logger/*": ["src/logger/*"],
+      "#consts/*": ["src/consts/*"],
+      "#utils/*": ["src/utils/*"]
     }
   }
 }

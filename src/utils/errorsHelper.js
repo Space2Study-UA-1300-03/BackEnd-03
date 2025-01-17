@@ -1,6 +1,8 @@
-const { UNAUTHORIZED, NOT_FOUND, FORBIDDEN, BAD_REQUEST } = require('~/consts/errors')
+import { errors } from '#consts/errors.js'
 
-const createError = (status, errorInfo) => {
+const { UNAUTHORIZED, NOT_FOUND, FORBIDDEN, BAD_REQUEST } = errors
+
+export const createError = (status, errorInfo) => {
   const err = new Error(errorInfo.message)
   err.status = status
   err.code = errorInfo.code
@@ -8,26 +10,18 @@ const createError = (status, errorInfo) => {
   return err
 }
 
-const createUnauthorizedError = () => {
+export const createUnauthorizedError = () => {
   return createError(401, UNAUTHORIZED)
 }
 
-const createForbiddenError = () => {
+export const createForbiddenError = () => {
   return createError(403, FORBIDDEN)
 }
 
-const createNotFoundError = () => {
+export const createNotFoundError = () => {
   return createError(404, NOT_FOUND)
 }
 
-const createBadRequestError = () => {
+export const createBadRequestError = () => {
   return createError(400, BAD_REQUEST)
-}
-
-module.exports = {
-  createError,
-  createUnauthorizedError,
-  createNotFoundError,
-  createForbiddenError,
-  createBadRequestError
 }

@@ -1,8 +1,8 @@
-const {
-  enums: { APP_LANG_ENUM }
-} = require('~/consts/validation')
+import { enums } from './validation.js'
 
-const errors = {
+const APP_LANG_ENUM = enums.APP_LANG_ENUM
+
+export const errors = {
   USER_NOT_FOUND: {
     code: 'USER_NOT_FOUND',
     message: 'User with the specified email was not found.'
@@ -138,5 +138,3 @@ const validationErrors = {
   firstName: errors.NAME_FIELD_IS_NOT_OF_PROPER_FORMAT('firstName'),
   lastName: errors.NAME_FIELD_IS_NOT_OF_PROPER_FORMAT('lastName')
 }
-
-module.exports = errors
