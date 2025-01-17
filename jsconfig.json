@@ -7,7 +7,10 @@
       "#initialization/*": ["src/initialization/*"],
       "#logger/*": ["src/logger/*"],
       "#consts/*": ["src/consts/*"],
-      "#utils/*": ["src/utils/*"]
+      "#utils/*": ["src/utils/*"],
+      "#controllers/*": ["src/controllers/*"],
+      "#middlewares/*": ["src/middlewares/*"],
+      "#services/*": ["src/services/*"]
     }
   }
 }

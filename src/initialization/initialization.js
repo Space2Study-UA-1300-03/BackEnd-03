@@ -1,8 +1,7 @@
-// const { createNotFoundError } = require('~/utils/errorsHelper')
-// const errorMiddleware = require('~/middlewares/error')
 // const router = require('~/routes')
 import { createNotFoundError } from '#utils/errorsHelper.js'
 import { swaggerSpec } from '#initialization/swagger.js'
+import { errorMiddleware } from '#middlewares/error.js'
 import swaggerUi from 'swagger-ui-express'
 import { config } from '#configs/config.js'
 import cookieParser from 'cookie-parser'
@@ -32,5 +31,5 @@ export const initialization = (app) => {
     next(createNotFoundError())
   })
 
-  // app.use(errorMiddleware)
+  app.use(errorMiddleware)
 }

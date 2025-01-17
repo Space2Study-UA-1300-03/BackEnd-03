@@ -1,13 +1,10 @@
-const {
-  INTERNAL_SERVER_ERROR,
-  DOCUMENT_ALREADY_EXISTS,
-  MONGO_SERVER_ERROR,
-  VALIDATION_ERROR
-} = require('~/consts/errors')
-const logger = require('~/logger/logger')
-const getUniqueFields = require('~/utils/getUniqueFields')
+import { getUniqueFields } from '#utils/getUniqueFields.js'
+import { logger } from '#logger/logger.js'
+import { errors } from '#consts/errors.js'
 
-const errorMiddleware = (err, _req, res, _next) => {
+const { INTERNAL_SERVER_ERROR, DOCUMENT_ALREADY_EXISTS, MONGO_SERVER_ERROR, VALIDATION_ERROR } = errors
+
+export const errorMiddleware = (err, _req, res, _next) => {
   const { name, status, code, message } = err
   logger.error(err)
 
@@ -53,5 +50,3 @@ const errorMiddleware = (err, _req, res, _next) => {
     message
   })
 }
-
-module.exports = errorMiddleware
