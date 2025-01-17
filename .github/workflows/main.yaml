@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, develop, devops, feature/#90-sonar-backend ]
+    branches: [main, develop, devops, feature/#90-sonar-backend]
   pull_request:
     branches: [main, develop, devops]
 
