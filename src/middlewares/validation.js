@@ -1,8 +1,10 @@
-const { createError } = require('~/utils/errorsHelper')
-const { BODY_IS_NOT_DEFINED } = require('~/consts/errors')
-const { validateRequired, validateFunc } = require('~/utils/validationHelper')
+import { validateRequired, validateFunc } from '#utils/validationHelper.js'
+import { createError } from '#utils/errorsHelper.js'
+import { errors } from '#consts/errors.js'
 
-const validationMiddleware = (schema) => {
+export const validationMiddleware = (schema) => {
+  const BODY_IS_NOT_DEFINED = errors.BODY_IS_NOT_DEFINED
+
   return (req, _res, next) => {
     const { body } = req
     if (!body) {
@@ -22,5 +24,3 @@ const validationMiddleware = (schema) => {
     next()
   }
 }
-
-module.exports = validationMiddleware

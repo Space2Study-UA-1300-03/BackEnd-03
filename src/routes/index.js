@@ -1,3 +1,4 @@
+import { router as auth } from '#routes/auth.js'
 import { router as ping } from '#routes/ping.js'
 import express from 'express'
 
@@ -10,11 +11,10 @@ export const router = express.Router()
 // const email = require('~/routes/email')
 // const auth = require('~/routes/auth')
 // const user = require('~/routes/user')
-// const ping = require('~/routes/ping')
 
 router.use('/ping', ping)
+router.use('/auth', auth)
 
-// router.use('/auth', auth)
 // router.use('/users', user)
 // router.use('/send-email', email)
 // router.use('/admin-invitations', adminInvitation)

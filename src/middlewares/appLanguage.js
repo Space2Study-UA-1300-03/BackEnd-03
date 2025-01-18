@@ -1,10 +1,11 @@
-const { INVALID_LANGUAGE } = require('~/consts/errors')
-const { createError } = require('~/utils/errorsHelper')
-const {
-  enums: { APP_LANG_ENUM }
-} = require('~/consts/validation')
+import { createError } from '#utils/errorsHelper.js'
+import { enums } from '#consts/validation.js'
+import { errors } from '#consts/errors.js'
 
-const langMiddleware = (req, _res, next) => {
+export const langMiddleware = (req, _res, next) => {
+  const INVALID_LANGUAGE = errors.INVALID_LANGUAGE
+  const APP_LANG_ENUM = enums.APP_LANG_ENUM
+
   let lang = req.acceptsLanguages(...APP_LANG_ENUM)
 
   if (!lang) {
@@ -14,5 +15,3 @@ const langMiddleware = (req, _res, next) => {
   req.lang = lang
   next()
 }
-
-module.exports = langMiddleware

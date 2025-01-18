@@ -8,7 +8,7 @@ import { logger } from '#logger/logger.js'
 export const serverSetup = async (app) => {
   const SERVER_PORT = config.all.SERVER_PORT
   await databaseInitialization()
-  // await checkUserExistence() // FIXME: Uncomment this line to seed super admin
+  // await checkUserExistence() // FIXME: Якісь помилки, коли викликається ця функція, розібратись
   initialization(app)
   return app.listen(SERVER_PORT, () => {
     logger.info(`Server is running on port ${SERVER_PORT}`)
