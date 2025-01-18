@@ -1,8 +1,8 @@
-const CronJob = require('cron').CronJob
-const userService = require('~/services/user')
-const emailService = require('~/services/email')
-const emailSubject = require('~/consts/emailSubject')
-const { oneDayInMs } = require('~/consts/auth')
+import { emailSubject } from '#consts/emailSubject.js'
+import { emailService } from '#services/email.js'
+import { userService } from '#services/user.js'
+import { oneDayInMs } from '#consts/auth.js'
+import { CronJob } from 'cron'
 
 const DAYS_TO_SEND_EMAILS = 173
 const DAYS_TO_DELETE_USER = 180
@@ -22,9 +22,9 @@ const defaultFilter = {
   }
 }
 
-const checkUsersForLastLogin = new CronJob(EVERY_DAY_AT_3AM, () => checkLastLogin(), null, false, timeZone)
+export const checkUsersForLastLogin = new CronJob(EVERY_DAY_AT_3AM, () => checkLastLogin(), null, false, timeZone)
 
-const checkLastLogin = async () => {
+export const checkLastLogin = async () => {
   const users = await userService.getUsers(defaultFilter)
   const dateNow = new Date()
 
@@ -44,5 +44,3 @@ const checkLastLogin = async () => {
     })
   )
 }
-
-module.exports = { checkUsersForLastLogin, checkLastLogin }

@@ -1,13 +1,13 @@
-const CronJob = require('cron').CronJob
-const tokenService = require('~/services/token')
-const userService = require('~/services/user')
-const { tokenNames } = require('~/consts/auth')
+import { tokenService } from '#services/token.js'
+import { userService } from '#services/user.js'
+import { tokenNames } from '#consts/auth.js'
+import { CronJob } from 'cron'
 
 const EVERY_MIDNIGHT = '0 0 * * *'
 
-const removeUnverifiedUsers = new CronJob(EVERY_MIDNIGHT, () => removeUsersWithUnconfirmedEmail())
+export const removeUnverifiedUsers = new CronJob(EVERY_MIDNIGHT, () => removeUsersWithUnconfirmedEmail())
 
-const removeUsersWithUnconfirmedEmail = async () => {
+export const removeUsersWithUnconfirmedEmail = async () => {
   const usersWithConfirmToken = await tokenService.findTokensWithUsersByParams({ confirmToken: { $ne: null } })
 
   if (!usersWithConfirmToken.length) {
@@ -35,5 +35,3 @@ const removeUsersWithUnconfirmedEmail = async () => {
     })
   )
 }
-
-module.exports = { removeUsersWithUnconfirmedEmail, removeUnverifiedUsers }

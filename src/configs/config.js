@@ -17,3 +17,36 @@ export const config = {
     }
   }
 }
+
+export const superAdmin = {
+  get all() {
+    return {
+      firstName: process.env.MAIL_FIRSTNAME,
+      lastName: process.env.MAIL_LASTNAME,
+      email: process.env.MAIL_USER,
+      password: process.env.MAIL_PASS
+    }
+  }
+}
+
+export const gmailCredentials = {
+  get all() {
+    return {
+      user: process.env.MAIL_USER,
+      clientId: process.env.GMAIL_CLIENT_ID,
+      clientSecret: process.env.GMAIL_CLIENT_SECRET,
+      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      redirectUri: process.env.GMAIL_REDIRECT_URI
+    }
+  }
+}
+
+export const azureAccess = {
+  get all() {
+    return {
+      STORAGE_ACCOUNT: process.env.STORAGE_ACCOUNT,
+      ACCESS_KEY: process.env.ACCESS_KEY,
+      AZURE_HOST: process.env.AZURE_HOST
+    }
+  }
+}

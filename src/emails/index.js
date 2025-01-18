@@ -1,6 +1,6 @@
-const emailSubject = require('~/consts/emailSubject')
+import { emailSubject } from '#consts/emailSubject.js'
 
-const templateList = {
+export const templateList = {
   [emailSubject.EMAIL_CONFIRMATION]: {
     en: {
       subject: 'Please confirm your email',
@@ -52,5 +52,3 @@ const templateList = {
     }
   }
 }
-
-module.exports = { templateList }

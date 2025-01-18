@@ -1,5 +1,7 @@
-const { Schema, model } = require('mongoose')
-const { USER, TOKEN } = require('~/consts/models')
+import { Schema, model } from 'mongoose'
+import { refs } from '#consts/models.js'
+
+const { USER, TOKEN } = refs
 
 const tokenSchema = new Schema({
   user: {
@@ -21,4 +23,4 @@ const tokenSchema = new Schema({
   }
 })
 
-module.exports = model(TOKEN, tokenSchema)
+export default model(TOKEN, tokenSchema)

@@ -1,4 +1,4 @@
-const filterAllowedFields = (fields, allowedFields) => {
+export const filterAllowedFields = (fields, allowedFields) => {
   const updatedFields = {}
   for (const key in fields) {
     if (key in allowedFields) {
@@ -7,5 +7,3 @@ const filterAllowedFields = (fields, allowedFields) => {
   }
   return updatedFields
 }
-
-module.exports = filterAllowedFields

@@ -60,6 +60,11 @@
     "#utils/*": "./src/utils/*",
     "#controllers/*": "./src/controllers/*",
     "#middlewares/*": "./src/middlewares/*",
-    "#services/*": "./src/services/*"
+    "#services/*": "./src/services/*",
+    "#cron-jobs/*": "./src/cron-jobs/*",
+    "#seed/*": "./src/seed/*",
+    "#routes/*": "./src/routes/*",
+    "#models/*": "./src/models/*",
+    "#validation/*": "./src/validation/*"
   }
 }

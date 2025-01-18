@@ -1,20 +1,19 @@
-const EmailTemplates = require('email-templates')
-const { sendMail } = require('~/utils/mailer')
-const { templateList } = require('~/emails')
-const {
-  gmailCredentials: { user }
-} = require('~/configs/config')
-const { createError } = require('~/utils/errorsHelper')
-const { TEMPLATE_NOT_FOUND } = require('~/consts/errors')
+import { gmailCredentials } from '#configs/config.js'
+import { createError } from '#utils/errorsHelper.js'
+import { templateList } from '#src/emails/index.js'
+import EmailTemplates from 'email-templates'
+import { sendMail } from '#utils/mailer.js'
+import { errors } from '#consts/errors.js'
 
 const emailTemplates = new EmailTemplates()
 
-const emailService = {
+export const emailService = {
   sendEmail: async (email, subject, language, text = {}) => {
     const templateToSend = templateList[subject]
+    const user = gmailCredentials.all.user
 
     if (!templateToSend) {
-      throw createError(404, TEMPLATE_NOT_FOUND)
+      throw createError(404, errors.TEMPLATE_NOT_FOUND)
     }
 
     const langTemplate = templateToSend[language]
@@ -29,5 +28,3 @@ const emailService = {
     })
   }
 }
-
-module.exports = emailService

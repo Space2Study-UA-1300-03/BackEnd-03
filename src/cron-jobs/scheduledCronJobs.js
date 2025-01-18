@@ -1,9 +1,7 @@
-const { checkUsersForLastLogin } = require('~/cron-jobs/checkForLastLogin')
-const { removeUnverifiedUsers } = require('~/cron-jobs/removeUnverifiedUsers')
+import { removeUnverifiedUsers } from '#cron-jobs/removeUnverifiedUsers.js'
+import { checkUsersForLastLogin } from '#cron-jobs/checkForLastLogin.js'
 
-const scheduledCronJobs = () => {
+export const scheduledCronJobs = () => {
   checkUsersForLastLogin.start()
   removeUnverifiedUsers.start()
 }
-
-module.exports = scheduledCronJobs

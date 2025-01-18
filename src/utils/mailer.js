@@ -1,15 +1,15 @@
-const nodemailer = require('nodemailer')
-const { google } = require('googleapis')
-const logger = require('~/logger/logger')
-const {
-  gmailCredentials: { user, clientId, clientSecret, refreshToken, redirectUri }
-} = require('~/configs/config')
-const { createError } = require('~/utils/errorsHelper')
-const { API_TOKEN_NOT_RETRIEVED, EMAIL_NOT_SENT } = require('~/consts/errors')
+import { gmailCredentials } from '#configs/config.js'
+import { createError } from '#utils/errorsHelper.js'
+import { errors } from '#consts/errors.js'
+import { logger } from '#logger/logger.js'
+import nodemailer from 'nodemailer'
+import { google } from 'googleapis'
 
+const { user, clientId, clientSecret, refreshToken, redirectUri } = gmailCredentials.all
+const { API_TOKEN_NOT_RETRIEVED, EMAIL_NOT_SENT } = errors
 const OAuth2 = google.auth.OAuth2
 
-const getAccessToken = async () => {
+export const getAccessToken = async () => {
   try {
     const oAuth2Client = new OAuth2(clientId, clientSecret, redirectUri)
 
@@ -23,7 +23,7 @@ const getAccessToken = async () => {
   }
 }
 
-const createTransport = async () => {
+export const createTransport = async () => {
   try {
     const accessToken = await getAccessToken()
     const transporter = nodemailer.createTransport({
@@ -45,7 +45,7 @@ const createTransport = async () => {
   }
 }
 
-const sendMail = async (mailOptions) => {
+export const sendMail = async (mailOptions) => {
   try {
     const transporter = await createTransport()
     await transporter.verify()
@@ -58,5 +58,3 @@ const sendMail = async (mailOptions) => {
     throw createError(400, EMAIL_NOT_SENT)
   }
 }
-
-module.exports = { getAccessToken, createTransport, sendMail }

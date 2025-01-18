@@ -1,11 +1,12 @@
-const User = require('~/models/user')
-const { createError } = require('~/utils/errorsHelper')
+import { allowedUserFieldsForUpdate } from '#validation/services/user.js'
+import { filterAllowedFields } from '#utils/filterAllowedFields.js'
+import { createError } from '#utils/errorsHelper.js'
+import { errors } from '#consts/errors.js'
+import User from '#models/user.js'
 
-const { DOCUMENT_NOT_FOUND, ALREADY_REGISTERED } = require('~/consts/errors')
-const filterAllowedFields = require('~/utils/filterAllowedFields')
-const { allowedUserFieldsForUpdate } = require('~/validation/services/user')
+const { DOCUMENT_NOT_FOUND, ALREADY_REGISTERED } = errors
 
-const userService = {
+export const userService = {
   getUsers: async ({ match, sort, skip, limit }) => {
     const count = await User.countDocuments(match)
 
@@ -102,5 +103,3 @@ const userService = {
     await User.findByIdAndRemove(id).exec()
   }
 }
-
-module.exports = userService

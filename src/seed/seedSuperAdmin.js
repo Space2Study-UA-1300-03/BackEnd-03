@@ -1,13 +1,12 @@
-const User = require('~/models/user')
-const {
-  superAdmin: { firstName, lastName, email, password }
-} = require('~/configs/config')
-const {
-  roles: { SUPERADMIN }
-} = require('~/consts/auth')
-const logger = require('~/logger/logger')
+import { superAdmin } from '#configs/config.js'
+import { logger } from '#logger/logger.js'
+import { roles } from '#consts/auth.js'
+import User from '#models/user.js'
 
-const SeedSuperAdmin = {
+const { firstName, lastName, email, password } = superAdmin.all
+const { SUPERADMIN } = roles
+
+export const SeedSuperAdmin = {
   createSuperAdmin: async () => {
     try {
       const superAdmin = {
@@ -26,5 +25,3 @@ const SeedSuperAdmin = {
     }
   }
 }
-
-module.exports = SeedSuperAdmin
