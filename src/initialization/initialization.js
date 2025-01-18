@@ -1,9 +1,9 @@
-// const router = require('~/routes')
 import { createNotFoundError } from '#utils/errorsHelper.js'
 import { swaggerSpec } from '#initialization/swagger.js'
 import { errorMiddleware } from '#middlewares/error.js'
-import swaggerUi from 'swagger-ui-express'
 import { config } from '#configs/config.js'
+import swaggerUi from 'swagger-ui-express'
+import { router } from '#routes/index.js'
 import cookieParser from 'cookie-parser'
 import express from 'express'
 import cors from 'cors'
@@ -25,7 +25,7 @@ export const initialization = (app) => {
 
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
-  // app.use('/', router)
+  app.use('/', router)
 
   app.use((_req, _res, next) => {
     next(createNotFoundError())

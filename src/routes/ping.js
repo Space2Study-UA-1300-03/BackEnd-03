@@ -1,5 +1,6 @@
-const express = require('express')
-const router = express.Router()
+import express from 'express'
+
+export const router = express.Router()
 
 /**
  * @swagger
@@ -26,5 +27,3 @@ const router = express.Router()
 router.get('/', (_req, res) => {
   res.json({ message: 'pong' })
 })
-
-module.exports = router
