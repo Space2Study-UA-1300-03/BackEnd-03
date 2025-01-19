@@ -1,4 +1,4 @@
-// module.exports = {
+// export default {
 //   roots: ['<rootDir>/src/test'],
 //   moduleNameMapper: {
 //     '^~/(.*)$': '<rootDir>/src/$1'
@@ -27,9 +27,6 @@
 //   coverageReporters: ['html', 'lcov'],
 //   coverageDirectory: '<rootDir>/src/test/coverage',
 //   testTimeout: 12000,
-//   testMatch: [
-//     '<rootDir>/src/test/integration/**/*.spec.js',
-//     '<rootDir>/src/test/unit/**/*.spec.js'
-//   ],
+//   testMatch: ['<rootDir>/src/test/integration/**/*.spec.js', '<rootDir>/src/test/unit/**/*.spec.js'],
 //   testResultsProcessor: 'jest-sonar-reporter'
 // }

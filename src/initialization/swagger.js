@@ -14,6 +14,6 @@ const swaggerOptions = {
       description: 'Space2Study API'
     }
   },
-  apis: [path.join(__dirname, '..', 'routes', '*.js')]
+  apis: [path.join(__dirname, '..', 'docs', 'swagger', '*.swagger.js')]
 }
 export const swaggerSpec = swaggerJsdoc(swaggerOptions)
