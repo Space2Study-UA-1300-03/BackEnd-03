@@ -17,5 +17,3 @@ const start = async () => {
 }
 
 start()
-
-//TODO: Add password hashing
