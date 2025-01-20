@@ -12,7 +12,7 @@ export const serverSetup = async (app) => {
   initialization(app)
   return app.listen(SERVER_PORT, () => {
     logger.info(`Server is running on port ${SERVER_PORT}`)
-    if (process.env.NODE_ENV !== 'test') {
+    if (process.env.NODE_ENV !== 'development') {
       scheduledCronJobs()
     }
   })
