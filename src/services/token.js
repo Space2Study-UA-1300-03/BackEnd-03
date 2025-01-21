@@ -1,29 +1,18 @@
-const jwt = require('jsonwebtoken')
-const Token = require('~/models/token')
-const {
-  config: {
-    JWT_ACCESS_SECRET,
-    JWT_ACCESS_EXPIRES_IN,
-    JWT_REFRESH_SECRET,
-    JWT_REFRESH_EXPIRES_IN,
-    JWT_RESET_SECRET,
-    JWT_RESET_EXPIRES_IN,
-    JWT_CONFIRM_SECRET,
-    JWT_CONFIRM_EXPIRES_IN
-  }
-} = require('~/configs/config')
-const { INVALID_TOKEN_NAME } = require('~/consts/errors')
-const { tokenNames } = require('~/consts/auth')
-const { createError } = require('~/utils/errorsHelper')
+import { createError } from '#utils/errorsHelper.js'
+import { tokenNames } from '#consts/auth.js'
+import { config } from '#configs/config.js'
+import { errors } from '#consts/errors.js'
+import Token from '#models/token.js'
+import jwt from 'jsonwebtoken'
 
-const tokenService = {
+export const tokenService = {
   generateTokens: (payload) => {
-    const accessToken = jwt.sign(payload, JWT_ACCESS_SECRET, {
-      expiresIn: JWT_ACCESS_EXPIRES_IN
+    const accessToken = jwt.sign(payload, config.all.JWT_ACCESS_SECRET, {
+      expiresIn: config.all.JWT_ACCESS_EXPIRES_IN
     })
 
-    const refreshToken = jwt.sign(payload, JWT_REFRESH_SECRET, {
-      expiresIn: JWT_REFRESH_EXPIRES_IN
+    const refreshToken = jwt.sign(payload, config.all.JWT_REFRESH_SECRET, {
+      expiresIn: config.all.JWT_REFRESH_EXPIRES_IN
     })
 
     return {
@@ -33,14 +22,14 @@ const tokenService = {
   },
 
   generateResetToken: (payload) => {
-    return jwt.sign(payload, JWT_RESET_SECRET, {
-      expiresIn: JWT_RESET_EXPIRES_IN
+    return jwt.sign(payload, config.all.JWT_RESET_SECRET, {
+      expiresIn: config.all.JWT_RESET_EXPIRES_IN
     })
   },
 
   generateConfirmToken: (payload) => {
-    return jwt.sign(payload, JWT_CONFIRM_SECRET, {
-      expiresIn: JWT_CONFIRM_EXPIRES_IN
+    return jwt.sign(payload, config.all.JWT_CONFIRM_SECRET, {
+      expiresIn: config.all.JWT_CONFIRM_EXPIRES_IN
     })
   },
 
@@ -53,24 +42,24 @@ const tokenService = {
   },
 
   validateAccessToken: (token) => {
-    return tokenService.validateToken(token, JWT_ACCESS_SECRET)
+    return tokenService.validateToken(token, config.all.JWT_ACCESS_SECRET)
   },
 
   validateRefreshToken: (token) => {
-    return tokenService.validateToken(token, JWT_REFRESH_SECRET)
+    return tokenService.validateToken(token, config.all.JWT_REFRESH_SECRET)
   },
 
   validateResetToken: (token) => {
-    return tokenService.validateToken(token, JWT_RESET_SECRET)
+    return tokenService.validateToken(token, config.all.JWT_RESET_SECRET)
   },
 
   validateConfirmToken: (token) => {
-    return tokenService.validateToken(token, JWT_CONFIRM_SECRET)
+    return tokenService.validateToken(token, config.all.JWT_CONFIRM_SECRET)
   },
 
   saveToken: async (userId, tokenValue, tokenName) => {
     if (!Object.values(tokenNames).includes(tokenName)) {
-      throw createError(404, INVALID_TOKEN_NAME)
+      throw createError(404, errors.INVALID_TOKEN_NAME)
     }
 
     let tokenData = await Token.findOne({ user: userId })
@@ -87,7 +76,7 @@ const tokenService = {
 
   findToken: async (tokenValue, tokenName) => {
     if (!Object.values(tokenNames).includes(tokenName)) {
-      throw createError(404, INVALID_TOKEN_NAME)
+      throw createError(404, errors.INVALID_TOKEN_NAME)
     }
 
     try {
@@ -114,5 +103,3 @@ const tokenService = {
     await Token.deleteOne({ confirmToken })
   }
 }
-
-module.exports = tokenService

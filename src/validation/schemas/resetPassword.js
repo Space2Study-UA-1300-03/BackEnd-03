@@ -1,9 +1,9 @@
-const {
-  lengths: { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH },
-  regex: { PASSWORD_PATTERN }
-} = require('~/consts/validation')
+import { lengths, regex } from '#consts/validation.js'
 
-const resetPasswordValidationSchema = {
+const { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } = lengths
+const { PASSWORD_PATTERN } = regex
+
+export const resetPasswordValidationSchema = {
   password: {
     type: 'string',
     required: true,
@@ -14,5 +14,3 @@ const resetPasswordValidationSchema = {
     regex: PASSWORD_PATTERN
   }
 }
-
-module.exports = resetPasswordValidationSchema

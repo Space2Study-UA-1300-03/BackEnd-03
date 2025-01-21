@@ -1,4 +1,4 @@
-const allowedUserFieldsForUpdate = {
+export const allowedUserFieldsForUpdate = {
   photo: true,
   firstName: true,
   lastName: true,
@@ -11,8 +11,4 @@ const allowedUserFieldsForUpdate = {
   nativeLanguage: true,
   appLanguage: true,
   FAQ: true
-}
-
-module.exports = {
-  allowedUserFieldsForUpdate
 }

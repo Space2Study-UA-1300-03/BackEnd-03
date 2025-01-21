@@ -1,26 +1,23 @@
-const tokenService = require('~/services/token')
-const emailService = require('~/services/email')
-const { getUserByEmail, createUser, privateUpdateUser, getUserById } = require('~/services/user')
-const { createError } = require('~/utils/errorsHelper')
-const {
-  EMAIL_NOT_CONFIRMED,
-  INCORRECT_CREDENTIALS,
-  BAD_RESET_TOKEN,
-  BAD_REFRESH_TOKEN,
-  USER_NOT_FOUND
-} = require('~/consts/errors')
-const emailSubject = require('~/consts/emailSubject')
-const {
-  tokenNames: { REFRESH_TOKEN, RESET_TOKEN, CONFIRM_TOKEN }
-} = require('~/consts/auth')
+import { emailSubject } from '#consts/emailSubject.js'
+import { createError } from '#utils/errorsHelper.js'
+import { tokenService } from '#services/token.js'
+import { emailService } from '#services/email.js'
+import { userService } from '#services/user.js'
+import { tokenNames } from '#consts/auth.js'
+import { errors } from '#consts/errors.js'
 
-const authService = {
+const { EMAIL_NOT_CONFIRMED, INCORRECT_CREDENTIALS, BAD_RESET_TOKEN, BAD_REFRESH_TOKEN, USER_NOT_FOUND } = errors
+const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
+const { CONFIRM_TOKEN, REFRESH_TOKEN, RESET_TOKEN } = tokenNames
+
+export const authService = {
   signup: async (role, firstName, lastName, email, password, language) => {
     const user = await createUser(role, firstName, lastName, email, password, language)
 
     const confirmToken = tokenService.generateConfirmToken({ id: user._id, role })
     await tokenService.saveToken(user._id, confirmToken, CONFIRM_TOKEN)
-    await emailService.sendEmail(email, emailSubject.EMAIL_CONFIRMATION, language, { confirmToken, email, firstName })
+    // await emailService.sendEmail(email, emailSubject.EMAIL_CONFIRMATION, language, { confirmToken, email, firstName })
+    //TODO fix email sending
     return {
       userId: user._id,
       userEmail: user.email
@@ -34,7 +31,7 @@ const authService = {
       throw createError(401, USER_NOT_FOUND)
     }
 
-    const checkedPassword = (password === user.password) || isFromGoogle
+    const checkedPassword = password === user.password || isFromGoogle
 
     if (!checkedPassword) {
       throw createError(401, INCORRECT_CREDENTIALS)
@@ -111,5 +108,3 @@ const authService = {
     })
   }
 }
-
-module.exports = authService

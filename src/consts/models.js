@@ -1,4 +1,4 @@
-const refs = {
+export const refs = {
   USER: 'User',
   OFFER: 'Offer',
   SUBJECT: 'Subject',
@@ -14,5 +14,3 @@ const refs = {
   QUESTION: 'Question',
   RESOURCES_CATEGORY: 'ResourcesCategory'
 }
-
-module.exports = refs

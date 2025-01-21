@@ -1,13 +1,11 @@
-const {
-  regex: { EMAIL_PATTERN }
-} = require('~/consts/validation')
+import { regex } from '#consts/validation.js'
 
-const forgotPasswordValidationSchema = {
+const { EMAIL_PATTERN } = regex
+
+export const forgotPasswordValidationSchema = {
   email: {
     type: 'string',
     required: true,
     regex: EMAIL_PATTERN
   }
 }
-
-module.exports = forgotPasswordValidationSchema

@@ -1,11 +1,11 @@
-const User = require('~/models/user')
-const {
-  roles: { SUPERADMIN }
-} = require('~/consts/auth')
-const SeedSuperAdmin = require('~/seed/seedSuperAdmin')
-const logger = require('~/logger/logger')
+import { SeedSuperAdmin } from './seedSuperAdmin.js'
+import { logger } from '#logger/logger.js'
+import { roles } from '#consts/auth.js'
+import User from '#models/user.js'
 
-const checkUserExistence = async () => {
+const SUPERADMIN = roles.SUPERADMIN
+
+export const checkUserExistence = async () => {
   try {
     const isUserExist = await User.exists({ role: SUPERADMIN })
 
@@ -16,5 +16,3 @@ const checkUserExistence = async () => {
     logger.error(err)
   }
 }
-
-module.exports = checkUserExistence

@@ -2,10 +2,12 @@
   "name": "sp_project_be",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./src/app.js",
+  "type": "module",
   "scripts": {
     "test": "jest --maxWorkers=1",
-    "start": "nodemon src/app.js --legacy-watch",
+    "start:dev": "set NODE_ENV=development && nodemon",
+    "start:prod": "set NODE_ENV=production && nodemon src/app.js --legacy-watch",
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -33,7 +35,6 @@
     "express": "^4.17.1",
     "googleapis": "^105.0.0",
     "jsonwebtoken": "^8.5.1",
-    "module-alias": "^2.2.2",
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.2",
     "multer": "^1.4.5-lts.1",
@@ -49,5 +50,21 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "imports": {
+    "#src/*": "./src/*",
+    "#configs/*": "./src/configs/*",
+    "#initialization/*": "./src/initialization/*",
+    "#logger/*": "./src/logger/*",
+    "#consts/*": "./src/consts/*",
+    "#utils/*": "./src/utils/*",
+    "#controllers/*": "./src/controllers/*",
+    "#middlewares/*": "./src/middlewares/*",
+    "#services/*": "./src/services/*",
+    "#cron-jobs/*": "./src/cron-jobs/*",
+    "#seed/*": "./src/seed/*",
+    "#routes/*": "./src/routes/*",
+    "#models/*": "./src/models/*",
+    "#validation/*": "./src/validation/*"
   }
 }

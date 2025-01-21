@@ -1,4 +1,4 @@
-const loginValidationSchema = {
+export const loginValidationSchema = {
   email: {
     type: 'string',
     required: true
@@ -8,5 +8,3 @@ const loginValidationSchema = {
     required: true
   }
 }
-
-module.exports = { loginValidationSchema }

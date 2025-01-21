@@ -1,22 +1,19 @@
-const databaseInitialization = require('~/initialization/database')
-const checkUserExistence = require('~/seed/checkUserExistence')
-const initialization = require('~/initialization/initialization')
-const logger = require('~/logger/logger')
-const {
-  config: { SERVER_PORT }
-} = require('~/configs/config')
-const scheduledCronJobs = require('~/cron-jobs/scheduledCronJobs')
+import { databaseInitialization } from '#initialization/database.js'
+import { checkUserExistence } from '#seed/checkUserExistence.js'
+import { scheduledCronJobs } from '#cron-jobs/scheduledCronJobs.js'
+import { initialization } from '#initialization/initialization.js'
+import { config } from '#configs/config.js'
+import { logger } from '#logger/logger.js'
 
-const serverSetup = async (app) => {
+export const serverSetup = async (app) => {
+  const SERVER_PORT = config.all.SERVER_PORT
   await databaseInitialization()
   await checkUserExistence()
   initialization(app)
   return app.listen(SERVER_PORT, () => {
     logger.info(`Server is running on port ${SERVER_PORT}`)
-    if (process.env.NODE_ENV !== 'test') {
+    if (process.env.NODE_ENV !== 'development') {
       scheduledCronJobs()
     }
   })
 }
-
-module.exports = serverSetup

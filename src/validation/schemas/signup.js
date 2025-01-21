@@ -1,10 +1,10 @@
-const {
-  lengths: { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, MAX_NAME_LENGTH, MIN_NAME_LENGTH },
-  regex: { EMAIL_PATTERN, PASSWORD_PATTERN, NAME_PATTERN },
-  enums: { ROLE_ENUM }
-} = require('~/consts/validation')
+import { lengths, regex, enums } from '#consts/validation.js'
 
-const signupValidationSchema = {
+const { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, MAX_NAME_LENGTH, MIN_NAME_LENGTH } = lengths
+const { EMAIL_PATTERN, PASSWORD_PATTERN, NAME_PATTERN } = regex
+const { ROLE_ENUM } = enums
+
+export const signupValidationSchema = {
   firstName: {
     type: 'string',
     required: true,
@@ -43,5 +43,3 @@ const signupValidationSchema = {
     regex: PASSWORD_PATTERN
   }
 }
-
-module.exports = signupValidationSchema

@@ -1,12 +1,10 @@
-const { createLogger, transports, format } = require('winston')
-const { combine, timestamp, json, metadata, errors, prettyPrint } = format
-require('winston-mongodb')
+import { config } from '../configs/config.js'
+import * as winston from 'winston'
+import 'winston-mongodb'
 
-const {
-  config: { MONGODB_URL }
-} = require('~/configs/config')
+const { combine, timestamp, json, metadata, errors, prettyPrint } = winston.format
 
-const logger = createLogger({
+export const logger = winston.createLogger({
   format: combine(
     errors({ stack: true }),
     timestamp({ format: 'DD-MM-YYYY hh:mm:ss A' }),
@@ -15,15 +13,17 @@ const logger = createLogger({
     prettyPrint()
   ),
   transports: [
-    new transports.Console({
+    new winston.transports.Console({
       handleExceptions: true
     })
   ]
 })
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV === 'development') {
+  const MONGODB_URL = config.all.MONGODB_URL
+
   logger.add(
-    new transports.MongoDB({
+    new winston.transports.MongoDB({
       level: 'error',
       db: MONGODB_URL,
       options: { useUnifiedTopology: true },
@@ -32,5 +32,3 @@ if (process.env.NODE_ENV !== 'test') {
     })
   )
 }
-
-module.exports = logger
