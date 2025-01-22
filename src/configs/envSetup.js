@@ -4,7 +4,7 @@ import path from 'path'
 export const loadEnvConfig = () => {
   const NODE_ENV = process.env?.NODE_ENV?.trim() || 'development'
   const envFile = NODE_ENV === 'production' ? '.env.local' : '.env.test.local'
-  const envPath = path.join(envFile)
+  const envPath = path.join(__dirname, '..', '..', envFile)
   const result = dotenv.config({ path: envPath })
 
   if (result.error) throw new Error(`Failed to load ${envFile}: ${result.error.message}`)
