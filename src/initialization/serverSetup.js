@@ -5,11 +5,13 @@ import { initialization } from '#initialization/initialization.js'
 import { config } from '#configs/config.js'
 import { logger } from '#logger/logger.js'
 
+const { SERVER_PORT } = config
+
 export const serverSetup = async (app) => {
-  const SERVER_PORT = config.all.SERVER_PORT
   await databaseInitialization()
   await checkUserExistence()
   initialization(app)
+  
   return app.listen(SERVER_PORT, () => {
     logger.info(`Server is running on port ${SERVER_PORT}`)
     if (process.env.NODE_ENV !== 'development') {

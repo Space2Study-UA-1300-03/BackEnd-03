@@ -1,9 +1,7 @@
-import { serverSetup } from './initialization/serverSetup.js'
-import { loadEnvConfig } from './envSetup.js'
-import { logger } from './logger/logger.js'
 import express from 'express'
 
-loadEnvConfig()
+import { serverSetup } from './initialization/serverSetup.js'
+import { logger } from './logger/logger.js'
 
 const app = express()
 

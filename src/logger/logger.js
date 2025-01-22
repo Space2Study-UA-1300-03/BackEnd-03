@@ -1,8 +1,10 @@
-import { config } from '../configs/config.js'
 import * as winston from 'winston'
 import 'winston-mongodb'
 
+import { config } from '../configs/config.js'
+
 const { combine, timestamp, json, metadata, errors, prettyPrint } = winston.format
+const { MONGODB_URL } = config
 
 export const logger = winston.createLogger({
   format: combine(
@@ -20,8 +22,6 @@ export const logger = winston.createLogger({
 })
 
 if (process.env.NODE_ENV === 'development') {
-  const MONGODB_URL = config.all.MONGODB_URL
-
   logger.add(
     new winston.transports.MongoDB({
       level: 'error',

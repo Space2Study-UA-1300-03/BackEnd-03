@@ -1,6 +1,9 @@
+import mongoose from 'mongoose'
+
 import { config } from '#configs/config.js'
 import { logger } from '#logger/logger.js'
-import mongoose from 'mongoose'
+
+const { MONGODB_URL } = config
 
 const dropAllCollections = async () => {
   const collections = await mongoose.connection.db.collections()
@@ -18,8 +21,6 @@ const checkForLocalDB = async () => {
 }
 
 export const databaseInitialization = async () => {
-  const MONGODB_URL = config.all.MONGODB_URL
-
   await mongoose.connect(MONGODB_URL)
   await checkForLocalDB()
   logger.info('Connected to MongoDB.')
