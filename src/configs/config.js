@@ -1,4 +1,4 @@
-import { loadEnvConfig } from '../envSetup.js'
+import { loadEnvConfig } from './envSetup.js'
 loadEnvConfig()
 
 export const config = {

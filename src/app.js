@@ -1,7 +1,6 @@
-import express from 'express'
-
 import { serverSetup } from './initialization/serverSetup.js'
 import { logger } from './logger/logger.js'
+import express from 'express'
 
 const app = express()
 
