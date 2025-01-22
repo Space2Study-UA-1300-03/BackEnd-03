@@ -3,7 +3,10 @@
  * tags:
  *   - name: Auth
  *     description: Authentication user
- *
+ */
+
+/**
+ * @swagger
  * /auth/verify:
  *   get:
  *     summary: Email verify new user

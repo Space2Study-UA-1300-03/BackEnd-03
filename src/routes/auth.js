@@ -19,9 +19,9 @@ import express from 'express'
 export const router = express.Router()
 
 router.post('/signup', validationMiddleware(signupValidationSchema), langMiddleware, asyncWrapper(signup))
-router.get('/verify', asyncWrapper(verifyEmail))
+router.get('/verify', langMiddleware, asyncWrapper(verifyEmail))
 
-router.post('/login', validationMiddleware(loginValidationSchema), asyncWrapper(login))
+router.post('/login', validationMiddleware(loginValidationSchema), langMiddleware, asyncWrapper(login))
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
 
