@@ -94,7 +94,7 @@ export const authService = {
     const tokenFromDB = await tokenService.findToken(resetToken, RESET_TOKEN)
 
     if (!tokenData || !tokenFromDB) {
-      throw createError(400, BAD_RESET_TOKEN)
+      throw createError(400, BAD_RESET_TOKEN.message)
     }
 
     const { id: userId, firstName, email } = tokenData
@@ -105,5 +105,26 @@ export const authService = {
     await emailService.sendEmail(email, emailSubject.SUCCESSFUL_PASSWORD_RESET, language, {
       firstName
     })
+  },
+
+  verifyEmail: async (confirmToken) => {
+    if (!confirmToken) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+
+    const tokenData = tokenService.validateConfirmToken(confirmToken)
+    const tokenFromDB = await tokenService.findToken(confirmToken, CONFIRM_TOKEN)
+
+    if (!tokenData || !tokenFromDB) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+    if (tokenData.id !== tokenFromDB.user.toString()) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+
+    await userService.emailVerification(tokenFromDB.user)
+    await tokenService.removeConfirmToken(confirmToken)
+
+    return { message: 'Email confirmed' }
   }
 }

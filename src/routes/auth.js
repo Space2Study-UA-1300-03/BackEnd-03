@@ -1,4 +1,12 @@
-import { login, logout, refreshAccessToken, sendResetPasswordEmail, updatePassword, signup } from '#controllers/auth.js'
+import {
+  verifyEmail,
+  login,
+  logout,
+  refreshAccessToken,
+  sendResetPasswordEmail,
+  updatePassword,
+  signup
+} from '#controllers/auth.js'
 import { forgotPasswordValidationSchema } from '#validation/schemas/forgotPassword.js'
 import { resetPasswordValidationSchema } from '#validation/schemas/resetPassword.js'
 import { signupValidationSchema } from '#validation/schemas/signup.js'
@@ -11,6 +19,8 @@ import express from 'express'
 export const router = express.Router()
 
 router.post('/signup', validationMiddleware(signupValidationSchema), langMiddleware, asyncWrapper(signup))
+router.get('/verify', asyncWrapper(verifyEmail))
+
 router.post('/login', validationMiddleware(loginValidationSchema), asyncWrapper(login))
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
