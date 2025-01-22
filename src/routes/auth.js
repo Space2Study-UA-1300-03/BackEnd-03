@@ -14,12 +14,14 @@ router.post('/signup', validationMiddleware(signupValidationSchema), langMiddlew
 router.post('/login', validationMiddleware(loginValidationSchema), asyncWrapper(login))
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
+
 router.post(
   '/forgot-password',
   validationMiddleware(forgotPasswordValidationSchema),
   langMiddleware,
   asyncWrapper(sendResetPasswordEmail)
 )
+
 router.patch(
   '/reset-password/:token',
   validationMiddleware(resetPasswordValidationSchema),
