@@ -15,20 +15,17 @@ export const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
       handleExceptions: true
-    })
+    }),
+    ...(config.MONGODB_URL
+      ? [
+          new winston.transports.MongoDB({
+            level: 'error',
+            db: config.MONGODB_URL,
+            options: { useUnifiedTopology: true },
+            expireAfterSeconds: 604800,
+            handleExceptions: true
+          })
+        ]
+      : [])
   ]
 })
-
-if (process.env.NODE_ENV === 'development') {
-  const MONGODB_URL = config.all.MONGODB_URL
-
-  logger.add(
-    new winston.transports.MongoDB({
-      level: 'error',
-      db: MONGODB_URL,
-      options: { useUnifiedTopology: true },
-      expireAfterSeconds: 604800,
-      handleExceptions: true
-    })
-  )
-}

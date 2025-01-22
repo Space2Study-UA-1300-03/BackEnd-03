@@ -2,12 +2,11 @@
   "name": "sp_project_be",
   "version": "0.0.1",
   "description": "",
-  "main": "./src/app.js",
   "type": "module",
   "scripts": {
     "test": "jest --maxWorkers=1",
-    "start:dev": "set NODE_ENV=development && nodemon",
-    "start:prod": "set NODE_ENV=production && nodemon src/app.js --legacy-watch",
+    "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon src/app.js",
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -15,6 +14,7 @@
   "author": "SoftServe ITA",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^8.0.0",

@@ -3,11 +3,11 @@ import { logger } from '#logger/logger.js'
 import { roles } from '#consts/auth.js'
 import User from '#models/user.js'
 
+const { firstName, lastName, email, password } = superAdmin
+const { SUPERADMIN } = roles
+
 export const SeedSuperAdmin = {
   createSuperAdmin: async () => {
-    const { firstName, lastName, email, password } = superAdmin.all
-    const { SUPERADMIN } = roles
-
     try {
       const superAdmin = {
         role: SUPERADMIN,
