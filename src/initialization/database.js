@@ -1,7 +1,6 @@
-import mongoose from 'mongoose'
-
 import { config } from '#configs/config.js'
 import { logger } from '#logger/logger.js'
+import mongoose from 'mongoose'
 
 const { MONGODB_URL } = config
 
@@ -15,13 +14,21 @@ const dropAllCollections = async () => {
 }
 
 const checkForLocalDB = async () => {
-  if (process.env.NODE_ENV === 'test') {
+  if (process.env.NODE_ENV === 'development') {
     await dropAllCollections()
   }
 }
 
 export const databaseInitialization = async () => {
-  await mongoose.connect(MONGODB_URL)
-  await checkForLocalDB()
-  logger.info('Connected to MongoDB.')
+  try {
+    await mongoose.connect(MONGODB_URL, {
+      serverSelectionTimeoutMS: 5000,
+      retryWrites: true
+    })
+    await checkForLocalDB()
+    logger.info('Connected to MongoDB.')
+  } catch (error) {
+    logger.error('Failed to connect to MongoDB:', error)
+    throw error
+  }
 }
