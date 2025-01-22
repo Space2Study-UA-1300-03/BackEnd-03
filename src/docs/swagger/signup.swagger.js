@@ -53,7 +53,7 @@
 
 /**
  * @swagger
- * /signup:
+ * /auth/signup:
  *   post:
  *     summary: Create a new user
  *     tags: [Auth]
