@@ -25,12 +25,6 @@
  *             schema:
  *               type: object
  *               properties:
- *                 status:
- *                   type: integer
- *                   example: 200
- *                 code:
- *                   type: string
- *                   example: "OK"
  *                 message:
  *                   type: string
  *                   example: "Email confirmed"
