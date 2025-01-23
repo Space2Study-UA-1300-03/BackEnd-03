@@ -1,9 +1,10 @@
-import { enums } from '#consts/validation.js'
+import { enums, lengths } from '#consts/validation.js'
 import { errors } from '#consts/errors.js'
 import { Schema, model } from 'mongoose'
 import { refs } from '#consts/models.js'
 
 const { APP_LANG_ENUM, SPOKEN_LANG_ENUM, STATUS_ENUM, ROLE_ENUM, LOGIN_ROLE_ENUM } = enums
+const { MIN_PASSWORD_LENGTH } = lengths
 const { SUBJECT, OFFER, USER } = refs
 const {
   FIELD_CANNOT_BE_SHORTER,
@@ -62,9 +63,9 @@ const userSchema = new Schema(
         {
           validator: function (value) {
             if (this.authProvider === 'google') return true;
-            return value && value.length >= 8;
+            return value && value.length >= MIN_PASSWORD_LENGTH;
           },
-          message: FIELD_CANNOT_BE_SHORTER('password', 8),
+          message: FIELD_CANNOT_BE_SHORTER('password', MIN_PASSWORD_LENGTH),
         },
       ],
       select: false
