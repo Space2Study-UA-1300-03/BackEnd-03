@@ -1,5 +1,6 @@
 import { OAuth2Client } from 'google-auth-library'
 
+import { logger } from '#logger/logger.js'
 import { authService } from '#services/auth.js'
 import { oneDayInMs } from '#consts/auth.js'
 import { tokenNames } from '#consts/auth.js'
@@ -111,8 +112,8 @@ export const verifyIdToken = async (req, res) => {
       message: 'Google authentication successful',
       user
     })
-  } catch (error) {
-    console.error('Error verifying ID token:', error)
+  } catch (err) {
+    logger.error('Error verifying ID token:', err)
     res.status(401).json({ error: 'Invalid ID token' })
   }
 }

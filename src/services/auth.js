@@ -6,6 +6,7 @@ import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
 import User from '#models/user.js'
+import { logger } from '#logger/logger.js'
 
 const { EMAIL_NOT_CONFIRMED, INCORRECT_CREDENTIALS, BAD_RESET_TOKEN, BAD_REFRESH_TOKEN, USER_NOT_FOUND } = errors
 const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
@@ -138,8 +139,8 @@ export const authService = {
         authProvider: user.authProvider
       }
   
-    } catch(e) {
-      console.error('Error in google Login', e)
+    } catch(err) {
+      logger.error('Error in google Login', err)
     }
   }
 }
