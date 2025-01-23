@@ -23,7 +23,7 @@ router.post('/signup', validationMiddleware(signupValidationSchema), langMiddlew
 router.get('/verify', langMiddleware, asyncWrapper(verifyEmail))
 
 router.post('/login', validationMiddleware(loginValidationSchema), langMiddleware, asyncWrapper(login))
-router.post('/google-auth', langMiddleware, asyncWrapper(verifyIdToken))
+router.post('/google', langMiddleware, asyncWrapper(verifyIdToken))
 
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
