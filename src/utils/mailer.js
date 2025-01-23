@@ -1,9 +1,10 @@
+import nodemailer from 'nodemailer'
+import { google } from 'googleapis'
+
 import { gmailCredentials } from '#configs/config.js'
 import { createError } from '#utils/errorsHelper.js'
 import { errors } from '#consts/errors.js'
 import { logger } from '#logger/logger.js'
-import nodemailer from 'nodemailer'
-import { google } from 'googleapis'
 
 const { user, clientId, clientSecret, refreshToken, redirectUri } = gmailCredentials
 const { API_TOKEN_NOT_RETRIEVED, EMAIL_NOT_SENT } = errors

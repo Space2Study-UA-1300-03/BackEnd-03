@@ -5,6 +5,8 @@ import { emailService } from '#services/email.js'
 import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
+import { logger } from '#logger/logger.js'
+import User from '#models/user.js'
 
 const { EMAIL_NOT_CONFIRMED, INCORRECT_CREDENTIALS, BAD_RESET_TOKEN, BAD_REFRESH_TOKEN, USER_NOT_FOUND } = errors
 const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
@@ -126,5 +128,43 @@ export const authService = {
     await tokenService.removeConfirmToken(confirmToken)
 
     return { message: 'Email confirmed' }
+  },
+
+  googleLogin: async (payload) => {
+    if (!payload?.email || !payload?.name) {
+      throw new Error('Invalid payload: email and name are required')
+    }
+
+    const { email, name } = payload
+    const [firstName, lastName] = name.split(' ')
+
+    try {
+      let user = await User.findOne({ email })
+
+      if (!user) {
+        user = new User({
+          email,
+          firstName,
+          lastName: lastName || firstName,
+          role: ['student'],
+          isEmailConfirmed: true,
+          password: '',
+          authProvider: 'google'
+        })
+
+        await user.save()
+      }
+
+      return {
+        id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        role: user.role,
+        authProvider: user.authProvider
+      }
+    } catch (err) {
+      logger.error('Error in google Login', err)
+      throw err
+    }
   }
 }
