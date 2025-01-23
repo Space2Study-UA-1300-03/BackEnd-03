@@ -10,7 +10,7 @@ const { REFRESH_TOKEN, ACCESS_TOKEN } = tokenNames
 const { COOKIE_DOMAIN } = config
 const { clientId } = gmailCredentials
 
-const client = new OAuth2Client({ apiKey: clientId })
+const client = new OAuth2Client(clientId)
 
 const COOKIE_OPTIONS = {
   maxAge: oneDayInMs,
@@ -113,7 +113,15 @@ export const verifyIdToken = async (req, res) => {
       user
     })
   } catch (err) {
-    logger.error('Error verifying ID token:', err)
-    res.status(401).json({ error: 'Invalid ID token' })
+    logger.error('Google auth error:', {
+      error: err.message,
+      stack: err.stack,
+      idToken: idToken.substring(0, 10) + '...'
+    })
+    
+    const errorMessage = err.message.includes('Token used too late') 
+      ? 'Token expired' 
+      : 'Invalid ID token'
+    res.status(401).json({ error: errorMessage })
   }
 }

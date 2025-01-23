@@ -111,6 +111,10 @@ export const authService = {
   },
 
   googleLogin: async (payload) => {
+    if (!payload?.email || !payload?.name) {
+      throw new Error('Invalid payload: email and name are required')
+    }
+    
     const {email, name} = payload;
     const [firstName, lastName] = name.split(' ');
   
@@ -141,6 +145,7 @@ export const authService = {
   
     } catch(err) {
       logger.error('Error in google Login', err)
+      throw err
     }
   }
 }

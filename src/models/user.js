@@ -20,7 +20,8 @@ const userSchema = new Schema(
     authProvider: {
       type: String,
       enum: ['local', 'google'],
-      required: true
+      required: true,
+      default: 'local'
     },
     role: {
       type: [String],
