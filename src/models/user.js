@@ -17,6 +17,11 @@ const {
 
 const userSchema = new Schema(
   {
+    authProvider: {
+      type: String,
+      enum: ['local', 'google'],
+      required: true
+    },
     role: {
       type: [String],
       enum: {
@@ -45,8 +50,22 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, FIELD_CANNOT_BE_EMPTY('password')],
-      minLength: [8, FIELD_CANNOT_BE_SHORTER('password', 8)],
+      validate: [
+        {
+          validator: function (value) {
+            if (this.authProvider === 'google') return true;
+            return value && value.trim().length > 0;
+          },
+          message: FIELD_CANNOT_BE_EMPTY('password'),
+        },
+        {
+          validator: function (value) {
+            if (this.authProvider === 'google') return true;
+            return value && value.length >= 8;
+          },
+          message: FIELD_CANNOT_BE_SHORTER('password', 8),
+        },
+      ],
       select: false
     },
     address: {
