@@ -1,11 +1,12 @@
 import {
-  verifyEmail,
-  login,
-  logout,
-  refreshAccessToken,
   sendResetPasswordEmail,
+  refreshAccessToken,
   updatePassword,
-  signup
+  verifyIdToken,
+  verifyEmail,
+  logout,
+  signup,
+  login
 } from '#controllers/auth.js'
 import { forgotPasswordValidationSchema } from '#validation/schemas/forgotPassword.js'
 import { resetPasswordValidationSchema } from '#validation/schemas/resetPassword.js'
@@ -22,6 +23,8 @@ router.post('/signup', validationMiddleware(signupValidationSchema), langMiddlew
 router.get('/verify', langMiddleware, asyncWrapper(verifyEmail))
 
 router.post('/login', validationMiddleware(loginValidationSchema), langMiddleware, asyncWrapper(login))
+router.post('/google', langMiddleware, asyncWrapper(verifyIdToken))
+
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
 

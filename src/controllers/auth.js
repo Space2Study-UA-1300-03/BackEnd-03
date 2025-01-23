@@ -1,10 +1,15 @@
+import { config, gmailCredentials } from '#configs/config.js'
+import { OAuth2Client } from 'google-auth-library'
 import { authService } from '#services/auth.js'
-import { oneDayInMs } from '#consts/auth.js'
 import { tokenNames } from '#consts/auth.js'
-import { config } from '#configs/config.js'
+import { oneDayInMs } from '#consts/auth.js'
+import { logger } from '#logger/logger.js'
 
 const { REFRESH_TOKEN, ACCESS_TOKEN } = tokenNames
 const { COOKIE_DOMAIN } = config
+const { clientId } = gmailCredentials
+
+const client = new OAuth2Client(clientId)
 
 const COOKIE_OPTIONS = {
   maxAge: oneDayInMs,
@@ -91,4 +96,37 @@ export const verifyEmail = async (req, res) => {
   const message = await authService.verifyEmail(confirmToken)
 
   res.status(200).json(message)
+}
+
+export const verifyIdToken = async (req, res) => {
+  const { token } = req.body
+  const idToken = token?.credential
+
+  if (!idToken) {
+    return res.status(400).json({ error: 'ID token is required' })
+  }
+
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken,
+      audience: clientId
+    })
+
+    const payload = ticket.getPayload()
+    const user = await authService.googleLogin(payload)
+
+    res.status(200).json({
+      message: 'Google authentication successful',
+      user
+    })
+  } catch (err) {
+    logger.error('Google auth error:', {
+      error: err.message,
+      stack: err.stack,
+      idToken: idToken.substring(0, 10) + '...'
+    })
+
+    const errorMessage = err.message.includes('Token used too late') ? 'Token expired' : 'Invalid ID token'
+    res.status(401).json({ error: errorMessage })
+  }
 }
