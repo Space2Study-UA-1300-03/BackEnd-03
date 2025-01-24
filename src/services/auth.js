@@ -8,7 +8,14 @@ import { errors } from '#consts/errors.js'
 import { logger } from '#logger/logger.js'
 import User from '#models/user.js'
 
-const { EMAIL_NOT_CONFIRMED, INCORRECT_CREDENTIALS, BAD_RESET_TOKEN, BAD_REFRESH_TOKEN, USER_NOT_FOUND } = errors
+const {
+  INCORRECT_CREDENTIALS,
+  EMAIL_NOT_CONFIRMED,
+  BAD_CONFIRM_TOKEN,
+  BAD_REFRESH_TOKEN,
+  BAD_RESET_TOKEN,
+  USER_NOT_FOUND
+} = errors
 const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
 const { CONFIRM_TOKEN, REFRESH_TOKEN, RESET_TOKEN } = tokenNames
 
@@ -29,7 +36,7 @@ export const authService = {
     const user = await getUserByEmail(email)
 
     if (!user) {
-      throw createError(401, USER_NOT_FOUND)
+      throw createError(404, USER_NOT_FOUND)
     }
 
     const checkedPassword = password === user.password || isFromGoogle
@@ -111,17 +118,17 @@ export const authService = {
 
   verifyEmail: async (confirmToken) => {
     if (!confirmToken) {
-      throw createError(400, BAD_RESET_TOKEN)
+      throw createError(400, BAD_CONFIRM_TOKEN)
     }
 
     const tokenData = tokenService.validateConfirmToken(confirmToken)
     const tokenFromDB = await tokenService.findToken(confirmToken, CONFIRM_TOKEN)
 
     if (!tokenData || !tokenFromDB) {
-      throw createError(400, BAD_RESET_TOKEN)
+      throw createError(400, BAD_CONFIRM_TOKEN)
     }
     if (tokenData.id !== tokenFromDB.user.toString()) {
-      throw createError(400, BAD_RESET_TOKEN)
+      throw createError(400, BAD_CONFIRM_TOKEN)
     }
 
     await userService.emailVerification(tokenFromDB.user)

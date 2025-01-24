@@ -40,8 +40,8 @@
  *                   example: 400
  *                 code:
  *                   type: string
- *                   example: "BAD_RESET_TOKEN"
+ *                   example: "BAD_CONFIRM_TOKEN"
  *                 message:
  *                   type: string
- *                   example: "The reset token is either invalid or has expired."
+ *                   example: "The confirm token is either invalid or has expired."
  */
