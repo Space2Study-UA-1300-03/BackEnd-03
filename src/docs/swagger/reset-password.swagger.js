@@ -2,40 +2,42 @@
  * @swagger
  * components:
  *   schemas:
- *     ForgotPasswordRequest:
+ *     ResetPasswordRequest:
  *       type: object
  *       required:
- *         - email
+ *         - password
  *       properties:
- *         email:
+ *         password:
  *           type: string
- *           pattern: '^([a-z\d]+([._-][a-z\d]+)*)@([a-z\d]+([.-][a-z\d]+)*\.[a-z]{2,})$'
- *           description: Valid email address
- *           example: "user@example.com"
+ *           minLength: 8
+ *           maxLength: 25
+ *           pattern: '^(?=.*\d)(?=.*[a-zа-яєії])\S+$'
+ *           description: Password must contain at least one letter and one number
+ *           example: "NewPassword123"
  */
 
 /**
  * @swagger
- * tags:
- *   - name: Auth
- *     description: Authentication endpoints
- */
-
-/**
- * @swagger
- * /auth/forgot-password:
- *   post:
- *     summary: Send password reset email
+ * /auth/reset-password/{token}:
+ *   patch:
+ *     summary: Reset user password
  *     tags: [Auth]
+ *     parameters:
+ *       - in: path
+ *         name: token
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Reset password token from email
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/ForgotPasswordRequest'
+ *             $ref: '#/components/schemas/ResetPasswordRequest'
  *     responses:
  *       204:
- *         description: Password reset email sent successfully
+ *         description: Password successfully reset
  *       404:
  *         description: Not Found
  *         content:
@@ -90,10 +92,6 @@
  *                 value:
  *                   - code: "FIELD_IS_NOT_OF_PROPER_FORMAT"
  *                     message: "${field} can contain alphabetic characters only."
- *               FIELD_IS_NOT_OF_PROPER_ENUM_VALUE:
- *                 value:
- *                   - code: "FIELD_IS_NOT_OF_PROPER_ENUM_VALUE"
- *                     message: "${field} should be either one of the values: [${enumSet.join(', ')}]."
  *       400:
  *         description: Invalid request
  *         content:
@@ -120,5 +118,4 @@
  *                 value:
  *                   code: "INVALID_LANGUAGE"
  *                   message: "The language name is invalid. Possible options: ['en', 'ua']"
- *
  */
