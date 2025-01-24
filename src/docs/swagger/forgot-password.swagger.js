@@ -1,77 +1,43 @@
 /**
  * @swagger
- *
  * components:
  *   schemas:
- *     LoginRequest:
+ *     ForgotPasswordRequest:
  *       type: object
  *       required:
  *         - email
- *         - password
  *       properties:
  *         email:
  *           type: string
  *           pattern: '^([a-z\d]+([._-][a-z\d]+)*)@([a-z\d]+([.-][a-z\d]+)*\.[a-z]{2,})$'
  *           description: Valid email address
  *           example: "user@example.com"
- *         password:
- *           type: string
- *           pattern: '^(?=.*\d)(?=.*[a-zа-яєії])\S+$'
- *           minLength: 8
- *           maxLength: 25
- *           description: Password must contain at least one letter and one number
- *           example: "Password123"
  */
 
 /**
  * @swagger
  * tags:
  *   - name: Auth
- *     description: Authentication user
+ *     description: Authentication endpoints
  */
 
 /**
  * @swagger
- * /auth/login:
+ * /auth/forgot-password:
  *   post:
- *     summary: Authorize user
+ *     summary: Send password reset email
  *     tags: [Auth]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/LoginRequest'
+ *             $ref: '#/components/schemas/ForgotPasswordRequest'
  *     responses:
- *       200:
- *         description: Successful authentication
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 accessToken:
- *                   type: string
- *                   description: JWT access token
- *                   example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTE3ZDVhMTBmYTU5ODk2ZjMzZTQ2YSIsInJvbGUiOiJzdHVkZW50IiwiaXNGaXJzdExvZ2luIjp0cnVlLCJpYXQiOjE3Mzc1ODgxNjYsImV4cCI6MTczNzU5MTc2Nn0.EDBILzuP2wvCJ6NUmRH8EQP2r-2eGWjoSUXvl2Y6-qo"
- *       400:
- *         description: Invalid language provided
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: integer
- *                   example: 400
- *                 code:
- *                   type: string
- *                   example: "INVALID_LANGUAGE"
- *                 message:
- *                   type: string
- *                   example: "The language name is invalid. Possible options: ['en', 'ua']"
- *       401:
- *         description: Unauthorized
+ *       204:
+ *         description: Password reset email sent successfully
+ *       404:
+ *         description: Not Found
  *         content:
  *           application/json:
  *             schema:
@@ -82,14 +48,18 @@
  *                 message:
  *                   type: string
  *             examples:
- *               EMAIL_NOT_CONFIRMED:
+ *               USER_NOT_FOUND:
  *                 value:
- *                   code: "EMAIL_NOT_CONFIRMED"
- *                   message: "Please confirm your email to login."
- *               INCORRECT_CREDENTIALS:
+ *                   code: "USER_NOT_FOUND"
+ *                   message: "User with the specified email was not found."
+ *               INVALID_TOKEN_NAME:
  *                 value:
- *                   code: "INCORRECT_CREDENTIALS"
- *                   message: "The password you entered is incorrect."
+ *                   code: "INVALID_TOKEN_NAME"
+ *                   message: "The token name you used is invalid."
+ *               TEMPLATE_NOT_FOUND:
+ *                 value:
+ *                   code: "TEMPLATE_NOT_FOUND"
+ *                   message: "The requested template was not found."
  *       422:
  *         description: Validation errors
  *         content:
@@ -124,24 +94,26 @@
  *                 value:
  *                   - code: "FIELD_IS_NOT_OF_PROPER_ENUM_VALUE"
  *                     message: "${field} should be either one of the values: [${enumSet.join(', ')}]."
- *       404:
- *         description: Not Found
+ *       400:
+ *         description: Bad request errors
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 code:
- *                   type: string
- *                 message:
- *                   type: string
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   code:
+ *                     type: string
+ *                   message:
+ *                     type: string
  *             examples:
- *               USER_NOT_FOUND:
+ *               EMAIL_NOT_SENT:
  *                 value:
- *                   code: "USER_NOT_FOUND"
- *                   message: "User with the specified email was not found."
- *               DOCUMENT_NOT_FOUND:
+ *                   - code: "EMAIL_NOT_SENT"
+ *                     message: "Email has not been sent."
+ *               API_TOKEN_NOT_RETRIEVED:
  *                 value:
- *                   code: "DOCUMENT_NOT_FOUND"
- *                   message: "The language name is invalid. Possible options: ${APP_LANG_ENUM.join(', ')}."
+ *                   - code: "API_TOKEN_NOT_RETRIEVED"
+ *                     message: "The access token has not been retrieved."
  */
