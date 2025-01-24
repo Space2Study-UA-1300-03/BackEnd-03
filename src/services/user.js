@@ -71,6 +71,10 @@ export const userService = {
     }
   },
 
+  emailVerification: async (id) => {
+    await User.findByIdAndUpdate(id, { isEmailConfirmed: true }, { new: true }).exec()
+  },
+
   updateUser: async (id, role, updateData) => {
     const filteredUpdateData = filterAllowedFields(updateData, allowedUserFieldsForUpdate)
 

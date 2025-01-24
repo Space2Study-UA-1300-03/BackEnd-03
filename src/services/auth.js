@@ -5,8 +5,8 @@ import { emailService } from '#services/email.js'
 import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
-import User from '#models/user.js'
 import { logger } from '#logger/logger.js'
+import User from '#models/user.js'
 
 const { EMAIL_NOT_CONFIRMED, INCORRECT_CREDENTIALS, BAD_RESET_TOKEN, BAD_REFRESH_TOKEN, USER_NOT_FOUND } = errors
 const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
@@ -18,8 +18,7 @@ export const authService = {
 
     const confirmToken = tokenService.generateConfirmToken({ id: user._id, role })
     await tokenService.saveToken(user._id, confirmToken, CONFIRM_TOKEN)
-    // await emailService.sendEmail(email, emailSubject.EMAIL_CONFIRMATION, language, { confirmToken, email, firstName })
-    //TODO fix email sending
+    await emailService.sendEmail(email, emailSubject.EMAIL_CONFIRMATION, language, { confirmToken, email, firstName })
     return {
       userId: user._id,
       userEmail: user.email
@@ -97,7 +96,7 @@ export const authService = {
     const tokenFromDB = await tokenService.findToken(resetToken, RESET_TOKEN)
 
     if (!tokenData || !tokenFromDB) {
-      throw createError(400, BAD_RESET_TOKEN)
+      throw createError(400, BAD_RESET_TOKEN.message)
     }
 
     const { id: userId, firstName, email } = tokenData
@@ -110,18 +109,39 @@ export const authService = {
     })
   },
 
+  verifyEmail: async (confirmToken) => {
+    if (!confirmToken) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+
+    const tokenData = tokenService.validateConfirmToken(confirmToken)
+    const tokenFromDB = await tokenService.findToken(confirmToken, CONFIRM_TOKEN)
+
+    if (!tokenData || !tokenFromDB) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+    if (tokenData.id !== tokenFromDB.user.toString()) {
+      throw createError(400, BAD_RESET_TOKEN)
+    }
+
+    await userService.emailVerification(tokenFromDB.user)
+    await tokenService.removeConfirmToken(confirmToken)
+
+    return { message: 'Email confirmed' }
+  },
+
   googleLogin: async (payload) => {
     if (!payload?.email || !payload?.name) {
       throw new Error('Invalid payload: email and name are required')
     }
-    
-    const {email, name} = payload;
-    const [firstName, lastName] = name.split(' ');
-  
+
+    const { email, name } = payload
+    const [firstName, lastName] = name.split(' ')
+
     try {
-      let user = await User.findOne({email});
-  
-      if(!user) {
+      let user = await User.findOne({ email })
+
+      if (!user) {
         user = new User({
           email,
           firstName,
@@ -131,10 +151,10 @@ export const authService = {
           password: '',
           authProvider: 'google'
         })
-  
+
         await user.save()
       }
-  
+
       return {
         id: user._id,
         firstName: user.firstName,
@@ -142,8 +162,7 @@ export const authService = {
         role: user.role,
         authProvider: user.authProvider
       }
-  
-    } catch(err) {
+    } catch (err) {
       logger.error('Error in google Login', err)
       throw err
     }

@@ -55,18 +55,18 @@ const userSchema = new Schema(
       validate: [
         {
           validator: function (value) {
-            if (this.authProvider === 'google') return true;
-            return value && value.trim().length > 0;
+            if (this.authProvider === 'google') return true
+            return value && value.trim().length > 0
           },
-          message: FIELD_CANNOT_BE_EMPTY('password'),
+          message: FIELD_CANNOT_BE_EMPTY('password')
         },
         {
           validator: function (value) {
-            if (this.authProvider === 'google') return true;
-            return value && value.length >= MIN_PASSWORD_LENGTH;
+            if (this.authProvider === 'google') return true
+            return value && value.length >= MIN_PASSWORD_LENGTH
           },
-          message: FIELD_CANNOT_BE_SHORTER('password', MIN_PASSWORD_LENGTH),
-        },
+          message: FIELD_CANNOT_BE_SHORTER('password', MIN_PASSWORD_LENGTH)
+        }
       ],
       select: false
     },

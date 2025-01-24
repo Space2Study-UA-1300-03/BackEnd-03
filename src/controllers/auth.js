@@ -1,10 +1,9 @@
-import { OAuth2Client } from 'google-auth-library'
-
-import { logger } from '#logger/logger.js'
-import { authService } from '#services/auth.js'
-import { oneDayInMs } from '#consts/auth.js'
-import { tokenNames } from '#consts/auth.js'
 import { config, gmailCredentials } from '#configs/config.js'
+import { OAuth2Client } from 'google-auth-library'
+import { authService } from '#services/auth.js'
+import { tokenNames } from '#consts/auth.js'
+import { oneDayInMs } from '#consts/auth.js'
+import { logger } from '#logger/logger.js'
 
 const { REFRESH_TOKEN, ACCESS_TOKEN } = tokenNames
 const { COOKIE_DOMAIN } = config
@@ -91,6 +90,14 @@ export const updatePassword = async (req, res) => {
   res.status(204).end()
 }
 
+export const verifyEmail = async (req, res) => {
+  const { confirmToken } = req.query
+
+  const message = await authService.verifyEmail(confirmToken)
+
+  res.status(200).json(message)
+}
+
 export const verifyIdToken = async (req, res) => {
   const { token } = req.body
   const idToken = token?.credential
@@ -105,8 +112,8 @@ export const verifyIdToken = async (req, res) => {
       audience: clientId
     })
 
-    const payload = ticket.getPayload();
-    const user = await authService.googleLogin(payload);
+    const payload = ticket.getPayload()
+    const user = await authService.googleLogin(payload)
 
     res.status(200).json({
       message: 'Google authentication successful',
@@ -118,10 +125,8 @@ export const verifyIdToken = async (req, res) => {
       stack: err.stack,
       idToken: idToken.substring(0, 10) + '...'
     })
-    
-    const errorMessage = err.message.includes('Token used too late') 
-      ? 'Token expired' 
-      : 'Invalid ID token'
+
+    const errorMessage = err.message.includes('Token used too late') ? 'Token expired' : 'Invalid ID token'
     res.status(401).json({ error: errorMessage })
   }
 }

@@ -1,4 +1,13 @@
-import { login, logout, refreshAccessToken, sendResetPasswordEmail, updatePassword, signup, verifyIdToken } from '#controllers/auth.js'
+import {
+  sendResetPasswordEmail,
+  refreshAccessToken,
+  updatePassword,
+  verifyIdToken,
+  verifyEmail,
+  logout,
+  signup,
+  login
+} from '#controllers/auth.js'
 import { forgotPasswordValidationSchema } from '#validation/schemas/forgotPassword.js'
 import { resetPasswordValidationSchema } from '#validation/schemas/resetPassword.js'
 import { signupValidationSchema } from '#validation/schemas/signup.js'
@@ -11,16 +20,21 @@ import express from 'express'
 export const router = express.Router()
 
 router.post('/signup', validationMiddleware(signupValidationSchema), langMiddleware, asyncWrapper(signup))
-router.post('/login', validationMiddleware(loginValidationSchema), asyncWrapper(login))
-router.post('/google-auth', asyncWrapper(verifyIdToken))
+router.get('/verify', langMiddleware, asyncWrapper(verifyEmail))
+
+router.post('/login', validationMiddleware(loginValidationSchema), langMiddleware, asyncWrapper(login))
+router.post('/google', langMiddleware, asyncWrapper(verifyIdToken))
+
 router.post('/logout', asyncWrapper(logout))
 router.get('/refresh', asyncWrapper(refreshAccessToken))
+
 router.post(
   '/forgot-password',
   validationMiddleware(forgotPasswordValidationSchema),
   langMiddleware,
   asyncWrapper(sendResetPasswordEmail)
 )
+
 router.patch(
   '/reset-password/:token',
   validationMiddleware(resetPasswordValidationSchema),
