@@ -3,7 +3,10 @@
  * tags:
  *   - name: Auth
  *     description: Authentication user
- *
+ */
+
+/**
+ * @swagger
  * /auth/verify:
  *   get:
  *     summary: Email verify new user
@@ -22,12 +25,6 @@
  *             schema:
  *               type: object
  *               properties:
- *                 status:
- *                   type: integer
- *                   example: 200
- *                 code:
- *                   type: string
- *                   example: "OK"
  *                 message:
  *                   type: string
  *                   example: "Email confirmed"
@@ -43,8 +40,8 @@
  *                   example: 400
  *                 code:
  *                   type: string
- *                   example: "BAD_RESET_TOKEN"
+ *                   example: "BAD_CONFIRM_TOKEN"
  *                 message:
  *                   type: string
- *                   example: "The reset token is either invalid or has expired."
+ *                   example: "The confirm token is either invalid or has expired."
  */

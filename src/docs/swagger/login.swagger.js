@@ -1,35 +1,19 @@
 /**
  * @swagger
+ *
  * components:
  *   schemas:
- *     SignUpRequest:
+ *     LoginRequest:
  *       type: object
  *       required:
  *         - email
  *         - password
- *         - firstName
- *         - lastName
- *         - role
  *       properties:
- *         firstName:
- *           type: string
- *           pattern: '^[a-zа-яєії]+$'
- *           minLength: 1
- *           maxLength: 30
- *           description: User's first name using only letters
- *           example: "John"
- *         lastName:
- *           type: string
- *           pattern: '^[a-zа-яєії]+$'
- *           minLength: 1
- *           maxLength: 30
- *           description: User's last name using only letters
- *           example: "Doe"
  *         email:
  *           type: string
  *           pattern: '^([a-z\d]+([._-][a-z\d]+)*)@([a-z\d]+([.-][a-z\d]+)*\.[a-z]{2,})$'
  *           description: Valid email address
- *           example: "john.doe@example.com"
+ *           example: "user@example.com"
  *         password:
  *           type: string
  *           pattern: '^(?=.*\d)(?=.*[a-zа-яєії])\S+$'
@@ -37,11 +21,6 @@
  *           maxLength: 25
  *           description: Password must contain at least one letter and one number
  *           example: "Password123"
- *         role:
- *           type: string
- *           enum: [student, tutor, admin, superadmin]
- *           description: User's role in the system
- *           example: "student"
  */
 
 /**
@@ -53,32 +32,30 @@
 
 /**
  * @swagger
- * /auth/signup:
+ * /auth/login:
  *   post:
- *     summary: Create a new user
+ *     summary: Authorize user
  *     tags: [Auth]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/SignUpRequest'
+ *             $ref: '#/components/schemas/LoginRequest'
  *     responses:
- *       201:
- *         description: User successfully created
+ *       200:
+ *         description: Successful authentication
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 userId:
+ *                 accessToken:
  *                   type: string
- *                   example: "678c28639d1901a26da8958d"
- *                 userEmail:
- *                   type: string
- *                   example: "mustafa_hane54@example.org"
+ *                   description: JWT access token
+ *                   example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTE3ZDVhMTBmYTU5ODk2ZjMzZTQ2YSIsInJvbGUiOiJzdHVkZW50IiwiaXNGaXJzdExvZ2luIjp0cnVlLCJpYXQiOjE3Mzc1ODgxNjYsImV4cCI6MTczNzU5MTc2Nn0.EDBILzuP2wvCJ6NUmRH8EQP2r-2eGWjoSUXvl2Y6-qo"
  *       400:
- *         description: Invalid request
+ *         description: Invalid language provided
  *         content:
  *           application/json:
  *             schema:
@@ -89,19 +66,12 @@
  *                   example: 400
  *                 code:
  *                   type: string
+ *                   example: "INVALID_LANGUAGE"
  *                 message:
  *                   type: string
- *             examples:
- *               INVALID_LANGUAGE:
- *                 value:
- *                   code: "INVALID_LANGUAGE"
- *                   message: "The language name is invalid. Possible options: ['en', 'ua']"
- *               EMAIL_NOT_SENT:
- *                 value:
- *                   code: "EMAIL_NOT_SENT"
- *                   message: "Email has not been sent."
- *       404:
- *         description: Not Found
+ *                   example: "The language name is invalid. Possible options: ['en', 'ua']"
+ *       401:
+ *         description: Unauthorized
  *         content:
  *           application/json:
  *             schema:
@@ -112,34 +82,14 @@
  *                 message:
  *                   type: string
  *             examples:
- *               DOCUMENT_NOT_FOUND:
+ *               EMAIL_NOT_CONFIRMED:
  *                 value:
- *                   code: "DOCUMENT_NOT_FOUND"
- *                   message: "Document with the specified ID was not found."
- *               INVALID_TOKEN_NAME:
+ *                   code: "EMAIL_NOT_CONFIRMED"
+ *                   message: "Please confirm your email to login."
+ *               INCORRECT_CREDENTIALS:
  *                 value:
- *                   code: "INVALID_TOKEN_NAME"
- *                   message: "The token name you used is invalid."
- *               TEMPLATE_NOT_FOUND:
- *                 value:
- *                   code: "TEMPLATE_NOT_FOUND"
- *                   message: "The requested template was not found."
- *       409:
- *         description: User already exists
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: integer
- *                   example: 409
- *                 code:
- *                   type: string
- *                   example: "ALREADY_REGISTERED"
- *                 message:
- *                   type: string
- *                   example: "User with the specified email already exists."
+ *                   code: "INCORRECT_CREDENTIALS"
+ *                   message: "The password you entered is incorrect."
  *       422:
  *         description: Validation errors
  *         content:
@@ -174,4 +124,24 @@
  *                 value:
  *                   - code: "FIELD_IS_NOT_OF_PROPER_ENUM_VALUE"
  *                     message: "${field} should be either one of the values: [${enumSet.join(', ')}]."
+ *       404:
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: string
+ *                 message:
+ *                   type: string
+ *             examples:
+ *               USER_NOT_FOUND:
+ *                 value:
+ *                   code: "USER_NOT_FOUND"
+ *                   message: "User with the specified email was not found."
+ *               DOCUMENT_NOT_FOUND:
+ *                 value:
+ *                   code: "DOCUMENT_NOT_FOUND"
+ *                   message: "The language name is invalid. Possible options: ${APP_LANG_ENUM.join(', ')}."
  */
