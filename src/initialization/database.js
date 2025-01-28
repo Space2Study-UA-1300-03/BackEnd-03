@@ -21,6 +21,7 @@ const checkForLocalDB = async () => {
 
 export const databaseInitialization = async () => {
   try {
+    mongoose.set('strictQuery', true)
     await mongoose.connect(MONGODB_URL, {
       serverSelectionTimeoutMS: 5000,
       retryWrites: true

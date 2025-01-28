@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --maxWorkers=1",
     "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon src/app.js",
+    "start:prod": "cross-env NODE_ENV=production node src/app.js",
     "lint": "eslint . --fix",
     "pre-commit": "lint-staged"
   },
