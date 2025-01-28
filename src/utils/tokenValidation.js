@@ -1,7 +1,7 @@
-const { createUnauthorizedError } = require('~/utils/errorsHelper')
-const tokenService = require('../services/token')
+import { createUnauthorizedError } from '#utils/errorsHelper.js'
+import { tokenService } from '#services/token.js'
 
-const tokenValidation = (accessToken) => {
+export const tokenValidation = (accessToken) => {
   if (!accessToken) {
     throw createUnauthorizedError()
   }
@@ -13,5 +13,3 @@ const tokenValidation = (accessToken) => {
 
   return userData
 }
-
-module.exports = { tokenValidation }

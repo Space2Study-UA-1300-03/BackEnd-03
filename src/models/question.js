@@ -1,14 +1,11 @@
-const { Schema, model } = require('mongoose')
-const {
-  enums: { QUESTION_TYPE_ENUM, RESOURCES_TYPES_ENUM }
-} = require('~/consts/validation')
-const { QUESTION, USER, RESOURCES_CATEGORY } = require('~/consts/models')
-const {
-  FIELD_CANNOT_BE_EMPTY,
-  FIELD_CANNOT_BE_LONGER,
-  FIELD_CANNOT_BE_SHORTER,
-  ENUM_CAN_BE_ONE_OF
-} = require('~/consts/errors')
+import { enums } from '#consts/validation.js'
+import { errors } from '#consts/errors.js'
+import { Schema, model } from 'mongoose'
+import { refs } from '#consts/models.js'
+
+const { FIELD_CANNOT_BE_EMPTY, FIELD_CANNOT_BE_LONGER, FIELD_CANNOT_BE_SHORTER, ENUM_CAN_BE_ONE_OF } = errors
+const { QUESTION_TYPE_ENUM, RESOURCES_TYPES_ENUM } = enums
+const { QUESTION, USER, RESOURCES_CATEGORY } = refs
 
 const questionSchema = new Schema(
   {
@@ -69,4 +66,4 @@ const questionSchema = new Schema(
   { timestamps: true, versionKey: false }
 )
 
-module.exports = model(QUESTION, questionSchema)
+export default model(QUESTION, questionSchema)

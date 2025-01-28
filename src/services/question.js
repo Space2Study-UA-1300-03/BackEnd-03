@@ -1,7 +1,7 @@
-const Question = require('~/models/question')
-const { createForbiddenError } = require('~/utils/errorsHelper')
+import { createForbiddenError } from '#utils/errorsHelper.js'
+import Question from '#models/question.js'
 
-const questionService = {
+export const questionService = {
   getQuestions: async (match, sort, skip = 0, limit = 10) => {
     const items = await Question.find(match)
       .collation({ locale: 'en', strength: 1 })
@@ -64,5 +64,3 @@ const questionService = {
     return question.populate({ path: 'category', select: '_id name' })
   }
 }
-
-module.exports = questionService

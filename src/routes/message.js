@@ -1,3 +1,7 @@
+/**
+ * @description MASSAGE ROUTE: is now DEPRECATED //TODO: update this file in the future
+ */
+
 const router = require('express').Router({ mergeParams: true })
 
 const asyncWrapper = require('~/middlewares/asyncWrapper')

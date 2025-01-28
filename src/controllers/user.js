@@ -1,8 +1,8 @@
-const userService = require('~/services/user')
-const { createForbiddenError } = require('~/utils/errorsHelper')
-const createAggregateOptions = require('~/utils/users/createAggregateOptions')
+import { createAggregateOptions } from '#utils/users/createAggregateOptions.js'
+import { createForbiddenError } from '#utils/errorsHelper.js'
+import { userService } from '#services/user.js'
 
-const getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
   const { skip, limit, sort, match } = createAggregateOptions(req.query)
 
   const users = await userService.getUsers({ skip, limit, sort, match })
@@ -10,7 +10,7 @@ const getUsers = async (req, res) => {
   res.status(200).json(users)
 }
 
-const getUserById = async (req, res) => {
+export const getUserById = async (req, res) => {
   const { id } = req.params
   const { role } = req.query
 
@@ -19,7 +19,7 @@ const getUserById = async (req, res) => {
   res.status(200).json(user)
 }
 
-const updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   const { id } = req.params
   const { role } = req.user
   const updateData = req.body
@@ -31,7 +31,7 @@ const updateUser = async (req, res) => {
   res.status(204).end()
 }
 
-const updateStatus = async (req, res) => {
+export const updateStatus = async (req, res) => {
   const { id } = req.params
   const updateData = req.body
 
@@ -40,18 +40,10 @@ const updateStatus = async (req, res) => {
   res.status(204).end()
 }
 
-const deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
   const { id } = req.params
 
   await userService.deleteUser(id)
 
   res.status(204).end()
-}
-
-module.exports = {
-  getUsers,
-  getUserById,
-  deleteUser,
-  updateUser,
-  updateStatus
 }

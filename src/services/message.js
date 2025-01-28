@@ -1,3 +1,7 @@
+/**
+ * @description MASSAGE ROUTE: is now DEPRECATED //TODO: update this file in the future
+ */
+
 const mongoose = require('mongoose')
 const Message = require('~/models/message')
 const Chat = require('~/models/chat')

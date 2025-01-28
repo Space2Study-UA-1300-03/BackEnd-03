@@ -1,10 +1,8 @@
-const router = require('express').Router()
+import { langMiddleware } from '#middlewares/appLanguage.js'
+import { asyncWrapper } from '#middlewares/asyncWrapper.js'
+import { sendEmail } from '#controllers/email.js'
+import express from 'express'
 
-const asyncWrapper = require('~/middlewares/asyncWrapper')
-const langMiddleware = require('~/middlewares/appLanguage')
+export const router = express.Router()
 
-const emailController = require('~/controllers/email')
-
-router.post('/', langMiddleware, asyncWrapper(emailController.sendEmail))
-
-module.exports = router
+router.post('/', langMiddleware, asyncWrapper(sendEmail))

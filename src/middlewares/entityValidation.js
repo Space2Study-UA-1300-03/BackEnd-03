@@ -1,7 +1,9 @@
-const { DOCUMENT_NOT_FOUND } = require('~/consts/errors')
-const { createError } = require('~/utils/errorsHelper')
+import { createError } from '#utils/errorsHelper.js'
+import { errors } from '#consts/errors.js'
 
-const isEntityValid = (entities) => {
+const { DOCUMENT_NOT_FOUND } = errors
+
+export const isEntityValid = (entities) => {
   return async (req, _res, next) => {
     const models = []
 
@@ -50,5 +52,3 @@ const isEntityValid = (entities) => {
     next()
   }
 }
-
-module.exports = isEntityValid

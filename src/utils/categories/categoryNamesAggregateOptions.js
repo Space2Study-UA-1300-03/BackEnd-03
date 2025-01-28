@@ -1,4 +1,4 @@
-const categoryNamesAggregateOptions = () => {
+export const categoryNamesAggregateOptions = () => {
   return [
     {
       $lookup: {
@@ -20,5 +20,3 @@ const categoryNamesAggregateOptions = () => {
     }
   ]
 }
-
-module.exports = categoryNamesAggregateOptions

@@ -1,9 +1,9 @@
-const resourcesCategoryService = require('~/services/resourcesCategory')
-const getMatchOptions = require('~/utils/getMatchOptions')
-const getSortOptions = require('~/utils/getSortOptions')
-const getRegex = require('~/utils/getRegex')
+import { resourcesCategoryService } from '#services/resourcesCategory.js'
+import { getMatchOptions } from '#utils/getMatchOptions.js'
+import { getSortOptions } from '#utils/getSortOptions.js'
+import { getRegex } from '#utils/getRegex.js'
 
-const createResourcesCategory = async (req, res) => {
+export const createResourcesCategory = async (req, res) => {
   const { id: author } = req.user
   const data = req.body
 
@@ -12,7 +12,7 @@ const createResourcesCategory = async (req, res) => {
   res.status(201).send(newResourcesCategory)
 }
 
-const getResourcesCategories = async (req, res) => {
+export const getResourcesCategories = async (req, res) => {
   const { id: author } = req.user
   const { name, sort, skip, limit } = req.query
 
@@ -29,7 +29,7 @@ const getResourcesCategories = async (req, res) => {
   res.status(200).json(resourcesCategories)
 }
 
-const getResourcesCategoriesNames = async (req, res) => {
+export const getResourcesCategoriesNames = async (req, res) => {
   const { id: author } = req.user
 
   const match = getMatchOptions({ author })
@@ -39,7 +39,7 @@ const getResourcesCategoriesNames = async (req, res) => {
   res.status(200).json(resourcesCategoriesNames)
 }
 
-const updateResourceCategory = async (req, res) => {
+export const updateResourceCategory = async (req, res) => {
   const { id } = req.params
   const { id: author } = req.user
   const updateData = req.body
@@ -49,18 +49,10 @@ const updateResourceCategory = async (req, res) => {
   res.status(204).end()
 }
 
-const deleteResourceCategory = async (req, res) => {
+export const deleteResourceCategory = async (req, res) => {
   const { id } = req.params
 
   await resourcesCategoryService.deleteResourceCategory(id)
 
   res.status(204).end()
-}
-
-module.exports = {
-  getResourcesCategories,
-  createResourcesCategory,
-  getResourcesCategoriesNames,
-  updateResourceCategory,
-  deleteResourceCategory
 }

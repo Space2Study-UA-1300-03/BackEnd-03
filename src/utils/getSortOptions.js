@@ -1,4 +1,4 @@
-const getSortOptions = (sort) => {
+export const getSortOptions = (sort) => {
   try {
     const { order, orderBy } = JSON.parse(sort)
     return { [orderBy || 'updatedAt']: order || 'asc' }
@@ -6,5 +6,3 @@ const getSortOptions = (sort) => {
     return { updatedAt: 'asc' }
   }
 }
-
-module.exports = getSortOptions

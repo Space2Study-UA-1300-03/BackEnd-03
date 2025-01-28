@@ -1,8 +1,8 @@
-const emailService = require('~/services/email')
-const emailSubject = require('~/consts/emailSubject')
-const AdminInvitation = require('~/models/adminInvitation')
+import AdminInvitation from '#models/adminInvitation.js'
+import { emailSubject } from '#consts/emailSubject.js'
+import { emailService } from '#services/email.js'
 
-const adminInvitationService = {
+export const adminInvitationService = {
   sendAdminInvitations: async (emails, language) => {
     return Promise.all(
       emails.map(async (email) => {
@@ -19,5 +19,3 @@ const adminInvitationService = {
     return await AdminInvitation.find().lean().exec()
   }
 }
-
-module.exports = adminInvitationService

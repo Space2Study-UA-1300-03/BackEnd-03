@@ -1,7 +1,9 @@
-const { Schema, model } = require('mongoose')
+import { errors } from '#consts/errors.js'
+import { Schema, model } from 'mongoose'
+import { refs } from '#consts/models.js'
 
-const { USER, RESOURCES_CATEGORY } = require('~/consts/models')
-const { FIELD_CANNOT_BE_EMPTY, FIELD_CANNOT_BE_LONGER, FIELD_CANNOT_BE_SHORTER } = require('~/consts/errors')
+const { FIELD_CANNOT_BE_EMPTY, FIELD_CANNOT_BE_LONGER, FIELD_CANNOT_BE_SHORTER } = errors
+const { USER, RESOURCES_CATEGORY } = refs
 
 const resourcesCategorySchema = new Schema(
   {
@@ -20,4 +22,4 @@ const resourcesCategorySchema = new Schema(
   { timestamps: true, versionKey: false }
 )
 
-module.exports = model(RESOURCES_CATEGORY, resourcesCategorySchema)
+export default model(RESOURCES_CATEGORY, resourcesCategorySchema)

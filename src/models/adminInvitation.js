@@ -1,5 +1,7 @@
-const { Schema, model } = require('mongoose')
-const { ADMIN_INVITATION } = require('~/consts/models')
+import { Schema, model } from 'mongoose'
+import { refs } from '#consts/models.js'
+
+const { ADMIN_INVITATION } = refs
 
 const adminInvitationSchema = new Schema({
   email: {
@@ -15,4 +17,4 @@ const adminInvitationSchema = new Schema({
   }
 })
 
-module.exports = model(ADMIN_INVITATION, adminInvitationSchema)
+export default model(ADMIN_INVITATION, adminInvitationSchema)

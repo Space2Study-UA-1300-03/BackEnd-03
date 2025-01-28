@@ -1,13 +1,12 @@
-import cookieParser from 'cookie-parser'
-import express from 'express'
-import cors from 'cors'
-import swaggerUi from 'swagger-ui-express'
-
 import { createNotFoundError } from '#utils/errorsHelper.js'
 import { swaggerSpec } from '#initialization/swagger.js'
 import { errorMiddleware } from '#middlewares/error.js'
 import { config } from '#configs/config.js'
+import swaggerUi from 'swagger-ui-express'
 import { router } from '#routes/index.js'
+import cookieParser from 'cookie-parser'
+import express from 'express'
+import cors from 'cors'
 
 const { CLIENT_URL } = config
 

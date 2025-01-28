@@ -1,7 +1,7 @@
-const { createForbiddenError } = require('~/utils/errorsHelper')
-const { tokenValidation } = require('../utils/tokenValidation')
+import { createForbiddenError } from '#utils/errorsHelper.js'
+import { tokenValidation } from '#utils/tokenValidation.js'
 
-const authMiddleware = (req, _res, next) => {
+export const authMiddleware = (req, _res, next) => {
   const accessToken = req.cookies.accessToken || req.headers.cookie
   const userData = tokenValidation(accessToken)
   req.user = userData
@@ -9,7 +9,7 @@ const authMiddleware = (req, _res, next) => {
   next()
 }
 
-const restrictTo = (...roles) => {
+export const restrictTo = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
       return next(createForbiddenError())
@@ -17,5 +17,3 @@ const restrictTo = (...roles) => {
     next()
   }
 }
-
-module.exports = { authMiddleware, restrictTo }
