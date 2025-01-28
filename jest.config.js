@@ -7,8 +7,9 @@
 const config = {
   roots: ['<rootDir>/src/test'],
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1',
     '^#src/(.*)$': '<rootDir>/src/$1',
+    '^#initialization/(.*)$': '<rootDir>/src/initialization/$1',
+    '^#logger/(.*)$': '<rootDir>/src/logger/$1',
     '^#configs/(.*)$': '<rootDir>/src/configs/$1',
     '^#consts/(.*)$': '<rootDir>/src/consts/$1',
     '^#utils/(.*)$': '<rootDir>/src/utils/$1',
@@ -25,6 +26,7 @@ const config = {
   collectCoverage: true,
   testEnvironment: 'node',
   coverageReporters: ['html', 'lcov'],
+  moduleFileExtensions: ['js', 'mjs', 'json'],
   coverageDirectory: '<rootDir>/src/test/coverage',
   testTimeout: 12000,
 
