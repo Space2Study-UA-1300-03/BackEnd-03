@@ -2,7 +2,7 @@
  * @description Checking if jest integration tests are working
  */
 
-import { describe, expect, xit, beforeAll, afterAll, afterEach } from '@jest/globals'
+import { describe, expect, it, beforeAll, afterAll, afterEach } from '@jest/globals'
 import { connect, clearDatabase, closeDatabase } from '#src/test/dbHandler.js'
 import { ping } from '#src/controllers/ping.js'
 
@@ -25,12 +25,12 @@ describe('Ping Controller', () => {
   })
 
   describe('GET /ping', () => {
-    xit('should respond with status 200', async () => {
+    it('should respond with status 200', async () => {
       const response = await app.get('/ping', ping)
 
       expect(response.status).toBe(200)
     })
-    xit('should respond with body { message: "pong" }', async () => {
+    it('should respond with body { message: "pong" }', async () => {
       const response = await app.get('/ping', ping)
 
       expect(response.status).toBe(200)
