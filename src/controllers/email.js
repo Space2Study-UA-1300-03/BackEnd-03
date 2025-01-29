@@ -10,7 +10,6 @@ export const sendEmail = async (req, res) => {
   if (!email || !subject || !text) {
     return res.status(400).json({ error: 'Missing required fields' })
   }
-
   try {
     await emailService.sendEmail(email, subject, lang, text)
     res.status(204).end()
