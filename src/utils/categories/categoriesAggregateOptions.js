@@ -1,6 +1,6 @@
-const getRegex = require('~/utils/getRegex')
+import { getRegex } from '#utils/getRegex.js'
 
-const categoriesAggregateOptions = (query) => {
+export const categoriesAggregateOptions = (query) => {
   const { limit = 100, name = '', skip = 0 } = query
 
   return [
@@ -52,5 +52,3 @@ const categoriesAggregateOptions = (query) => {
     }
   ]
 }
-
-module.exports = categoriesAggregateOptions

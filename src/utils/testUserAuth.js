@@ -1,6 +1,6 @@
-const User = require('~/models/user')
+import User from '#models/user.js'
 
-const testUserAuthentication = async (app, testUser = {}) => {
+export const testUserAuthentication = async (app, testUser = {}) => {
   const qtyOfMandatorySignupFields = 5
   if (Object.keys(testUser).length < qtyOfMandatorySignupFields) {
     testUser = {
@@ -21,5 +21,3 @@ const testUserAuthentication = async (app, testUser = {}) => {
 
   return loginUserResponse.body.accessToken
 }
-
-module.exports = testUserAuthentication

@@ -1,4 +1,4 @@
-const getMatchOptions = (filters) => {
+export const getMatchOptions = (filters) => {
   const match = {}
 
   for (let [key, value] of Object.entries(filters)) {
@@ -9,5 +9,3 @@ const getMatchOptions = (filters) => {
 
   return match
 }
-
-module.exports = getMatchOptions

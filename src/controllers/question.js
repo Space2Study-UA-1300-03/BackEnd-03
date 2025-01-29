@@ -1,9 +1,9 @@
-const questionService = require('~/services/question')
-const getCategoriesOptions = require('~/utils/getCategoriesOption')
-const getMatchOptions = require('~/utils/getMatchOptions')
-const getSortOptions = require('~/utils/getSortOptions')
+import { getCategoriesOptions } from '#utils/getCategoriesOption.js'
+import { getMatchOptions } from '#utils/getMatchOptions.js'
+import { getSortOptions } from '#utils/getSortOptions.js'
+import { questionService } from '#services/question.js'
 
-const getQuestions = async (req, res) => {
+export const getQuestions = async (req, res) => {
   const { id: author } = req.user
   const { title, sort, skip, limit, categories } = req.query
   const categoriesOptions = getCategoriesOptions(categories)
@@ -20,7 +20,7 @@ const getQuestions = async (req, res) => {
   res.status(200).json(questions)
 }
 
-const getQuestionById = async (req, res) => {
+export const getQuestionById = async (req, res) => {
   const { id } = req.params
 
   const question = await questionService.getQuestionById(id)
@@ -28,7 +28,7 @@ const getQuestionById = async (req, res) => {
   res.status(200).json(question)
 }
 
-const createQuestion = async (req, res) => {
+export const createQuestion = async (req, res) => {
   const { id: author } = req.user
   const data = req.body
 
@@ -37,7 +37,7 @@ const createQuestion = async (req, res) => {
   res.status(201).json(newQuestion)
 }
 
-const deleteQuestion = async (req, res) => {
+export const deleteQuestion = async (req, res) => {
   const userId = req.user.id
   const { id } = req.params
 
@@ -46,7 +46,7 @@ const deleteQuestion = async (req, res) => {
   res.status(204).end()
 }
 
-const updateQuestion = async (req, res) => {
+export const updateQuestion = async (req, res) => {
   const { id } = req.params
   const { id: currentUserId } = req.user
   const data = req.body
@@ -54,12 +54,4 @@ const updateQuestion = async (req, res) => {
   const updatedQuestion = await questionService.updateQuestion(id, currentUserId, data)
 
   res.status(200).json(updatedQuestion)
-}
-
-module.exports = {
-  getQuestions,
-  getQuestionById,
-  createQuestion,
-  deleteQuestion,
-  updateQuestion
 }

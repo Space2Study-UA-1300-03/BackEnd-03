@@ -1,10 +1,11 @@
-const { Schema, model } = require('mongoose')
+import { enums } from '#consts/validation.js'
+import { errors } from '#consts/errors.js'
+import { refs } from '#consts/models.js'
+import { Schema, model } from 'mongoose'
 
-const {
-  enums: { MAIN_ROLE_ENUM, SPOKEN_LANG_ENUM, PROFICIENCY_LEVEL_ENUM, OFFER_STATUS_ENUM }
-} = require('~/consts/validation')
-const { USER, OFFER } = require('~/consts/models')
-const { ENUM_CAN_BE_ONE_OF } = require('~/consts/errors')
+const { MAIN_ROLE_ENUM, SPOKEN_LANG_ENUM, PROFICIENCY_LEVEL_ENUM, OFFER_STATUS_ENUM } = enums
+const { ENUM_CAN_BE_ONE_OF } = errors
+const { OFFER, USER } = refs
 
 const offerSchema = new Schema(
   {
@@ -72,4 +73,4 @@ const offerSchema = new Schema(
   }
 )
 
-module.exports = model(OFFER, offerSchema)
+export default model(OFFER, offerSchema)

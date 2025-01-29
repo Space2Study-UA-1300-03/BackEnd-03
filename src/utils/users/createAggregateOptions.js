@@ -1,6 +1,6 @@
-const getRegex = require('../getRegex')
+import { getRegex } from '#utils/getRegex.js'
 
-const generateOptions = (value) => {
+export const generateOptions = (value) => {
   if (!value) {
     return [true, false]
   }
@@ -8,7 +8,7 @@ const generateOptions = (value) => {
   return options.map((option) => option === 'true')
 }
 
-const createAggregateOptions = (query) => {
+export const createAggregateOptions = (query) => {
   const {
     email,
     isEmailConfirmed,
@@ -77,5 +77,3 @@ const createAggregateOptions = (query) => {
     skip: parseInt(skip)
   }
 }
-
-module.exports = createAggregateOptions

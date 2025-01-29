@@ -1,15 +1,15 @@
-const router = require('express').Router()
+import { getUsers, getUserById, deleteUser, updateUser, updateStatus } from '#controllers/user.js'
+import { authMiddleware, restrictTo } from '#middlewares/auth.js'
+import { isEntityValid } from '#middlewares/entityValidation.js'
+import { asyncWrapper } from '#middlewares/asyncWrapper.js'
+import { idValidation } from '#middlewares/idValidation.js'
+import { roles } from '#consts/auth.js'
+import User from '#models/user.js'
+import express from 'express'
 
-const idValidation = require('~/middlewares/idValidation')
-const asyncWrapper = require('~/middlewares/asyncWrapper')
-const { restrictTo, authMiddleware } = require('~/middlewares/auth')
-const isEntityValid = require('~/middlewares/entityValidation')
+const { ADMIN } = roles
 
-const userController = require('~/controllers/user')
-const User = require('~/models/user')
-const {
-  roles: { ADMIN }
-} = require('~/consts/auth')
+export const router = express.Router()
 
 const params = [{ model: User, idName: 'id' }]
 
@@ -17,12 +17,10 @@ router.use(authMiddleware)
 
 router.param('id', idValidation)
 
-router.get('/', asyncWrapper(userController.getUsers))
-router.get('/:id', isEntityValid({ params }), asyncWrapper(userController.getUserById))
-router.patch('/:id', isEntityValid({ params }), asyncWrapper(userController.updateUser))
+router.get('/', asyncWrapper(getUsers))
+router.get('/:id', isEntityValid({ params }), asyncWrapper(getUserById))
+router.patch('/:id', isEntityValid({ params }), asyncWrapper(updateUser))
 
 router.use(restrictTo(ADMIN))
-router.patch('/:id/change-status', isEntityValid({ params }), asyncWrapper(userController.updateStatus))
-router.delete('/:id', isEntityValid({ params }), asyncWrapper(userController.deleteUser))
-
-module.exports = router
+router.patch('/:id/change-status', isEntityValid({ params }), asyncWrapper(updateStatus))
+router.delete('/:id', isEntityValid({ params }), asyncWrapper(deleteUser))

@@ -1,12 +1,12 @@
-const router = require('express').Router({ mergeParams: true })
+import { getOffers, createOffer, updateOffer, deleteOffer, getOfferById } from '#controllers/offer.js'
+import { isEntityValid } from '#middlewares/entityValidation.js'
+import { asyncWrapper } from '#middlewares/asyncWrapper.js'
+import { idValidation } from '#middlewares/idValidation.js'
+import { authMiddleware } from '#middlewares/auth.js'
+import Offer from '#models/offer.js'
+import express from 'express'
 
-const idValidation = require('~/middlewares/idValidation')
-const asyncWrapper = require('~/middlewares/asyncWrapper')
-const { authMiddleware } = require('~/middlewares/auth')
-const isEntityValid = require('~/middlewares/entityValidation')
-
-const offerController = require('~/controllers/offer')
-const Offer = require('~/models/offer')
+export const router = express.Router({ mergeParams: true })
 
 const body = [
   { model: Offer, idName: 'categoryId' },
@@ -18,10 +18,8 @@ router.use(authMiddleware)
 
 router.param('id', idValidation)
 
-router.get('/', asyncWrapper(offerController.getOffers))
-router.post('/', isEntityValid({ body }), asyncWrapper(offerController.createOffer))
-router.get('/:id', isEntityValid({ params }), asyncWrapper(offerController.getOfferById))
-router.patch('/:id', isEntityValid({ params }), asyncWrapper(offerController.updateOffer))
-router.delete('/:id', isEntityValid({ params }), asyncWrapper(offerController.deleteOffer))
-
-module.exports = router
+router.get('/', asyncWrapper(getOffers))
+router.post('/', isEntityValid({ body }), asyncWrapper(createOffer))
+router.get('/:id', isEntityValid({ params }), asyncWrapper(getOfferById))
+router.patch('/:id', isEntityValid({ params }), asyncWrapper(updateOffer))
+router.delete('/:id', isEntityValid({ params }), asyncWrapper(deleteOffer))

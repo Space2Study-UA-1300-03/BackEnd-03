@@ -1,12 +1,10 @@
-const multer = require('multer')
+import * as multer from 'multer'
 
 const storage = multer.memoryStorage()
-const upload = multer({
+export const upload = multer({
   storage,
   limits: {
     fileSize: 10 * 1024 * 1024,
     fieldNameSize: 100
   }
 })
-
-module.exports = upload

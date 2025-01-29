@@ -1,4 +1,4 @@
-const allowedOfferFieldsForUpdate = {
+export const allowedOfferFieldsForUpdate = {
   price: true,
   proficiencyLevel: true,
   title: true,
@@ -8,8 +8,4 @@ const allowedOfferFieldsForUpdate = {
   category: true,
   status: true,
   FAQ: true
-}
-
-module.exports = {
-  allowedOfferFieldsForUpdate
 }

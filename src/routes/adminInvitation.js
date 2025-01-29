@@ -1,11 +1,9 @@
-const router = require('express').Router()
+import { sendAdminInvitations, getAdminInvitations } from '#controllers/adminInvitation.js'
+import { langMiddleware } from '#middlewares/appLanguage.js'
+import { asyncWrapper } from '#middlewares/asyncWrapper.js'
+import express from 'express'
 
-const langMiddleware = require('~/middlewares/appLanguage')
-const asyncWrapper = require('~/middlewares/asyncWrapper')
+export const router = express.Router()
 
-const adminInvitationController = require('~/controllers/adminInvitation')
-
-router.post('/', langMiddleware, asyncWrapper(adminInvitationController.sendAdminInvitations))
-router.get('/', asyncWrapper(adminInvitationController.getAdminInvitations))
-
-module.exports = router
+router.post('/', langMiddleware, asyncWrapper(sendAdminInvitations))
+router.get('/', asyncWrapper(getAdminInvitations))

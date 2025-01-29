@@ -1,26 +1,23 @@
-const router = require('express').Router()
+import { getQuestions, getQuestionById, createQuestion, deleteQuestion, updateQuestion } from '#controllers/question.js'
+import { authMiddleware, restrictTo } from '#middlewares/auth.js'
+import { isEntityValid } from '#middlewares/entityValidation.js'
+import { asyncWrapper } from '#middlewares/asyncWrapper.js'
+import { idValidation } from '#middlewares/idValidation.js'
+import Question from '#models/question.js'
+import { roles } from '#consts/auth.js'
+import express from 'express'
 
-const Question = require('~/models/question')
+const { TUTOR } = roles
 
-const questionController = require('~/controllers/question')
-const asyncWrapper = require('~/middlewares/asyncWrapper')
-const isEntityValid = require('~/middlewares/entityValidation')
-const idValidation = require('~/middlewares/idValidation')
-const { authMiddleware, restrictTo } = require('~/middlewares/auth')
-
-const {
-  roles: { TUTOR }
-} = require('~/consts/auth')
+export const router = express.Router()
 
 router.use(authMiddleware)
 router.param('id', idValidation)
 const params = [{ model: Question, idName: 'id' }]
 
-router.get('/', asyncWrapper(questionController.getQuestions))
-router.get('/:questionId', isEntityValid({ params }), asyncWrapper(questionController.getQuestionById))
+router.get('/', asyncWrapper(getQuestions))
+router.get('/:questionId', isEntityValid({ params }), asyncWrapper(getQuestionById))
 router.use(restrictTo(TUTOR))
-router.post('/', asyncWrapper(questionController.createQuestion))
-router.delete('/:id', isEntityValid({ params }), asyncWrapper(questionController.deleteQuestion))
-router.patch('/:id', isEntityValid({ params }), asyncWrapper(questionController.updateQuestion))
-
-module.exports = router
+router.post('/', asyncWrapper(createQuestion))
+router.delete('/:questionId', isEntityValid({ params }), asyncWrapper(deleteQuestion))
+router.patch('/:questionId', isEntityValid({ params }), asyncWrapper(updateQuestion))

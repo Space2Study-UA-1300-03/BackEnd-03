@@ -2,11 +2,11 @@ import { createError } from '#utils/errorsHelper.js'
 import { errors } from '#consts/errors.js'
 
 const {
-  FIELD_IS_NOT_DEFINED,
-  FIELD_IS_NOT_OF_PROPER_TYPE,
+  FIELD_IS_NOT_OF_PROPER_ENUM_VALUE,
   FIELD_IS_NOT_OF_PROPER_LENGTH,
   FIELD_IS_NOT_OF_PROPER_FORMAT,
-  FIELD_IS_NOT_OF_PROPER_ENUM_VALUE
+  FIELD_IS_NOT_OF_PROPER_TYPE,
+  FIELD_IS_NOT_DEFINED
 } = errors
 
 export const validateRequired = (schemaFieldKey, required, field) => {

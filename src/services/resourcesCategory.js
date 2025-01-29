@@ -1,7 +1,7 @@
-const ResourcesCategory = require('~/models/resourcesCategory')
-const { createForbiddenError } = require('~/utils/errorsHelper')
+import { createForbiddenError } from '#utils/errorsHelper.js'
+import ResourcesCategory from '#models/resourcesCategory.js'
 
-const resourcesCategoryService = {
+export const resourcesCategoryService = {
   createResourcesCategory: async (author, data) => {
     const { name } = data
 
@@ -45,5 +45,3 @@ const resourcesCategoryService = {
     await ResourcesCategory.findByIdAndRemove(id).exec()
   }
 }
-
-module.exports = resourcesCategoryService

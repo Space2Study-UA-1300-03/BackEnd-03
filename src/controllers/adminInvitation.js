@@ -1,6 +1,6 @@
-const adminInvitationService = require('~/services/adminInvitation')
+import { adminInvitationService } from '#services/adminInvitation.js'
 
-const sendAdminInvitations = async (req, res) => {
+export const sendAdminInvitations = async (req, res) => {
   const { emails } = req.body
   const language = req.lang
 
@@ -9,13 +9,8 @@ const sendAdminInvitations = async (req, res) => {
   res.status(201).json(invitations)
 }
 
-const getAdminInvitations = async (req, res) => {
+export const getAdminInvitations = async (req, res) => {
   const invitations = await adminInvitationService.getAdminInvitations()
 
   res.status(200).json(invitations)
-}
-
-module.exports = {
-  sendAdminInvitations,
-  getAdminInvitations
 }

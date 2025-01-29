@@ -1,3 +1,7 @@
+/**
+ * @description CHAT ROUTE: is now DEPRECATED //TODO: update this file in the future
+ */
+
 const mongoose = require('mongoose')
 const { DOCUMENT_NOT_FOUND } = require('~/consts/errors')
 

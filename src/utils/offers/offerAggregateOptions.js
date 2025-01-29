@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const getRegex = require('../getRegex')
+import { getRegex } from '#utils/getRegex.js'
+import mongoose from 'mongoose'
 
-const offerAggregateOptions = (query, params) => {
+export const offerAggregateOptions = (query, params) => {
   const {
     authorRole,
     price,
@@ -152,5 +152,3 @@ const offerAggregateOptions = (query, params) => {
     }
   ]
 }
-
-module.exports = offerAggregateOptions

@@ -1,9 +1,8 @@
-const Offer = require('~/models/offer')
+import { allowedOfferFieldsForUpdate } from '#validation/services/offer.js'
+import { filterAllowedFields } from '#utils/filterAllowedFields.js'
+import Offer from '#models/offer.js'
 
-const filterAllowedFields = require('~/utils/filterAllowedFields')
-const { allowedOfferFieldsForUpdate } = require('~/validation/services/offer')
-
-const offerService = {
+export const offerService = {
   getOffers: async (pipeline) => {
     const [response] = await Offer.aggregate(pipeline).exec()
     return response
@@ -66,5 +65,3 @@ const offerService = {
     await Offer.findByIdAndRemove(id).exec()
   }
 }
-
-module.exports = offerService
