@@ -95,6 +95,10 @@ export const errors = {
     code: 'EMAIL_NOT_SENT',
     message: 'Email has not been sent.'
   },
+  EMAIL_ALREADY_CONFIRMED: {
+    code: 'EMAIL_ALREADY_CONFIRMED',
+    message: 'This email has already been confirmed. No further action is required.'
+  },
   INVALID_LANGUAGE: {
     code: 'INVALID_LANGUAGE',
     message: `The language name is invalid. Possible options: ${APP_LANG_ENUM.join(', ')}.`
