@@ -91,9 +91,9 @@ export const updatePassword = async (req, res) => {
 }
 
 export const verifyEmail = async (req, res) => {
-  const { confirmToken } = req.query
+  const { token } = req.params
 
-  const message = await authService.verifyEmail(confirmToken)
+  const message = await authService.verifyEmail(token)
 
   res.status(200).json(message)
 }
