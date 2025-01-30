@@ -16,7 +16,7 @@ const {
   BAD_RESET_TOKEN,
   USER_NOT_FOUND
 } = errors
-const { getUserByEmail, createUser, privateUpdateUser, getUserById, hashPassword, varifyPassword } = userService
+const { getUserByEmail, createUser, privateUpdateUser, getUserById, hashPassword, verifyPassword } = userService
 const { CONFIRM_TOKEN, REFRESH_TOKEN, RESET_TOKEN } = tokenNames
 
 export const authService = {
@@ -40,7 +40,7 @@ export const authService = {
       throw createError(404, USER_NOT_FOUND)
     }
 
-    const verifiedPassword = await varifyPassword(password, user.password)
+    const verifiedPassword = await verifyPassword(password, user.password)
     const checkedPassword = verifiedPassword || isFromGoogle
 
     if (!checkedPassword) {
