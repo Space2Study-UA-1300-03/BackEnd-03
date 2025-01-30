@@ -17,12 +17,6 @@ jobs:
 
       - name: 'Start MongoDB'
         uses: supercharge/mongodb-github-action@1.8.0
-        with:
-          mongodb-version: latest
-          mongodb-port: 27017
-          mongodb-username: ${{secrets.MONGODB_USER}}
-          mongodb-password: ${{secrets.MONGODB_PASS}}
-          mongodb-db: ${{secrets.MONGODB_DB}}
 
       - name: 'Wait for the database to start'
         run: |
@@ -31,19 +25,47 @@ jobs:
         env:
           WAIT_FOR_VERSION: 4df3f9262d84cab0039c07bf861045fbb3c20ab7 # v2.2.3
 
-      - name: 'Install Node.js v.14'
+      - name: 'Set up Node.js'
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
 
       - name: 'Install dependencies'
         run: npm install
+
+      - name: 'Create .env.test.local'
+        run: |
+          echo "MONGODB_USER=${{ secrets.MONGODB_USER }}" > .env.test.local
+          echo "MONGODB_PASS=${{ secrets.MONGODB_PASS }}" >> .env.test.local
+          echo "MONGODB_HOST=${{ secrets.MONGODB_HOST }}" >> .env.test.local
+          echo "MONGODB_DB=${{ secrets.MONGODB_DB }}" >> .env.test.local
+          echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env.test.local
+          echo "JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}" >> .env.test.local
+          echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env.test.local
+          echo "JWT_RESET_SECRET=${{ secrets.JWT_RESET_SECRET }}" >> .env.test.local
+          echo "JWT_CONFIRM_SECRET=${{ secrets.JWT_CONFIRM_SECRET }}" >> .env.test.local
+          echo "JWT_ACCESS_EXPIRES_IN=${{ secrets.JWT_ACCESS_EXPIRES_IN }}" >> .env.test.local
+          echo "JWT_REFRESH_EXPIRES_IN=${{ secrets.JWT_REFRESH_EXPIRES_IN }}" >> .env.test.local
+          echo "JWT_RESET_EXPIRES_IN=${{ secrets.JWT_RESET_EXPIRES_IN }}" >> .env.test.local
+          echo "JWT_CONFIRM_EXPIRES_IN=${{ secrets.JWT_CONFIRM_EXPIRES_IN }}" >> .env.test.local
+          echo "CLIENT_URL=${{ secrets.CLIENT_URL }}" >> .env.test.local
+          echo "SERVER_URL=${{ secrets.SERVER_URL }}" >> .env.test.local
+          echo "SERVER_PORT=${{ secrets.SERVER_PORT }}" >> .env.test.local
+          echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> .env.test.local
+          echo "MAIL_PASS=${{ secrets.MAIL_PASS }}" >> .env.test.local
+          echo "MAIL_FIRSTNAME=${{ secrets.MAIL_FIRSTNAME }}" >> .env.test.local
+          echo "MAIL_LASTNAME=${{ secrets.MAIL_LASTNAME }}" >> .env.test.local
+          echo "GMAIL_CLIENT_ID=${{ secrets.GMAIL_CLIENT_ID }}" >> .env.test.local
+          echo "GMAIL_CLIENT_SECRET=${{ secrets.GMAIL_CLIENT_SECRET }}" >> .env.test.local
+          echo "GMAIL_REFRESH_TOKEN=${{ secrets.GMAIL_REFRESH_TOKEN }}" >> .env.test.local
+          echo "GMAIL_REDIRECT_URI=${{ secrets.GMAIL_REDIRECT_URI }}" >> .env.test.local
+          echo "COOKIE_DOMAIN=${{ secrets.COOKIE_DOMAIN }}" >> .env.test.local
 
       - name: 'Run Tests'
         run: npm run test
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-          MONGODB_URL: mongodb://${{secrets.MONGODB_USER}}:${{secrets.MONGODB_PASS}}@localhost:27017/${{secrets.MONGODB_DB}}?authSource=admin
+          MONGODB_URL: 'mongodb+srv://${{ secrets.MONGODB_USER }}:${{ secrets.MONGODB_PASS }}@${{ secrets.MONGODB_HOST }}/${{ secrets.MONGODB_DB }}?retryWrites=true&w=majority'
           JWT_ACCESS_SECRET: ${{secrets.JWT_ACCESS_SECRET}}
           JWT_REFRESH_SECRET: ${{secrets.JWT_REFRESH_SECRET}}
           JWT_RESET_SECRET: ${{secrets.JWT_RESET_SECRET}}
@@ -63,12 +85,12 @@ jobs:
           GMAIL_CLIENT_SECRET: ${{secrets.GMAIL_CLIENT_SECRET}}
           GMAIL_REFRESH_TOKEN: ${{secrets.GMAIL_REFRESH_TOKEN}}
           GMAIL_REDIRECT_URI: ${{secrets.GMAIL_REDIRECT_URI}}
-          COOKIE_DOMAIN: ${{secrets.COOKIE_DOMAIN}}
+          COOKIE_DOMAIN: ${{secrets.COOKIE_DOMAIN }}
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         if: success() || failure()
         # if: always()
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
