@@ -7,13 +7,13 @@
 
 /**
  * @swagger
- * /auth/verify:
- *   get:
+ * /auth/confirm-email/{token}:
+ *   post:
  *     summary: Email verify new user
  *     tags: [Auth]
  *     parameters:
- *       - in: query
- *         name: confirmToken
+ *       - in: path
+ *         name: token
  *         required: true
  *         schema:
  *           type: string
