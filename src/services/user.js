@@ -114,7 +114,7 @@ export const userService = {
     return await bcrypt.hash(pass, SALT_ROUNDS)
   },
 
-  varifyPassword: async (pass, hashedPassword) => {
+  verifyPassword: async (pass, hashedPassword) => {
     return await bcrypt.compare(pass, hashedPassword)
   }
 }
