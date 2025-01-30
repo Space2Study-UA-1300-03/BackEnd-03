@@ -9,6 +9,7 @@ import { logger } from '#logger/logger.js'
 import User from '#models/user.js'
 
 const {
+  EMAIL_ALREADY_CONFIRMED,
   INCORRECT_CREDENTIALS,
   EMAIL_NOT_CONFIRMED,
   BAD_CONFIRM_TOKEN,
@@ -123,6 +124,20 @@ export const authService = {
 
     const tokenData = tokenService.validateConfirmToken(confirmToken)
     const tokenFromDB = await tokenService.findToken(confirmToken, CONFIRM_TOKEN)
+
+    /**
+     * @todo: //TODO: Refactor this part
+     */
+    if (!tokenFromDB) {
+      const user = await userService.getUserById(tokenData.id)
+      if (!user) {
+        throw createError(400, BAD_CONFIRM_TOKEN)
+      }
+
+      if (user.isEmailConfirmed) {
+        throw createError(400, EMAIL_ALREADY_CONFIRMED)
+      }
+    }
 
     if (!tokenData || !tokenFromDB) {
       throw createError(400, BAD_CONFIRM_TOKEN)
