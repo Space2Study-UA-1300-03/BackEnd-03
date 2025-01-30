@@ -27,7 +27,6 @@ describe('isEntityValid Middleware', () => {
     next = jest.fn()
     mockCreateError.mockClear()
 
-    // Створюємо моки для mongoose моделей
     UserModel = {
       findById: jest.fn(),
       modelName: 'User'
