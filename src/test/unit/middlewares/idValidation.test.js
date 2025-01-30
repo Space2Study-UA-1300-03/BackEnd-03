@@ -46,7 +46,7 @@ describe('idValidation Middleware', () => {
         expect.objectContaining({
           message: 'ID is invalid.',
           status: 400,
-          code: 'INVALID_ID' // перевіряємо код помилки
+          code: 'INVALID_ID'
         })
       )
     }
