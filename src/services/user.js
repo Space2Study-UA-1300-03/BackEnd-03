@@ -1,3 +1,6 @@
+import bcrypt from 'bcrypt';
+
+import { SALT_ROUNDS } from '#consts/auth.js'
 import { allowedUserFieldsForUpdate } from '#validation/services/user.js'
 import { filterAllowedFields } from '#utils/filterAllowedFields.js'
 import { createError } from '#utils/errorsHelper.js'
@@ -105,5 +108,13 @@ export const userService = {
 
   deleteUser: async (id) => {
     await User.findByIdAndRemove(id).exec()
+  },
+
+  hashPassword: async (pass) => {
+    return await bcrypt.hash(pass, SALT_ROUNDS)
+  },
+
+  verifyPassword: async (pass, hashedPassword) => {
+    return await bcrypt.compare(pass, hashedPassword)
   }
 }

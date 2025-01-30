@@ -16,12 +16,13 @@ const {
   BAD_RESET_TOKEN,
   USER_NOT_FOUND
 } = errors
-const { getUserByEmail, createUser, privateUpdateUser, getUserById } = userService
+const { getUserByEmail, createUser, privateUpdateUser, getUserById, hashPassword, verifyPassword } = userService
 const { CONFIRM_TOKEN, REFRESH_TOKEN, RESET_TOKEN } = tokenNames
 
 export const authService = {
   signup: async (role, firstName, lastName, email, password, language) => {
-    const user = await createUser(role, firstName, lastName, email, password, language)
+    const hashedPassword = await hashPassword(password)
+    const user = await createUser(role, firstName, lastName, email, hashedPassword, language)
 
     const confirmToken = tokenService.generateConfirmToken({ id: user._id, role })
     await tokenService.saveToken(user._id, confirmToken, CONFIRM_TOKEN)
@@ -39,7 +40,8 @@ export const authService = {
       throw createError(404, USER_NOT_FOUND)
     }
 
-    const checkedPassword = password === user.password || isFromGoogle
+    const verifiedPassword = await verifyPassword(password, user.password)
+    const checkedPassword = verifiedPassword || isFromGoogle
 
     if (!checkedPassword) {
       throw createError(401, INCORRECT_CREDENTIALS)
@@ -101,13 +103,14 @@ export const authService = {
   updatePassword: async (resetToken, password, language) => {
     const tokenData = tokenService.validateResetToken(resetToken)
     const tokenFromDB = await tokenService.findToken(resetToken, RESET_TOKEN)
+    const hashedPassword = await hashPassword(password)
 
     if (!tokenData || !tokenFromDB) {
       throw createError(400, BAD_RESET_TOKEN.message)
     }
 
     const { id: userId, firstName, email } = tokenData
-    await privateUpdateUser(userId, { password })
+    await privateUpdateUser(userId, { password: hashedPassword })
 
     await tokenService.removeResetToken(userId)
 
