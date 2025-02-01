@@ -1,12 +1,10 @@
 import { jest, describe, it, expect, beforeEach } from '@jest/globals'
 import mongoose from 'mongoose'
 
-// Mock getRegex utility
 jest.unstable_mockModule('#utils/getRegex.js', () => ({
   getRegex: jest.fn((value) => (value ? new RegExp(value, 'i') : new RegExp('(?:)', 'i')))
 }))
 
-// Mock ObjectId
 jest.spyOn(mongoose.Types, 'ObjectId').mockImplementation((value) => value)
 
 const { offerAggregateOptions } = await import('#utils/offers/offerAggregateOptions.js')

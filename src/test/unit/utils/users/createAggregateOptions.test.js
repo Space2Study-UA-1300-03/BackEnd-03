@@ -1,6 +1,5 @@
-import { jest, describe, it, expect, beforeEach } from '@jest/globals'
+import { jest, describe, it, expect } from '@jest/globals'
 
-// Mock getRegex utility
 jest.unstable_mockModule('#utils/getRegex.js', () => ({
   getRegex: jest.fn((value) => (value ? new RegExp(value, 'i') : new RegExp('(?:)', 'i')))
 }))
