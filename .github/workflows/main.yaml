@@ -37,7 +37,7 @@ jobs:
 
       - name: 'Create .env.test.local file'
         run: |
-          echo "MONGODB_URL= mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8" > .env.test.local
+          echo "MONGODB_URL=mongodb+srv://testLocal:lSG2ZdcCM9nSbkdU@test-local.2rhaq.mongodb.net/test-database?retryWrites=true&w=majority&appName=test-local" > .env.test.local
           echo "JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}" >> .env.test.local
           echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env.test.local
           echo "JWT_RESET_SECRET=${{ secrets.JWT_RESET_SECRET }}" >> .env.test.local
@@ -63,7 +63,7 @@ jobs:
         run: npm run test
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-          MONGODB_URL: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+          MONGODB_URL: mongodb+srv://testLocal:lSG2ZdcCM9nSbkdU@test-local.2rhaq.mongodb.net/test-database?retryWrites=true&w=majority&appName=test-local
           JWT_ACCESS_SECRET: ${{secrets.JWT_ACCESS_SECRET}}
           JWT_REFRESH_SECRET: ${{secrets.JWT_REFRESH_SECRET}}
           JWT_RESET_SECRET: ${{secrets.JWT_RESET_SECRET}}
