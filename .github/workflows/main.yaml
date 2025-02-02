@@ -48,7 +48,7 @@ jobs:
           echo "JWT_CONFIRM_EXPIRES_IN=${{ secrets.JWT_CONFIRM_EXPIRES_IN }}" >> .env.test.local
           echo "CLIENT_URL=${{ secrets.CLIENT_URL }}" >> .env.test.local
           echo "SERVER_URL=${{ secrets.SERVER_URL }}" >> .env.test.local
-          echo "SERVER_PORT=${{ secrets.SERVER_PORT }}" >> .env.test.local
+          echo "SERVER_PORT=8080" >> .env.test.local
           echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> .env.test.local
           echo "MAIL_PASS=${{ secrets.MAIL_PASS }}" >> .env.test.local
           echo "MAIL_FIRSTNAME=${{ secrets.MAIL_FIRSTNAME }}" >> .env.test.local
@@ -74,7 +74,7 @@ jobs:
           JWT_CONFIRM_EXPIRES_IN: ${{secrets.JWT_CONFIRM_EXPIRES_IN}}
           CLIENT_URL: ${{secrets.CLIENT_URL}}
           SERVER_URL: ${{secrets.SERVER_URL}}
-          SERVER_PORT: ${{secrets.SERVER_PORT}}
+          SERVER_PORT: 8080
           MAIL_USER: ${{secrets.MAIL_USER}}
           MAIL_PASS: ${{secrets.MAIL_PASS}}
           MAIL_FIRSTNAME: ${{secrets.MAIL_FIRSTNAME}}
