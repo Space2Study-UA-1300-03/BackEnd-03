@@ -13,7 +13,7 @@ jobs:
       - name: 'Checkout the Repo'
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for better SonarCloud reporting
+          fetch-depth: 0 # Для кращої роботи SonarCloud
 
       - name: 'Create env file'
         run: |
@@ -62,9 +62,10 @@ jobs:
         run: npm install
 
       - name: 'Run Tests'
-        run: |
-          npm run test
-          npm run test:coverage
+        run: npm run test
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+          MONGODB_URL: mongodb://${{secrets.MONGODB_USER}}:${{secrets.MONGODB_PASS}}@localhost:27017/${{secrets.MONGODB_DB}}?authSource=admin
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
