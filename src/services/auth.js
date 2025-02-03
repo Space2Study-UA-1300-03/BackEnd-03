@@ -5,8 +5,6 @@ import { emailService } from '#services/email.js'
 import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
-import { logger } from '#logger/logger.js'
-import User from '#models/user.js'
 
 const {
   EMAIL_ALREADY_CONFIRMED,
@@ -155,41 +153,28 @@ export const authService = {
     return { message: 'Email confirmed' }
   },
 
-  googleLogin: async (payload) => {
-    if (!payload?.email || !payload?.name) {
-      throw new Error('Invalid payload: email and name are required')
+  googleLogin: async (email) => {
+    const user = await getUserByEmail(email)
+
+    if (!user) {
+      throw createError(404, USER_NOT_FOUND)
     }
 
-    const { email, name } = payload
-    const [firstName, lastName] = name.split(' ')
+    const { _id, lastLoginAs, isFirstLogin, isEmailConfirmed } = user
 
-    try {
-      let user = await User.findOne({ email })
+    const tokens = tokenService.generateTokens({ id: _id, role: lastLoginAs, isFirstLogin })
+    await tokenService.saveToken(_id, tokens.refreshToken, REFRESH_TOKEN)
 
-      if (!user) {
-        user = new User({
-          email,
-          firstName,
-          lastName: lastName || firstName,
-          role: ['student'],
-          isEmailConfirmed: true,
-          password: '',
-          authProvider: 'google'
-        })
-
-        await user.save()
-      }
-
-      return {
-        id: user._id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        role: user.role,
-        authProvider: user.authProvider
-      }
-    } catch (err) {
-      logger.error('Error in google Login', err)
-      throw err
+    if (!isEmailConfirmed) {
+      await privateUpdateUser(_id, { isEmailConfirmed: true })
     }
+
+    if (isFirstLogin) {
+      await privateUpdateUser(_id, { isFirstLogin: false })
+    }
+
+    await privateUpdateUser(_id, { lastLogin: new Date() })
+
+    return tokens
   }
 }
