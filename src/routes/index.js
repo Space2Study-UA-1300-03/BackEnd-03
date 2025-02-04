@@ -6,6 +6,8 @@ import { router as offer } from '#routes/offer.js'
 import { router as auth } from '#routes/auth.js'
 import { router as ping } from '#routes/ping.js'
 import { router as user } from '#routes/user.js'
+import { router as locationRoutes } from '#routes/locationRoutes.js'
+
 import express from 'express'
 
 export const router = express.Router()
@@ -18,3 +20,4 @@ router.use('/admin-invitations', adminInvitation)
 router.use('/questions', question)
 router.use('/resources-categories', resourcesCategory)
 router.use('/offers', offer)
+router.use('/locations', locationRoutes)
