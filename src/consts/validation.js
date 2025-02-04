@@ -24,3 +24,8 @@ export const enums = {
   RESOURCES_TYPES_ENUM: ['lessons', 'attachments', 'questions', 'quizzes'],
   OFFER_STATUS_ENUM: ['active', 'draft', 'closed']
 }
+
+export const appearances = {
+  icon: 'mocked-path-to-icon',
+  color: '#66C42C'
+}
