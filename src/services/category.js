@@ -1,7 +1,7 @@
 import Category from '#models/category.js'
 
 export const categoriesService = {
-  getCategories: async () => {
+  getAllCategories: async () => {
     return Category.find()
   }
 }
