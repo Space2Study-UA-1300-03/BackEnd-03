@@ -71,5 +71,56 @@
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Category'
+ *                 type: object
+ *                 properties:
+ *                   appearance:
+ *                     type: object
+ *                     properties:
+ *                       icon:
+ *                         type: string
+ *                         example: mocked-path-to-icon
+ *                       color:
+ *                         type: string
+ *                         example: "#66C42C"
+ *                   _id:
+ *                     type: string
+ *                     example: 67a25c69d017c62d30111eb1
+ *                   categoryName:
+ *                     type: string
+ *                     example: math
+ *                   subjects:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         _id:
+ *                           type: string
+ *                           example: 67a25154d017c62d30111e99
+ *                         name:
+ *                           type: string
+ *                           example: algebra
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                     example: 2025-02-04T15:22:26.099Z
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
+ *                     example: 2025-02-04T15:22:26.099Z
+ *       404:
+ *         description: Categories not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 code:
+ *                   type: string
+ *                   example: CATEGORY_NOT_FOUND
+ *                 message:
+ *                   type: string
+ *                   example: Categories was not found.
  */
