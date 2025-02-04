@@ -35,3 +35,27 @@
  *           format: date-time
  *           description: Timestamp of last category update
  */
+
+/**
+ * @swagger
+ * tags:
+ *   - name: Categories
+ *     description: Category management operations
+ */
+
+/**
+ * @swagger
+ * /categories:
+ *   get:
+ *     summary: Get all categories
+ *     tags: [Categories]
+ *     responses:
+ *       200:
+ *         description: List of all categories
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Category'
+ */
