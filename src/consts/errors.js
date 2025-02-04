@@ -7,6 +7,10 @@ export const errors = {
     code: 'USER_NOT_FOUND',
     message: 'User with the specified email was not found.'
   },
+  CATEGORY_NOT_FOUND: {
+    code: 'CATEGORY_NOT_FOUND',
+    message: 'Categories was not found.'
+  },
   INCORRECT_CREDENTIALS: {
     code: 'INCORRECT_CREDENTIALS',
     message: 'The password you entered is incorrect.'
