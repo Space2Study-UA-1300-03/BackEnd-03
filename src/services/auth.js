@@ -5,6 +5,7 @@ import { emailService } from '#services/email.js'
 import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
+import User from '#models/user.js'
 
 const {
   EMAIL_ALREADY_CONFIRMED,
@@ -153,27 +154,52 @@ export const authService = {
     return { message: 'Email confirmed' }
   },
 
-  googleLogin: async (email) => {
-    const user = await getUserByEmail(email)
+  googleLogin: async (payload, type, role, lang) => {
+    const { email, given_name, email_verified, picture} = payload
+    const family_name = payload.family_name || payload.given_name
+    let user = await getUserByEmail(email)
+
+    if (!user && type === 'login') {
+      throw createError(404, USER_NOT_FOUND)
+    }
 
     if (!user) {
-      throw createError(404, USER_NOT_FOUND)
+      user = new User({
+        role,
+        lastLoginAs: role,
+        firstName: given_name,
+        lastName: family_name,
+        email,
+        password: '',
+        appLanguage: lang,
+        isEmailConfirmed: email_verified,
+        isFirstLogin: true,
+        authProvider: 'google',
+        photo: picture
+      })
+
+      await user.save()
     }
 
     const { _id, lastLoginAs, isFirstLogin, isEmailConfirmed } = user
 
     const tokens = tokenService.generateTokens({ id: _id, role: lastLoginAs, isFirstLogin })
     await tokenService.saveToken(_id, tokens.refreshToken, REFRESH_TOKEN)
-
+    
+    const updates = {};
     if (!isEmailConfirmed) {
-      await privateUpdateUser(_id, { isEmailConfirmed: true })
+      updates.isEmailConfirmed = true;
     }
-
+    
     if (isFirstLogin) {
-      await privateUpdateUser(_id, { isFirstLogin: false })
+      updates.isFirstLogin = false;
     }
-
-    await privateUpdateUser(_id, { lastLogin: new Date() })
+    
+    updates.lastLogin = new Date();
+    
+    if (Object.keys(updates).length > 0) {
+      await privateUpdateUser(_id, updates);
+    }
 
     return tokens
   }

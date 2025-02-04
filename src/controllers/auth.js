@@ -98,7 +98,9 @@ export const verifyEmail = async (req, res) => {
 }
 
 export const verifyIdToken = async (req, res) => {
-  const { token } = req.body
+  const { token, role, type } = req.body
+  const lang = req.lang
+
   const idToken = token?.credential
 
   if (!idToken) {
@@ -111,7 +113,7 @@ export const verifyIdToken = async (req, res) => {
   })
 
   const payload = ticket.getPayload()
-  const tokens = await authService.googleLogin(payload.email)
+  const tokens = await authService.googleLogin(payload, type, role, lang);
 
   res.cookie(ACCESS_TOKEN, tokens.accessToken, COOKIE_OPTIONS)
   res.cookie(REFRESH_TOKEN, tokens.refreshToken, COOKIE_OPTIONS)
