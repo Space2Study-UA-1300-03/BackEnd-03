@@ -12,3 +12,8 @@ export const getCategoryById = async (req, res) => {
 
   res.status(200).json(category)
 }
+export const getCategoryNames = async (_req, res) => {
+  const categories = await categoriesService.getCategoryNames()
+
+  res.status(200).json(categories)
+}
