@@ -3,7 +3,7 @@ import { getCountries, getCitiesByCountry } from '#controllers/locationControlle
 
 export const router = express.Router()
 
-router.get('/countries', getCountries) 
+router.get('/countries', getCountries)
 router.get('/countries/:countryCode/cities', getCitiesByCountry)
 
 export default router

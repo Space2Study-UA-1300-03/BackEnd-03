@@ -1,26 +1,26 @@
-import axios from 'axios'
-import { createError } from '#utils/errorsHelper.js'
-import dotenv from 'dotenv'
-
-dotenv.config()
+import { errors } from '#consts/errors.js'
 
 const API_BASE_URL = 'https://api.countrystatecity.in/v1'
-const API_KEY = process.env.CSC_API_KEY
 
-const fetchFromAPI = async (url) => {  
+const fetchFromAPI = async (url, apiKey) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}${url}`, {
-      headers: { 'X-CSCAPI-KEY': API_KEY },
+    const response = await fetch(`${API_BASE_URL}${url}`, {
+      method: 'GET',
+      headers: { 'X-CSCAPI-KEY': apiKey },
     })
-  
-    return response.data
+
+    if (!response.ok) {
+      throw new Error(errors.FAILED_FETCH_LOCATIONS.message)
+    }
+
+    return await response.json()
   } catch (error) {
     console.error(`Error fetching ${url}:`, error)
-    throw createError(500, 'Failed to fetch location data')
+    throw new Error(errors.FAILED_FETCH_LOCATIONS.message)
   }
 }
 
 export const locationService = {
-  getCountries: async () => fetchFromAPI('/countries'),
-  getCities: async (countryCode, stateCode) => fetchFromAPI(`/countries/${countryCode}/states/${stateCode}/cities`),
+  getCountries: async (apiKey) => fetchFromAPI('/countries', apiKey),
+  getCities: async (countryCode, apiKey) => fetchFromAPI(`/countries/${countryCode}/cities`, apiKey),
 }

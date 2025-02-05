@@ -1,42 +1,37 @@
-import axios from 'axios'
-import { config } from '#configs/config.js'
+import { errors } from '#consts/errors.js'
+import { locationService } from '#services/locationService.js'
 
-const API_URL = 'https://api.countrystatecity.in/v1'
-const HEADERS = { 'X-CSCAPI-KEY': config.CSC_API_KEY }
-
-export const getCountries = async (req, res) => {  
+export const getCountries = async (req, res) => {
   try {
-    const response = await axios.get(`${API_URL}/countries`, { headers: HEADERS })
-      
-    const countries = response.data.map((country) => ({
-      iso2: country.iso2,
-      name: country.name,
-    }))
-  
-    res.json(countries)
+    const apiKey = req.headers['x-cscapi-key']
+    if (!apiKey) {
+      return res.status(400).json(errors.API_KEY_REQUIRED)
+    }
+
+    const countries = await locationService.getCountries(apiKey)
+    res.json(countries.map(({ iso2, name }) => ({ iso2, name })))
   } catch (error) {
     console.error('Error fetching countries:', error)
-    res.status(500).json({ message: 'Error fetching countries', error: error.message })
+    res.status(500).json(errors.FAILED_FETCH_LOCATIONS)
   }
 }
-  
 
 export const getCitiesByCountry = async (req, res) => {
-  const { countryCode } = req.params
-
-  if (!countryCode) {
-    return res.status(400).json({ message: 'Country code is required' })
-  }
-
   try {
-    const response = await axios.get(`${API_URL}/countries/${countryCode}/cities`, { headers: HEADERS })
-    
-    const cities = response.data.map((city) => ({
-      name: city.name,
-    }))
+    const { countryCode } = req.params
+    const apiKey = req.headers['x-cscapi-key']
 
-    res.json(cities)
+    if (!apiKey) {
+      return res.status(400).json(errors.API_KEY_REQUIRED)
+    }
+    if (!countryCode || !countryCode.trim()) {
+      return res.status(400).json(errors.COUNTRY_CODE_REQUIRED)
+    }
+
+    const cities = await locationService.getCities(countryCode, apiKey)
+    res.json(cities.map(({ name }) => ({ name })))
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching cities', error: error.message })
+    console.error('Error fetching cities:', error)
+    res.status(500).json(errors.FAILED_FETCH_LOCATIONS)
   }
 }

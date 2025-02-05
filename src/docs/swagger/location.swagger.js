@@ -18,7 +18,16 @@
  *         name:
  *           type: string
  *           example: "Kyiv"
- */
+ *
+ *     ErrorResponse:
+ *       type: object
+ *       properties:
+ *         code:
+ *           type: string
+ *           example: "API_KEY_REQUIRED"
+ *         message:
+ *           type: string
+ *           example: "API key is required"
 
 /**
  * @swagger
@@ -33,6 +42,13 @@
  *   get:
  *     summary: Get a list of countries
  *     tags: [Location]
+ *     parameters:
+ *       - in: header
+ *         name: X-CSCAPI-KEY
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: API key required for authentication
  *     responses:
  *       200:
  *         description: A list of countries
@@ -42,6 +58,12 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Country'
+ *       400:
+ *         description: API key is required
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       500:
  *         description: Internal server error
  */
@@ -53,6 +75,12 @@
  *     summary: Get a list of cities by country code
  *     tags: [Location]
  *     parameters:
+ *       - in: header
+ *         name: X-CSCAPI-KEY
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: API key required for authentication
  *       - in: path
  *         name: countryCode
  *         required: true
@@ -69,7 +97,11 @@
  *               items:
  *                 $ref: '#/components/schemas/City'
  *       400:
- *         description: Bad request, country code is required
+ *         description: API key or country code is missing
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       500:
  *         description: Internal server error
  */
