@@ -44,6 +44,10 @@ export const errors = {
     code: 'ALREADY_REGISTERED',
     message: 'User with the specified email already exists.'
   },
+  CATEGORY_ALREADY_EXISTS: {
+    code: 'CATEGORY_ALREADY_EXISTS',
+    message: 'Category with the specified name already exists.'
+  },
   EMAIL_NOT_CONFIRMED: {
     code: 'EMAIL_NOT_CONFIRMED',
     message: 'Please confirm your email to login.'

@@ -2,7 +2,7 @@ import { createError } from '#utils/errorsHelper.js'
 import { errors } from '#consts/errors.js'
 import Category from '#models/category.js'
 
-const { CATEGORY_NOT_FOUND } = errors
+const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = errors
 
 export const categoriesService = {
   getAllCategories: async () => {
@@ -24,5 +24,15 @@ export const categoriesService = {
     if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
     return categories
+  },
+
+  createCategory: async (categoryData) => {
+    const existingCategory = await Category.findOne({ categoryName: categoryData.categoryName })
+    if (existingCategory) throw createError(400, CATEGORY_ALREADY_EXISTS)
+
+    const { categoryName, ...data } = categoryData
+    const newCategory = await Category.create({ categoryName, appearance: { ...data } })
+
+    return newCategory
   }
 }
