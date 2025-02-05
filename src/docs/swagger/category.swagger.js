@@ -34,6 +34,18 @@
  *           type: string
  *           format: date-time
  *           description: Timestamp of last category update
+ *
+ *     ValidationError:
+ *       type: object
+ *       properties:
+ *         status:
+ *           type: integer
+ *           example: 422
+ *         code:
+ *           type: string
+ *           example: FIELD_IS_NOT_OF_PROPER
+ *         message:
+ *           type: string
  */
 
 /**
@@ -46,6 +58,95 @@
 /**
  * @swagger
  * /categories:
+ *   post:
+ *     summary: Create a new category
+ *     tags: [Categories]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - categoryName
+ *             properties:
+ *               categoryName:
+ *                 type: string
+ *                 minLength: 3
+ *                 maxLength: 30
+ *                 description: Category name (3-30 characters)
+ *               icon:
+ *                 type: string
+ *                 description: Optional icon identifier
+ *               color:
+ *                 type: string
+ *                 description: Optional color code
+ *     responses:
+ *       201:
+ *         description: Category created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                   example: 67a3de0313a740c4c31afe93
+ *                 categoryName:
+ *                   type: string
+ *                   example: asdasss
+ *                 appearance:
+ *                   type: object
+ *                   properties:
+ *                     icon:
+ *                       type: string
+ *                       example: mocked-path-to-icon
+ *                     color:
+ *                       type: string
+ *                       example: "#66c42c"
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: 2025-02-05T21:54:11.826Z
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: 2025-02-05T21:54:11.826Z
+ *       422:
+ *         description: Validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/ValidationError'
+ *               examples:
+ *                 required:
+ *                   value:
+ *                     - status: 422
+ *                       code: FIELD_IS_NOT_OF_PROPER
+ *                       message: 'Validation error: Required at "categoryName"'
+ *                 invalid:
+ *                   value:
+ *                     - status: 422
+ *                       code: FIELD_IS_NOT_OF_PROPER
+ *                       message: 'Validation error: at categoryName'
+ *       409:
+ *         description: Category already exists
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 409
+ *                 code:
+ *                   type: string
+ *                   example: CATEGORY_ALREADY_EXISTS
+ *                 message:
+ *                   type: string
+ *                   example: Category with the specified name already exists.
  *   get:
  *     summary: Get all categories
  *     tags: [Categories]
