@@ -213,3 +213,43 @@
  *                   type: string
  *                   example: Categories was not found.
  */
+
+/**
+ * @swagger
+ * /categories/names:
+ *   get:
+ *     summary: Get category names and IDs
+ *     tags: [Categories]
+ *     responses:
+ *       200:
+ *         description: List of category names and IDs
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                     example: 67a33bd69f614b613105e425
+ *                   categoryName:
+ *                     type: string
+ *                     example: math
+ *       404:
+ *         description: Categories not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 code:
+ *                   type: string
+ *                   example: CATEGORY_NOT_FOUND
+ *                 message:
+ *                   type: string
+ *                   example: Categories was not found.
+ */
