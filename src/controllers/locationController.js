@@ -3,27 +3,27 @@ import { locationService } from '#services/locationService.js'
 
 export const getCountries = async (req, res) => {
   try {
-    const apiKey = req.headers['x-cscapi-key']
-    const countries = await locationService.getCountries(apiKey)
+    const countries = await locationService.getCountries()
     res.json(countries)
   } catch (error) {
     console.error('Error fetching countries:', error)
-    res.status(error.message === errors.API_KEY_REQUIRED.message ? 400 : 500).json({ message: error.message })
+    const status =
+      error.message === errors.NOT_FOUND.message || error.message === errors.BAD_REQUEST.message ? 400 : 500
+    res.status(status).json({ message: error.message })
   }
 }
 
 export const getCitiesByCountry = async (req, res) => {
   try {
     const { countryCode } = req.params
-    const apiKey = req.headers['x-cscapi-key']
-    const cities = await locationService.getCities(countryCode, apiKey)
+    const cities = await locationService.getCities(countryCode)
     res.json(cities)
   } catch (error) {
     console.error('Error fetching cities:', error)
-    res.status(
-      error.message === errors.API_KEY_REQUIRED.message || error.message === errors.COUNTRY_CODE_REQUIRED.message
+    const status =
+      error.message === errors.COUNTRY_CODE_REQUIRED.message || error.message === errors.NOT_FOUND.message
         ? 400
         : 500
-    ).json({ message: error.message })
+    res.status(status).json({ message: error.message })
   }
 }

@@ -46,13 +46,6 @@
  *   get:
  *     summary: Get a list of countries
  *     tags: [Location]
- *     parameters:
- *       - in: header
- *         name: X-CSCAPI-KEY
- *         required: true
- *         schema:
- *           type: string
- *         description: API key required for authentication
  *     responses:
  *       200:
  *         description: A list of countries
@@ -62,14 +55,8 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Country'
- *       400:
- *         description: API key is required
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/ErrorResponse'
  *       404:
- *         description: Countries not found
+ *         description: No countries found
  *         content:
  *           application/json:
  *             schema:
@@ -85,12 +72,6 @@
  *     summary: Get a list of cities by country code
  *     tags: [Location]
  *     parameters:
- *       - in: header
- *         name: X-CSCAPI-KEY
- *         required: true
- *         schema:
- *           type: string
- *         description: API key required for authentication
  *       - in: path
  *         name: countryCode
  *         required: true
@@ -107,13 +88,13 @@
  *               items:
  *                 $ref: '#/components/schemas/City'
  *       400:
- *         description: API key or country code is missing
+ *         description: Country code is required or invalid
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  *       404:
- *         description: Cities not found for the specified country
+ *         description: No cities found for the specified country
  *         content:
  *           application/json:
  *             schema:
