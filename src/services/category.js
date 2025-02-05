@@ -28,7 +28,7 @@ export const categoriesService = {
 
   createCategory: async (categoryData) => {
     const existingCategory = await Category.findOne({ categoryName: categoryData.categoryName })
-    if (existingCategory) throw createError(400, CATEGORY_ALREADY_EXISTS)
+    if (existingCategory) throw createError(409, CATEGORY_ALREADY_EXISTS)
 
     const { categoryName, ...data } = categoryData
     const newCategory = await Category.create({ categoryName, appearance: { ...data } })
