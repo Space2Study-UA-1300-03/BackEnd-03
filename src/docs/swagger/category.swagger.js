@@ -2,16 +2,6 @@
  * @swagger
  * components:
  *   schemas:
- *     Subject:
- *       type: object
- *       properties:
- *         subjectId:
- *           type: string
- *           description: Unique identifier of the subject
- *         name:
- *           type: string
- *           description: Name of the subject (lowercase)
- *
  *     Appearance:
  *       type: object
  *       properties:
@@ -34,10 +24,6 @@
  *         categoryName:
  *           type: string
  *           description: Name of the category (unique, lowercase)
- *         subjects:
- *           type: array
- *           items:
- *             $ref: '#/components/schemas/Subject'
  *         appearance:
  *           $ref: '#/components/schemas/Appearance'
  *         createdAt:
@@ -88,17 +74,6 @@
  *                   categoryName:
  *                     type: string
  *                     example: math
- *                   subjects:
- *                     type: array
- *                     items:
- *                       type: object
- *                       properties:
- *                         _id:
- *                           type: string
- *                           example: 67a25154d017c62d30111e99
- *                         name:
- *                           type: string
- *                           example: algebra
  *                   createdAt:
  *                     type: string
  *                     format: date-time
@@ -161,17 +136,6 @@
  *                 categoryName:
  *                   type: string
  *                   example: math
- *                 subjects:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       _id:
- *                         type: string
- *                         example: 67a25154d017c62d30111e99
- *                       name:
- *                         type: string
- *                         example: algebra
  *                 createdAt:
  *                   type: string
  *                   format: date-time
