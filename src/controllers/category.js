@@ -7,7 +7,8 @@ export const getAllCategories = async (_req, res) => {
 }
 
 export const getCategoryById = async (req, res) => {
-  const category = await categoriesService.getCategoryById()
+  const { id } = req.params
+  const category = await categoriesService.getCategoryById(id)
 
   res.status(200).json(category)
 }
