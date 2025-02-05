@@ -1,32 +1,17 @@
-import { lengths, regex } from '#consts/validation.js'
+import { errorMassages } from '#consts/validationError.js'
+import { lengths } from '#consts/validation.js'
+import { z } from 'zod'
 
-const { MAX_NAME_LENGTH, MIN_NAME_LENGTH } = lengths
-const { NAME_PATTERN } = regex
+const { FIELD_IS_SHORTER_THAN_MIN, FIELD_IS_LONGER_THAN_MAX } = errorMassages
+const { MIN_NAME_LENGTH, MAX_NAME_LENGTH } = lengths
 
-export const createCategoryValidationSchema = {
-  categoryName: {
-    type: 'string',
-    required: true,
-    regex: NAME_PATTERN,
-    length: {
-      min: MIN_NAME_LENGTH,
-      max: MAX_NAME_LENGTH
-    }
-  },
-  icon: {
-    type: 'string',
-    regex: NAME_PATTERN,
-    length: {
-      min: MIN_NAME_LENGTH,
-      max: MAX_NAME_LENGTH
-    }
-  },
-  color: {
-    type: 'string',
-    regex: NAME_PATTERN,
-    length: {
-      min: MIN_NAME_LENGTH,
-      max: MAX_NAME_LENGTH
-    }
-  }
-}
+export const createCategoryValidationSchema = z.object({
+  categoryName: z
+    .string()
+    .min(MIN_NAME_LENGTH, FIELD_IS_SHORTER_THAN_MIN(MIN_NAME_LENGTH))
+    .max(MAX_NAME_LENGTH, FIELD_IS_LONGER_THAN_MAX(MAX_NAME_LENGTH))
+    .toLowerCase()
+    .trim(),
+  icon: z.string().optional(),
+  color: z.string().optional()
+})
