@@ -5,7 +5,6 @@ import { emailService } from '#services/email.js'
 import { userService } from '#services/user.js'
 import { tokenNames } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
-import { logger } from '#logger/logger.js'
 import User from '#models/user.js'
 
 const {
@@ -155,41 +154,53 @@ export const authService = {
     return { message: 'Email confirmed' }
   },
 
-  googleLogin: async (payload) => {
-    if (!payload?.email || !payload?.name) {
-      throw new Error('Invalid payload: email and name are required')
+  googleLogin: async (payload, type, role, lang) => {
+    const { email, given_name, email_verified, picture} = payload
+    const family_name = payload.family_name || payload.given_name
+    let user = await getUserByEmail(email)
+
+    if (!user && type === 'login') {
+      throw createError(404, USER_NOT_FOUND)
     }
 
-    const { email, name } = payload
-    const [firstName, lastName] = name.split(' ')
+    if (!user) {
+      user = new User({
+        role,
+        lastLoginAs: role,
+        firstName: given_name,
+        lastName: family_name,
+        email,
+        password: '',
+        appLanguage: lang,
+        isEmailConfirmed: email_verified,
+        isFirstLogin: true,
+        authProvider: 'google',
+        photo: picture
+      })
 
-    try {
-      let user = await User.findOne({ email })
-
-      if (!user) {
-        user = new User({
-          email,
-          firstName,
-          lastName: lastName || firstName,
-          role: ['student'],
-          isEmailConfirmed: true,
-          password: '',
-          authProvider: 'google'
-        })
-
-        await user.save()
-      }
-
-      return {
-        id: user._id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        role: user.role,
-        authProvider: user.authProvider
-      }
-    } catch (err) {
-      logger.error('Error in google Login', err)
-      throw err
+      await user.save()
     }
+
+    const { _id, lastLoginAs, isFirstLogin, isEmailConfirmed } = user
+
+    const tokens = tokenService.generateTokens({ id: _id, role: lastLoginAs, isFirstLogin })
+    await tokenService.saveToken(_id, tokens.refreshToken, REFRESH_TOKEN)
+    
+    const updates = {};
+    if (!isEmailConfirmed) {
+      updates.isEmailConfirmed = true;
+    }
+    
+    if (isFirstLogin) {
+      updates.isFirstLogin = false;
+    }
+    
+    updates.lastLogin = new Date();
+    
+    if (Object.keys(updates).length > 0) {
+      await privateUpdateUser(_id, updates);
+    }
+
+    return tokens
   }
 }
