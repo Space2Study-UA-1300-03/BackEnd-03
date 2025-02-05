@@ -28,6 +28,10 @@
  *         message:
  *           type: string
  *           example: "API key is required"
+ *       required:
+ *         - code
+ *         - message 
+ */
 
 /**
  * @swagger
@@ -60,6 +64,12 @@
  *                 $ref: '#/components/schemas/Country'
  *       400:
  *         description: API key is required
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Countries not found
  *         content:
  *           application/json:
  *             schema:
@@ -98,6 +108,12 @@
  *                 $ref: '#/components/schemas/City'
  *       400:
  *         description: API key or country code is missing
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Cities not found for the specified country
  *         content:
  *           application/json:
  *             schema:

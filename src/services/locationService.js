@@ -10,6 +10,12 @@ const fetchFromAPI = async (url, apiKey) => {
     })
 
     if (!response.ok) {
+      if (response.status === 400) {
+        throw new Error(errors.BAD_REQUEST.message)
+      }
+      if (response.status === 404) {
+        throw new Error(errors.NOT_FOUND.message)
+      }
       throw new Error(errors.FAILED_FETCH_LOCATIONS.message)
     }
 
@@ -21,6 +27,17 @@ const fetchFromAPI = async (url, apiKey) => {
 }
 
 export const locationService = {
-  getCountries: async (apiKey) => fetchFromAPI('/countries', apiKey),
-  getCities: async (countryCode, apiKey) => fetchFromAPI(`/countries/${countryCode}/cities`, apiKey),
+  getCountries: async (apiKey) => {
+    if (!apiKey) throw new Error(errors.API_KEY_REQUIRED.message)
+    const countries = await fetchFromAPI('/countries', apiKey)
+    return countries.map(({ iso2, name }) => ({ iso2, name }))
+  },
+
+  getCities: async (countryCode, apiKey) => {
+    if (!apiKey) throw new Error(errors.API_KEY_REQUIRED.message)
+    if (!countryCode || !countryCode.trim()) throw new Error(errors.COUNTRY_CODE_REQUIRED.message)
+
+    const cities = await fetchFromAPI(`/countries/${countryCode}/cities`, apiKey)
+    return cities.map(({ name }) => ({ name }))
+  }
 }
