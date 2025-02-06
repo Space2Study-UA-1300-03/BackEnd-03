@@ -1,6 +1,7 @@
 import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
 import Category from '#models/category.js'
+import Subject from '#models/subject.js'
 
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
@@ -35,5 +36,11 @@ export const categoriesService = {
     const newCategory = await Category.create({ categoryName, appearance: { ...data } })
 
     return newCategory
+  },
+
+  getSubjectNamesByCategoryId: async (id) => {
+    const allSubjectNames = await Subject.find({ categoryId: id })
+
+    return allSubjectNames
   }
 }

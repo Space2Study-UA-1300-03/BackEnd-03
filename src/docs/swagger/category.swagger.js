@@ -318,3 +318,65 @@
  *                   type: string
  *                   example: Categories was not found.
  */
+
+/**
+ * @swagger
+ * /categories/{id}/subjects/names:
+ *   get:
+ *     summary: Get subject names, optionally filtered by category
+ *     tags: [Categories]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: false
+ *         schema:
+ *           type: string
+ *           nullable: true
+ *         description: Optional category ID to filter subjects
+ *         example: "67a4a9ed88c8f7199403020d"
+ *     responses:
+ *       200:
+ *         description: List of subject names
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                     format: uuid
+ *                     example: "67a4a9fa88c8f71994030210"
+ *                   subjectName:
+ *                     type: string
+ *                     example: "vangog"
+ *                   categoryId:
+ *                     type: string
+ *                     format: uuid
+ *                     example: "67a4a9ed88c8f7199403020d"
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                     example: "2025-02-06T12:24:26.026Z"
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
+ *                     example: "2025-02-06T12:24:26.026Z"
+ *       400:
+ *         description: Invalid ID format
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 400
+ *                 code:
+ *                   type: string
+ *                   example: "INVALID_ID"
+ *                 message:
+ *                   type: string
+ *                   example: "The ID is either invalid."
+ */
