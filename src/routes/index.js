@@ -1,6 +1,7 @@
 import { router as resourcesCategory } from '#routes/resourcesCategory.js'
 import { router as adminInvitation } from '#routes/adminInvitation.js'
 import { router as question } from '#routes/question.js'
+import { router as category } from '#routes/category.js'
 import { router as email } from '#routes/email.js'
 import { router as offer } from '#routes/offer.js'
 import { router as auth } from '#routes/auth.js'
@@ -21,3 +22,4 @@ router.use('/questions', question)
 router.use('/resources-categories', resourcesCategory)
 router.use('/offers', offer)
 router.use('/locations', locationRoutes)
+router.use('/categories', category)
