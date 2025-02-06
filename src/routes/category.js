@@ -6,7 +6,7 @@ import express from 'express'
 
 export const router = express.Router()
 
-router.param('id', idValidation)
-
 router.get('/', asyncWrapper(getAllCategories))
+
+router.param('id', idValidation)
 router.get('/:id', asyncWrapper(getCategoryById))
