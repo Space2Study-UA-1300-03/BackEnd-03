@@ -161,3 +161,78 @@
  *                   type: string
  *                   example: "Categories was not found."
  */
+
+/**
+ * @swagger
+ * /subjects/{id}:
+ *   get:
+ *     summary: Get subject by ID
+ *     tags: [Subjects]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Subject ID
+ *         example: "67a4a6418ba8f4ed5c2d91a0"
+ *     responses:
+ *       200:
+ *         description: Subject found successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                   format: uuid
+ *                   example: "67a4a6418ba8f4ed5c2d91a0"
+ *                 subjectName:
+ *                   type: string
+ *                   example: "math"
+ *                 categoryId:
+ *                   type: string
+ *                   format: uuid
+ *                   example: "67a4a63d8ba8f4ed5c2d919d"
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: "2025-02-06T12:08:33.561Z"
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: "2025-02-06T12:08:33.561Z"
+ *       400:
+ *         description: Invalid ID format
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 400
+ *                 code:
+ *                   type: string
+ *                   example: "INVALID_ID"
+ *                 message:
+ *                   type: string
+ *                   example: "ID is invalid."
+ *       404:
+ *         description: Subject not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 code:
+ *                   type: string
+ *                   example: "SUBJECT_NOT_FOUND"
+ *                 message:
+ *                   type: string
+ *                   example: "Subject was not found."
+ */
