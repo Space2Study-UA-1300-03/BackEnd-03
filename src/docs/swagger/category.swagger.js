@@ -200,3 +200,121 @@
  *                   type: string
  *                   example: Categories was not found.
  */
+
+/**
+ * @swagger
+ * /categories/{id}:
+ *   get:
+ *     summary: Get category by ID
+ *     tags: [Categories]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Category ID
+ *     responses:
+ *       200:
+ *         description: Category details
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 appearance:
+ *                   type: object
+ *                   properties:
+ *                     icon:
+ *                       type: string
+ *                       example: mocked-path-to-icon
+ *                     color:
+ *                       type: string
+ *                       example: "#66C42C"
+ *                 _id:
+ *                   type: string
+ *                   example: 67a33bd69f614b613105e425
+ *                 categoryName:
+ *                   type: string
+ *                   example: math
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: 2025-02-04T15:22:26.099Z
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: 2025-02-04T15:22:26.099Z
+ *       400:
+ *         description: Invalid ID format
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 400
+ *                 code:
+ *                   type: string
+ *                   example: INVALID_ID
+ *                 message:
+ *                   type: string
+ *                   example: ID is invalid.
+ *       404:
+ *         description: Category not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 code:
+ *                   type: string
+ *                   example: CATEGORY_NOT_FOUND
+ *                 message:
+ *                   type: string
+ *                   example: Categories was not found.
+ */
+
+/**
+ * @swagger
+ * /categories/names:
+ *   get:
+ *     summary: Get category names and IDs
+ *     tags: [Categories]
+ *     responses:
+ *       200:
+ *         description: List of category names and IDs
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                     example: 67a33bd69f614b613105e425
+ *                   categoryName:
+ *                     type: string
+ *                     example: math
+ *       404:
+ *         description: Categories not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 code:
+ *                   type: string
+ *                   example: CATEGORY_NOT_FOUND
+ *                 message:
+ *                   type: string
+ *                   example: Categories was not found.
+ */
