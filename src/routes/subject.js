@@ -1,5 +1,5 @@
-import { getAllSubjects, createSubjects } from '#controllers/subject.js'
 import { createSubjectValidationSchema } from '#validation/schemas/createSubject.js'
+import { getAllSubjects, createSubjects } from '#controllers/subject.js'
 import { dataValidation } from '#middlewares/dataValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import express from 'express'

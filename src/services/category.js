@@ -1,8 +1,8 @@
 import { createError } from '#utils/errorsHelper.js'
-import { errors } from '#consts/errors.js'
+import { error } from '#consts/validationError.js'
 import Category from '#models/category.js'
 
-const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = errors
+const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
 export const categoriesService = {
   getAllCategories: async () => {
