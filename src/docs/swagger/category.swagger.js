@@ -324,7 +324,7 @@
  * /categories/{id}/subjects/names:
  *   get:
  *     summary: Get subject names, optionally filtered by category
- *     tags: [Subjects]
+ *     tags: [Categories]
  *     parameters:
  *       - in: path
  *         name: id
