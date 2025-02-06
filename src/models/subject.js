@@ -7,12 +7,12 @@ const { SUBJECT, CATEGORY } = refs
 
 const subjectSchema = new Schema(
   {
-    name: {
+    subjectName: {
       type: String,
       required: [true, FIELD_CANNOT_BE_EMPTY('name')],
       lowercase: true
     },
-    category: {
+    categoryId: {
       type: Schema.Types.ObjectId,
       ref: CATEGORY,
       required: [true, FIELD_CANNOT_BE_EMPTY('category')]
