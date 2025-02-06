@@ -26,5 +26,12 @@ export const subjectsService = {
     const newSubject = await Subject.create({ categoryId, subjectName })
 
     return newSubject
+  },
+
+  getSubjectById: async (id) => {
+    const subject = await Subject.findById(id)
+    if (!subject) throw createError(404, SUBJECT_NOT_FOUND)
+
+    return subject
   }
 }
