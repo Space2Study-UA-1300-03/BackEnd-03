@@ -10,5 +10,12 @@ export const categoriesService = {
     if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
     return categories
+  },
+
+  getCategoryById: async (id) => {
+    const category = await Category.findById(id)
+    if (!category) throw createError(404, CATEGORY_NOT_FOUND)
+
+    return category
   }
 }

@@ -4,9 +4,8 @@ import mongoose from 'mongoose'
 
 const { INVALID_ID } = errors
 
-export const idValidation = (req, res, next, id) => {
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    throw createError(400, INVALID_ID)
-  }
+export const idValidation = (_req, _res, next, id) => {
+  if (!mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)
+
   next()
 }
