@@ -15,12 +15,6 @@ const categorySchema = new Schema(
       lowercase: true,
       required: [true, FIELD_CANNOT_BE_EMPTY('categoryName')]
     },
-    subjects: [
-      {
-        subjectId: { type: Schema.Types.ObjectId },
-        name: { type: String, lowercase: true }
-      }
-    ],
     appearance: {
       icon: { type: String, default: icon, lowercase: true },
       color: { type: String, default: color, lowercase: true }

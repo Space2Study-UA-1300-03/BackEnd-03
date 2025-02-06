@@ -1,7 +1,7 @@
 export const lengths = {
   MIN_PASSWORD_LENGTH: 8,
   MAX_PASSWORD_LENGTH: 25,
-  MIN_NAME_LENGTH: 1,
+  MIN_NAME_LENGTH: 3,
   MAX_NAME_LENGTH: 30
 }
 

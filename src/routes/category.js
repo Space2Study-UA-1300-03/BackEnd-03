@@ -1,4 +1,6 @@
-import { getAllCategories, getCategoryById, getCategoryNames } from '#controllers/category.js'
+import { getAllCategories, getCategoryById, getCategoryNames, createCategory } from '#controllers/category.js'
+import { createCategoryValidationSchema } from '#validation/schemas/createCategory.js'
+import { dataValidation } from '#middlewares/dataValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
 
@@ -11,3 +13,8 @@ router.get('/names', asyncWrapper(getCategoryNames))
 
 router.param('id', idValidation)
 router.get('/:id', asyncWrapper(getCategoryById))
+
+/**
+ * @description Create a new category only for admin
+ */
+router.post('/', dataValidation(createCategoryValidationSchema), asyncWrapper(createCategory))
