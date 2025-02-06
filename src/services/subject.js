@@ -23,7 +23,7 @@ export const subjectsService = {
     const existingCategory = await categoriesService.getCategoryById(categoryId)
     if (!existingCategory) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const newSubject = await Subject.create({ categoryId: validId, subjectName })
+    const newSubject = await Subject.create({ categoryId, subjectName })
 
     return newSubject
   }
