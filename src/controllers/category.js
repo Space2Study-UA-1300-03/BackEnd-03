@@ -1,4 +1,5 @@
 import { categoriesService } from '#services/category.js'
+import { subjectsService } from '#services/subject.js'
 
 export const getAllCategories = async (_req, res) => {
   const categories = await categoriesService.getAllCategories()
@@ -22,4 +23,13 @@ export const createCategory = async (req, res) => {
   const newCategory = await categoriesService.createCategory(req.body)
 
   res.status(201).json(newCategory)
+}
+
+export const getSubjectNamesByCategoryId = async (req, res) => {
+  const { id } = req.params
+
+  const subjectsNames =
+    id !== ':id' ? await categoriesService.getSubjectNamesByCategoryId(id) : await subjectsService.getAllSubjects()
+
+  res.status(200).json(subjectsNames)
 }
