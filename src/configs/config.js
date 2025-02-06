@@ -14,7 +14,8 @@ export const config = {
   JWT_RESET_SECRET: process.env.JWT_RESET_SECRET,
   JWT_RESET_EXPIRES_IN: process.env.JWT_RESET_EXPIRES_IN,
   JWT_CONFIRM_SECRET: process.env.JWT_CONFIRM_SECRET,
-  JWT_CONFIRM_EXPIRES_IN: process.env.JWT_CONFIRM_EXPIRES_IN
+  JWT_CONFIRM_EXPIRES_IN: process.env.JWT_CONFIRM_EXPIRES_IN,
+  CSC_API_KEY: process.env.CSC_API_KEY
 }
 
 export const superAdmin = {
