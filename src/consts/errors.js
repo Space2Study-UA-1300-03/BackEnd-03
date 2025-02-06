@@ -135,7 +135,20 @@ export const errors = {
   VALIDATION_ERROR: (message) => ({
     code: 'VALIDATION_ERROR',
     message: message
-  })
+  }),
+  API_KEY_REQUIRED: {
+    code: 'API_KEY_REQUIRED',
+    message: 'API key is required.'
+  },
+  COUNTRY_CODE_REQUIRED: {
+    code: 'COUNTRY_CODE_REQUIRED',
+    message: 'Country code is required.'
+  },
+  FAILED_FETCH_LOCATIONS: {
+    code: 'FAILED_FETCH_LOCATIONS',
+    message: 'Failed to fetch location data.'
+  }
+
 }
 
 const validationErrors = {
