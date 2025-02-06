@@ -11,3 +11,10 @@ export const createSubjects = async (req, res) => {
 
   res.status(201).json(newSubject)
 }
+
+export const getSubjectById = async (req, res) => {
+  const { id } = req.params
+  const subject = await subjectsService.getSubjectById(id)
+
+  res.status(200).json(subject)
+}
