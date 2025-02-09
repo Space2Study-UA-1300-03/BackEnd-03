@@ -13,5 +13,6 @@ export const refs = {
   ATTACHMENT: 'Attachment',
   QUESTION: 'Question',
   RESOURCES_CATEGORY: 'ResourcesCategory',
-  CATEGORY: 'Category'
+  CATEGORY: 'Category',
+  LANGUAGE: 'Language',
 }
