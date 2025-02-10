@@ -22,7 +22,7 @@ export const imageService = {
 
     const updatedBuffer = await bufferService.updatedBuffer(file.buffer)
 
-    const { url, publicId } = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName)
+    const { url, publicId } = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName, user.id)
 
     const updatedUser = await User.findByIdAndUpdate(user.id, { photo: { url, publicId } }, { new: true })
 
@@ -50,7 +50,7 @@ export const bufferService = {
 }
 
 export const cloudinaryService = {
-  uploadBufferToCloudinary: async (buffer, uniqueName) => {
+  uploadBufferToCloudinary: async (buffer, uniqueName, userId) => {
     if (!buffer) throw createError(422, BUFFER_IS_NOT_DEFINED)
 
     cloudinary.config({
@@ -62,7 +62,7 @@ export const cloudinaryService = {
     return new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
-          folder: CLOUDINARY_FOLDER,
+          folder: `${CLOUDINARY_FOLDER}/${userId}`,
           public_id: uniqueName
         },
         (error, result) => {
