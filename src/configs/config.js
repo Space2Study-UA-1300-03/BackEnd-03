@@ -18,6 +18,13 @@ export const config = {
   CSC_API_KEY: process.env.CSC_API_KEY
 }
 
+export const CloudinaryAccess = {
+  CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+  CLOUDINARY_KEY: process.env.CLOUDINARY_KEY,
+  CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET,
+  CLOUDINARY_URL: process.env.CLOUDINARY_URL
+}
+
 export const superAdmin = {
   firstName: process.env.MAIL_FIRSTNAME,
   lastName: process.env.MAIL_LASTNAME,
