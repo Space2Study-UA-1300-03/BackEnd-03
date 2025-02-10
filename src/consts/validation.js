@@ -2,13 +2,20 @@ export const lengths = {
   MIN_PASSWORD_LENGTH: 8,
   MAX_PASSWORD_LENGTH: 25,
   MIN_NAME_LENGTH: 3,
-  MAX_NAME_LENGTH: 30
+  MAX_NAME_LENGTH: 30,
+  IMG_W: 800,
+  IMG_H: 800
 }
 
 export const photo = {
-  MIMETYPE: ['image/png', 'image/jpeg'],
+  CLOUDINARY_FOLDER: 'Space2Study-UA-1300-03',
+  ALLOWED_FORMATS: ['png', 'jpg', 'jpeg'],
+  MIMETYPE: ['image/png', 'image/jpeg', 'image/jpg'],
   FILE_SIZE: 10 * 1024 * 1024,
-  FIELDNAME_SIZE: 100
+  FIELDNAME_SIZE: 100,
+  IMG_QUALITY: 90,
+  IMG_FIT: 'cover',
+  TO_FORMAT: 'jpeg'
 }
 
 export const regex = {

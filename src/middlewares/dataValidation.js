@@ -22,18 +22,20 @@ export const dataValidation = (schema) => {
   }
 }
 
-export const fileValidation = (schema) => (req, _res, next) => {
-  if (!req.file) throw createError(422, FILE_IS_NOT_DEFINED)
+export const fileValidation = (schema) => {
+  return (req, _res, next) => {
+    if (!req.file) throw createError(422, FILE_IS_NOT_DEFINED)
 
-  const { data, error } = schema.safeParse(req.file)
+    const { data, error } = schema.safeParse(req.file)
 
-  if (error) {
-    console.log({ error })
-    const errorPrettify = fromError(error).toString()
-    logger.error(errorPrettify)
-    throw createError(422, FIELD_IS_NOT_OF_PROPER(errorPrettify))
+    if (error) {
+      console.log({ error })
+      const errorPrettify = fromError(error).toString()
+      logger.error(errorPrettify)
+      throw createError(422, FIELD_IS_NOT_OF_PROPER(errorPrettify))
+    }
+
+    req.file = data
+    next()
   }
-
-  req.file = data
-  next()
 }

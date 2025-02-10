@@ -10,7 +10,7 @@ export const authMiddleware = (req, _res, next) => {
 }
 
 export const restrictTo = (...roles) => {
-  return (req, res, next) => {
+  return (req, _res, next) => {
     if (!roles.includes(req.user.role)) {
       return next(createForbiddenError())
     }

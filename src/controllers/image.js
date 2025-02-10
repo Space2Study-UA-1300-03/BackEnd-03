@@ -1,3 +1,7 @@
+import { imageService } from '#services/image.js'
+
 export const updateImage = async (req, res) => {
-  res.status(200)
+  const updatedUser = await imageService.updateImage(req.user, req.file)
+
+  res.status(201).json(updatedUser)
 }

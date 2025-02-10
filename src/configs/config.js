@@ -18,7 +18,7 @@ export const config = {
   CSC_API_KEY: process.env.CSC_API_KEY
 }
 
-export const CloudinaryAccess = {
+export const cloudinaryAccess = {
   CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
   CLOUDINARY_KEY: process.env.CLOUDINARY_KEY,
   CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET,

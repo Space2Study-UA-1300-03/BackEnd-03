@@ -19,6 +19,10 @@ export const error = {
     code: 'FILE_IS_NOT_DEFINED',
     message: 'Request file should not be null or undefined'
   },
+  BUFFER_IS_NOT_DEFINED: {
+    code: 'BUFFER_IS_NOT_DEFINED',
+    message: 'Request buffer should not be null or undefined'
+  },
 
   /**
    * @description Error message when response status is 409
@@ -38,6 +42,14 @@ export const error = {
   SUBJECT_NOT_FOUND: {
     code: 'SUBJECT_NOT_FOUND',
     message: 'Subject was not found.'
+  },
+
+  /**
+   * @description Error message when response status is 502
+   */
+  BAD_GATEWAY_CLOUDINARY: {
+    code: 'BAD_GATEWAY_CLOUDINARY',
+    message: 'Upload error in Cloudinary.'
   },
 
   FIELD_IS_NOT_OF_PROPER: (fieldMassage) => ({
