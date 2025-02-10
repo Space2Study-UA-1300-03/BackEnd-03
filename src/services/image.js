@@ -6,7 +6,7 @@ import { error } from '#consts/validationError.js'
 import { v2 as cloudinary } from 'cloudinary'
 import { logger } from '#logger/logger.js'
 import streamifier from 'streamifier'
-// import User from '#models/user.js'
+import User from '#models/user.js'
 import sharp from 'sharp'
 
 const { FILE_IS_NOT_DEFINED, BUFFER_IS_NOT_DEFINED, BAD_GATEWAY_CLOUDINARY } = error
@@ -22,10 +22,11 @@ export const imageService = {
 
     const updatedBuffer = await bufferService.updatedBuffer(file.buffer)
 
-    const imgUploadedLink = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName)
+    const { url, publicId } = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName)
 
-    console.log({ imgUploadedLink })
-    return imgUploadedLink
+    const updatedUser = await User.findByIdAndUpdate(user.id, { photo: { url, publicId } }, { new: true })
+
+    return updatedUser
   }
 }
 
