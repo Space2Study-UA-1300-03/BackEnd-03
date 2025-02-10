@@ -1,9 +1,7 @@
 import { errors } from '#consts/errors.js'
 import { config } from '#configs/config.js'
-import NodeCache from 'node-cache'
 import { BLACKLISTED_COUNTRIES } from '#consts/blacklist.js'
-
-export const cache = new NodeCache({ stdTTL: 24 * 60 * 60, checkperiod: 60 * 60 })
+import cache from '#utils/cache.js'
 
 const API_BASE_URL = 'https://api.countrystatecity.in/v1'
 

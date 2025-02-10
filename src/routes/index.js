@@ -9,6 +9,8 @@ import { router as auth } from '#routes/auth.js'
 import { router as ping } from '#routes/ping.js'
 import { router as user } from '#routes/user.js'
 import { router as locationRoutes } from '#routes/locationRoutes.js'
+import { router as languageRoutes } from '#routes/languageRoutes.js'
+
 
 import express from 'express'
 
@@ -25,3 +27,5 @@ router.use('/offers', offer)
 router.use('/locations', locationRoutes)
 router.use('/categories', category)
 router.use('/subjects', subject)
+router.use('/languages', languageRoutes)
+
