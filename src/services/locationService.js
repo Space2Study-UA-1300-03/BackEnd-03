@@ -1,6 +1,7 @@
 import { errors } from '#consts/errors.js'
 import { config } from '#configs/config.js'
 import NodeCache from 'node-cache'
+import { BLACKLISTED_COUNTRIES } from '#consts/blacklist.js'
 
 export const cache = new NodeCache({ stdTTL: 24 * 60 * 60, checkperiod: 60 * 60 })
 
@@ -45,7 +46,7 @@ export const locationService = {
     if (!countries.length) throw new Error(errors.NOT_FOUND.message)
 
     const filteredCountries = countries
-      .filter(({ name }) => !['Russia', 'China'].includes(name))
+      .filter(({ name }) => !BLACKLISTED_COUNTRIES.includes(name))
       .map(({ iso2, name }) => ({ iso2, name }))
 
     cache.set(cacheKey, filteredCountries)
