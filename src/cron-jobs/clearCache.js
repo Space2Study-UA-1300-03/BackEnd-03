@@ -1,5 +1,5 @@
 import cron from 'node-cron'
-import { cache } from '#services/locationService.js'
+import cache from '#utils/cache.js'
 
 /**
  * Scheduled task to clear cache every 24 hours.
