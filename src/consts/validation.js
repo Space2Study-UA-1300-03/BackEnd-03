@@ -5,6 +5,12 @@ export const lengths = {
   MAX_NAME_LENGTH: 30
 }
 
+export const photo = {
+  MIMETYPE: ['image/png', 'image/jpeg'],
+  FILE_SIZE: 10 * 1024 * 1024,
+  FIELDNAME_SIZE: 100
+}
+
 export const regex = {
   EMAIL_PATTERN: /^([a-z\d]+([._-][a-z\d]+)*)@([a-z\d]+([.-][a-z\d]+)*\.[a-z]{2,})$/i,
   PASSWORD_PATTERN: /^(?=.*\d)(?=.*[a-zа-яєії])\S+$/i,

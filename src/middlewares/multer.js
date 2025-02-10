@@ -1,10 +1,13 @@
+import { photo } from '#consts/validation.js'
 import multer from 'multer'
+
+const { FILE_SIZE, FIELDNAME_SIZE } = photo
 
 const storage = multer.memoryStorage()
 export const upload = multer({
   storage,
   limits: {
-    fileSize: 10 * 1024 * 1024,
-    fieldNameSize: 100
+    fileSize: FILE_SIZE,
+    fieldNameSize: FIELDNAME_SIZE
   }
 })
