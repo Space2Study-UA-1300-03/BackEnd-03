@@ -1,7 +1,8 @@
 import { createUnauthorizedError } from '#utils/errorsHelper.js'
 import { tokenService } from '#services/token.js'
+import { userService } from '#services/user.js'
 
-export const tokenValidation = (accessToken) => {
+export const tokenValidation = async (accessToken) => {
   if (!accessToken) {
     throw createUnauthorizedError()
   }
@@ -11,5 +12,11 @@ export const tokenValidation = (accessToken) => {
     throw createUnauthorizedError()
   }
 
-  return userData
+  const user = await userService.getUserById(userData.id)
+
+  if (!user) {
+    throw createUnauthorizedError()
+  }
+
+  return user
 }

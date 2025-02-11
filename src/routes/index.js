@@ -1,16 +1,16 @@
 import { router as resourcesCategory } from '#routes/resourcesCategory.js'
 import { router as adminInvitation } from '#routes/adminInvitation.js'
+import { router as locationRoutes } from '#routes/locationRoutes.js'
+import { router as languageRoutes } from '#routes/languageRoutes.js'
 import { router as question } from '#routes/question.js'
 import { router as category } from '#routes/category.js'
 import { router as subject } from '#routes/subject.js'
 import { router as email } from '#routes/email.js'
 import { router as offer } from '#routes/offer.js'
+import { router as image } from '#routes/image.js'
 import { router as auth } from '#routes/auth.js'
 import { router as ping } from '#routes/ping.js'
 import { router as user } from '#routes/user.js'
-import { router as locationRoutes } from '#routes/locationRoutes.js'
-import { router as languageRoutes } from '#routes/languageRoutes.js'
-
 
 import express from 'express'
 
@@ -28,4 +28,4 @@ router.use('/locations', locationRoutes)
 router.use('/categories', category)
 router.use('/subjects', subject)
 router.use('/languages', languageRoutes)
-
+router.use('/images', image)
