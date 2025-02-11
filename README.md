@@ -118,6 +118,60 @@ To run unit test open terminal and run `npm run test` in it.
   - All configuration is implemented via environment variable that is located inside
     `.env` file
 
+# Database Seeding
+
+## Description
+The seeding process is used to populate the database with initial or test data. In this project, commands are available to automate this process for the following entities: `Categories`, `Subjects`, and `Languages`.
+
+## Commands
+
+1. **Seeding Categories**
+   ```
+   npm run seed:categories
+   ```
+   This command adds initial data for categories from the `src/seed/data/categories.json` file. If a category already exists in the database, it will be skipped.
+
+2. **Seeding Subjects**
+   ```
+   npm run seed:subjects
+   ```
+   This command adds initial data for subjects from the `src/seed/data/subjects.json` file. If a subject already exists in the database, it will be skipped.
+
+3. **Seeding Languages**
+   ```
+   npm run seed:languages
+   ```
+   This command adds initial data for languages from a predefined list in the code. If a language already exists in the database, it will be skipped.
+
+4. **Seeding All Data**
+   ```
+   npm run seed:all
+   ```
+   Executes all three commands: `seed:categories`, `seed:subjects`, and `seed:languages`.
+
+## Console Messages
+- **New Records Added**: If a record is successfully added, the console will show a message like:
+  ```
+  info: Language "English" has been added.
+  ```
+- **Records Already Exist**: If a record already exists in the database, the console will show:
+  ```
+  info: Language "English" already exists.
+  ```
+- **Summary**: After seeding is complete, the console will display a summary message:
+  ```
+  info: Seeding process for languages completed successfully.
+  ```
+
+## Data Files
+- Categories: `src/seed/data/categories.json`
+- Subjects: `src/seed/data/subjects.json`
+
+## Important:
+Before running the seeding commands, ensure the following:
+1. The `.env` file contains a valid `MONGODB_URL`.
+2. The MongoDB server is running and accessible.
+
 ### Testing
 
 - Tests are implemented in the format of contract tests. We test services, controllers, middlewares, utils or subscriptions on the running application.
