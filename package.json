@@ -8,7 +8,10 @@
     "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
     "start:prod": "cross-env NODE_ENV=production node src/app.js",
     "lint": "eslint . --fix",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "clear:cache:all": "node src/seed/manualClearCache.js all",
+    "clear:cache:languages": "node src/seed/manualClearCache.js languages",
+    "clear:cache:locations": "node src/seed/manualClearCache.js locations"
   },
   "author": "SoftServe ITA",
   "license": "ISC",

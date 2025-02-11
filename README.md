@@ -118,6 +118,52 @@ To run unit test open terminal and run `npm run test` in it.
   - All configuration is implemented via environment variable that is located inside
     `.env` file
 
+# Cache Clearing Functionality
+
+This project includes functionality for managing cache, specifically for:
+1. Clearing all cached data.
+2. Clearing cached data for languages.
+3. Clearing cached data for locations.
+
+## Commands
+
+You can use the following npm scripts to manually clear the cache:
+
+### 1. Clear All Cache
+To clear all cached data:
+```bash
+npm run clear:cache:all
+```
+This command will flush all cache entries from the system.
+
+### 2. Clear Languages Cache
+To clear only the cache related to languages:
+```bash
+npm run clear:cache:languages
+```
+This command will remove the cache entry for `languages` from the system.
+
+### 3. Clear Locations Cache
+To clear only the cache related to locations (countries and cities):
+```bash
+npm run clear:cache:locations
+```
+This command will:
+- Remove the cache entry for `countries`.
+- Remove all cache entries for cities, identified by keys with the prefix `cities_`.
+
+## Scheduled Cache Clearing
+The system also includes a scheduled task to automatically clear all cache every 24 hours at midnight (UTC). This is managed using `node-cron`.
+
+### Schedule Details:
+- **Time**: Midnight (00:00 UTC)
+- **Frequency**: Daily
+
+## Notes
+- Ensure that the `node-cache` module is properly configured in your project.
+- Use these commands carefully in production environments to avoid accidental data loss in the cache.
+
+
 ### Testing
 
 - Tests are implemented in the format of contract tests. We test services, controllers, middlewares, utils or subscriptions on the running application.
