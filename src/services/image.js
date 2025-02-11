@@ -18,13 +18,13 @@ export const imageService = {
   updateImage: async (user, file) => {
     if (!file || !file.buffer) throw createError(422, FILE_IS_NOT_DEFINED)
 
-    const uniqueName = uniqueFileName(file.originalname, user.id)
+    const uniqueName = uniqueFileName(file.originalname, user._id)
 
     const updatedBuffer = await bufferService.updatedBuffer(file.buffer)
 
-    const { url, publicId } = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName, user.id)
+    const { url, publicId } = await cloudinaryService.uploadBufferToCloudinary(updatedBuffer, uniqueName, user._id)
 
-    const updatedUser = await User.findByIdAndUpdate(user.id, { photo: { url, publicId } }, { new: true })
+    const updatedUser = await User.findByIdAndUpdate(user._id, { photo: { url, publicId } }, { new: true })
 
     return updatedUser
   }

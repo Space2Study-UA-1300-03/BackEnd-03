@@ -7,6 +7,6 @@ import { upload } from '#middlewares/multer.js'
 import express from 'express'
 
 export const router = express.Router()
-router.use(authMiddleware)
+router.use(asyncWrapper(authMiddleware))
 
 router.patch('/update', upload.single('photo'), fileValidation(imageValidationSchema), asyncWrapper(updateImage))

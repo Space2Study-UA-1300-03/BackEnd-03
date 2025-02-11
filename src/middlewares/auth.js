@@ -1,9 +1,11 @@
 import { createForbiddenError } from '#utils/errorsHelper.js'
 import { tokenValidation } from '#utils/tokenValidation.js'
 
-export const authMiddleware = (req, _res, next) => {
+export const authMiddleware = async (req, _res, next) => {
   const accessToken = req.cookies.accessToken || req.headers.cookie
-  const userData = tokenValidation(accessToken)
+
+  const userData = await tokenValidation(accessToken)
+
   req.user = userData
 
   next()
