@@ -1,11 +1,10 @@
-import bcrypt from 'bcrypt';
-
-import { SALT_ROUNDS } from '#consts/auth.js'
 import { allowedUserFieldsForUpdate } from '#validation/services/user.js'
 import { filterAllowedFields } from '#utils/filterAllowedFields.js'
 import { createError } from '#utils/errorsHelper.js'
+import { SALT_ROUNDS } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
 import User from '#models/user.js'
+import bcrypt from 'bcrypt'
 
 const { DOCUMENT_NOT_FOUND, ALREADY_REGISTERED } = errors
 

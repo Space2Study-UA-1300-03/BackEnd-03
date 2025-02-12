@@ -13,6 +13,9 @@
     "seed:subjects": "node src/seed/seedSubjects.js",
     "seed:languages": "node src/seed/seedLanguages.js",
     "seed:all": "npm run seed:categories && npm run seed:subjects && npm run seed:languages"
+    "clear:cache:all": "node src/seed/manualClearCache.js all",
+    "clear:cache:languages": "node src/seed/manualClearCache.js languages",
+    "clear:cache:locations": "node src/seed/manualClearCache.js locations"
   },
   "author": "SoftServe ITA",
   "license": "ISC",
@@ -29,6 +32,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cloudinary": "^2.5.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cron": "^2.1.0",
@@ -45,8 +49,11 @@
     "node-cron": "^3.0.3",
     "nodemailer": "^6.7.7",
     "pug": "^3.0.2",
+    "sharp": "^0.33.5",
+    "streamifier": "^0.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.0.5",
     "winston": "^3.8.0",
     "zod": "^3.24.1",
     "zod-validation-error": "^3.4.0"

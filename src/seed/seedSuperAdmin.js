@@ -1,3 +1,4 @@
+import { userService } from '#src/services/user.js'
 import { superAdmin } from '#configs/config.js'
 import { logger } from '#logger/logger.js'
 import { roles } from '#consts/auth.js'
@@ -9,12 +10,14 @@ const { SUPERADMIN } = roles
 export const SeedSuperAdmin = {
   createSuperAdmin: async () => {
     try {
+      const hashedPassword = await userService.hashPassword(password)
+
       const superAdmin = {
         role: SUPERADMIN,
         firstName,
         lastName,
         email,
-        password,
+        password: hashedPassword,
         active: true,
         isEmailConfirmed: true
       }

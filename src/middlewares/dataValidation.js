@@ -3,7 +3,7 @@ import { error } from '#consts/validationError.js'
 import { fromError } from 'zod-validation-error'
 import { logger } from '#logger/logger.js'
 
-const { FIELD_IS_NOT_OF_PROPER, BODY_IS_NOT_DEFINED } = error
+const { FIELD_IS_NOT_OF_PROPER, BODY_IS_NOT_DEFINED, FILE_IS_NOT_DEFINED } = error
 
 export const dataValidation = (schema) => {
   return (req, _res, next) => {
@@ -18,6 +18,24 @@ export const dataValidation = (schema) => {
     }
 
     req.body = data
+    next()
+  }
+}
+
+export const fileValidation = (schema) => {
+  return (req, _res, next) => {
+    if (!req.file) throw createError(422, FILE_IS_NOT_DEFINED)
+
+    const { data, error } = schema.safeParse(req.file)
+
+    if (error) {
+      console.log({ error })
+      const errorPrettify = fromError(error).toString()
+      logger.error(errorPrettify)
+      throw createError(422, FIELD_IS_NOT_OF_PROPER(errorPrettify))
+    }
+
+    req.file = data
     next()
   }
 }

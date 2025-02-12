@@ -74,8 +74,11 @@ const userSchema = new Schema(
       country: { type: String },
       city: { type: String }
     },
-    photo: String,
-    professionalSummary: String,
+    photo: {
+      url: { type: String },
+      publicId: { type: String }
+    },
+    professionalSummary: { type: String },
     mainSubjects: {
       student: {
         type: [Schema.Types.ObjectId],

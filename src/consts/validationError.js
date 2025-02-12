@@ -13,7 +13,15 @@ export const error = {
    */
   BODY_IS_NOT_DEFINED: {
     code: 'BODY_IS_NOT_DEFINED',
-    message: 'request body should not be null or undefined'
+    message: 'Request body should not be null or undefined'
+  },
+  FILE_IS_NOT_DEFINED: {
+    code: 'FILE_IS_NOT_DEFINED',
+    message: 'Request file should not be null or undefined'
+  },
+  BUFFER_IS_NOT_DEFINED: {
+    code: 'BUFFER_IS_NOT_DEFINED',
+    message: 'Request buffer should not be null or undefined'
   },
 
   /**
@@ -36,6 +44,14 @@ export const error = {
     message: 'Subject was not found.'
   },
 
+  /**
+   * @description Error message when response status is 502
+   */
+  BAD_GATEWAY_CLOUDINARY: {
+    code: 'BAD_GATEWAY_CLOUDINARY',
+    message: 'Upload error in Cloudinary.'
+  },
+
   FIELD_IS_NOT_OF_PROPER: (fieldMassage) => ({
     code: 'FIELD_IS_NOT_OF_PROPER',
     message: fieldMassage
@@ -48,5 +64,11 @@ export const errorMassages = {
   }),
   FIELD_IS_LONGER_THAN_MAX: (length) => ({
     message: `Field is longer than max length in: ${length}.`
+  }),
+  MAX_FILE_SIZE: (size) => ({
+    message: `The file size cannot be more than: ${size}mb.`
+  }),
+  INVALID_MIMETYPE: (mimetype) => ({
+    message: `The mimetype should only be [${mimetype}].`
   })
 }
