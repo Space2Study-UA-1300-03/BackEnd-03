@@ -9,6 +9,10 @@
     "start:prod": "cross-env NODE_ENV=production node src/app.js",
     "lint": "eslint . --fix",
     "pre-commit": "lint-staged",
+    "seed:categories": "node src/seed/seedCategories.js",
+    "seed:subjects": "node src/seed/seedSubjects.js",
+    "seed:languages": "node src/seed/seedLanguages.js",
+    "seed:all": "npm run seed:categories && npm run seed:subjects && npm run seed:languages"
     "clear:cache:all": "node src/seed/manualClearCache.js all",
     "clear:cache:languages": "node src/seed/manualClearCache.js languages",
     "clear:cache:locations": "node src/seed/manualClearCache.js locations"
