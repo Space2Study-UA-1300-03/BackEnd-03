@@ -118,6 +118,105 @@ To run unit test open terminal and run `npm run test` in it.
   - All configuration is implemented via environment variable that is located inside
     `.env` file
 
+# Database Seeding
+
+## Description
+The seeding process is used to populate the database with initial or test data. In this project, commands are available to automate this process for the following entities: `Categories`, `Subjects`, and `Languages`.
+
+## Commands
+
+1. **Seeding Categories**
+   ```
+   npm run seed:categories
+   ```
+   This command adds initial data for categories from the `src/seed/data/categories.json` file. If a category already exists in the database, it will be skipped.
+
+2. **Seeding Subjects**
+   ```
+   npm run seed:subjects
+   ```
+   This command adds initial data for subjects from the `src/seed/data/subjects.json` file. If a subject already exists in the database, it will be skipped.
+
+3. **Seeding Languages**
+   ```
+   npm run seed:languages
+   ```
+   This command adds initial data for languages from a predefined list in the code. If a language already exists in the database, it will be skipped.
+
+4. **Seeding All Data**
+   ```
+   npm run seed:all
+   ```
+   Executes all three commands: `seed:categories`, `seed:subjects`, and `seed:languages`.
+
+## Console Messages
+- **New Records Added**: If a record is successfully added, the console will show a message like:
+  ```
+  info: Language "English" has been added.
+  ```
+- **Records Already Exist**: If a record already exists in the database, the console will show:
+  ```
+  info: Language "English" already exists.
+  ```
+- **Summary**: After seeding is complete, the console will display a summary message:
+  ```
+  info: Seeding process for languages completed successfully.
+  ```
+
+## Data Files
+- Categories: `src/seed/data/categories.json`
+- Subjects: `src/seed/data/subjects.json`
+
+## Important:
+Before running the seeding commands, ensure the following:
+1. The `.env` file contains a valid `MONGODB_URL`.
+2. The MongoDB server is running and accessible.
+
+# Cache Clearing Functionality
+
+This project includes functionality for managing cache, specifically for:
+1. Clearing all cached data.
+2. Clearing cached data for languages.
+3. Clearing cached data for locations.
+
+## Commands
+
+You can use the following npm scripts to manually clear the cache:
+
+### 1. Clear All Cache
+To clear all cached data:
+```bash
+npm run clear:cache:all
+```
+This command will flush all cache entries from the system.
+
+### 2. Clear Languages Cache
+To clear only the cache related to languages:
+```bash
+npm run clear:cache:languages
+```
+This command will remove the cache entry for `languages` from the system.
+
+### 3. Clear Locations Cache
+To clear only the cache related to locations (countries and cities):
+```bash
+npm run clear:cache:locations
+```
+This command will:
+- Remove the cache entry for `countries`.
+- Remove all cache entries for cities, identified by keys with the prefix `cities_`.
+
+## Scheduled Cache Clearing
+The system also includes a scheduled task to automatically clear all cache every 24 hours at midnight (UTC). This is managed using `node-cron`.
+
+### Schedule Details:
+- **Time**: Midnight (00:00 UTC)
+- **Frequency**: Daily
+
+## Notes
+- Ensure that the `node-cache` module is properly configured in your project.
+- Use these commands carefully in production environments to avoid accidental data loss in the cache.
+
 ### Testing
 
 - Tests are implemented in the format of contract tests. We test services, controllers, middlewares, utils or subscriptions on the running application.
