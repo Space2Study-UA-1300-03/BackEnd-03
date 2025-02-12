@@ -7,23 +7,6 @@ import bcrypt from 'bcrypt'
 const { DOCUMENT_NOT_FOUND, ALREADY_REGISTERED } = errors
 
 export const userService = {
-  getUsers: async ({ match, sort, skip, limit }) => {
-    const count = await User.countDocuments(match)
-
-    const items = await User.find(match)
-      .select('+status')
-      .sort(sort)
-      .collation({ locale: 'en_US', strength: 2, caseLevel: false })
-      .skip(skip)
-      .limit(limit)
-      .exec()
-
-    return {
-      items,
-      count
-    }
-  },
-
   getUserById: async (id, role) => {
     return await User.findOne({ _id: id, ...(role && { role }) })
       .select('+lastLoginAs +isEmailConfirmed +isFirstLogin')

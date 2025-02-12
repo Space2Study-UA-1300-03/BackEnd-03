@@ -1,21 +1,7 @@
-import { createAggregateOptions } from '#utils/users/createAggregateOptions.js'
 import { userService } from '#services/user.js'
 
-export const getUsers = async (req, res) => {
-  const { skip, limit, sort, match } = createAggregateOptions(req.query)
-
-  const users = await userService.getUsers({ skip, limit, sort, match })
-
-  res.status(200).json(users)
-}
-
-export const getUserById = async (req, res) => {
-  const { id } = req.params
-  const { role } = req.query
-
-  const user = await userService.getUserById(id, role)
-
-  res.status(200).json(user)
+export const getMe = async (req, res) => {
+  res.status(200).json(req.user)
 }
 
 export const updateUser = async (req, res) => {
