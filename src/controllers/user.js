@@ -1,5 +1,4 @@
 import { createAggregateOptions } from '#utils/users/createAggregateOptions.js'
-import { createForbiddenError } from '#utils/errorsHelper.js'
 import { userService } from '#services/user.js'
 
 export const getUsers = async (req, res) => {
@@ -20,15 +19,9 @@ export const getUserById = async (req, res) => {
 }
 
 export const updateUser = async (req, res) => {
-  const { id } = req.params
-  const { role } = req.user
-  const updateData = req.body
+  const updatedUser = await userService.updateUser(req.user, req.body)
 
-  if (id !== req.user.id) throw createForbiddenError()
-
-  await userService.updateUser(id, role, updateData)
-
-  res.status(204).end()
+  res.status(201).json(updatedUser)
 }
 
 export const updateStatus = async (req, res) => {
