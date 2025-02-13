@@ -28,18 +28,33 @@ export const categoriesService = {
     }
   },
 
+  getCategoryNames: async (page, limit) => {
+    const totalCategories = await Category.countDocuments()
+
+    const totalPages = Math.ceil(totalCategories / limit)
+    const skip = (page - 1) * limit
+
+    const categories = await Category.find({}, 'categoryName').sort({ createdAt: -1 }).skip(skip).limit(limit)
+    if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
+
+    return {
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalCategories,
+        itemsPerPage: limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      },
+      data: categories
+    }
+  },
+
   getCategoryById: async (id) => {
     const category = await Category.findById(id)
     if (!category) throw createError(404, CATEGORY_NOT_FOUND)
 
     return category
-  },
-
-  getCategoryNames: async () => {
-    const categories = await Category.find({}, 'categoryName')
-    if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
-
-    return categories
   },
 
   createCategory: async (categoryData) => {
