@@ -6,11 +6,26 @@ import Subject from '#models/subject.js'
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
 export const categoriesService = {
-  getAllCategories: async () => {
-    const categories = await Category.find()
+  getAllCategories: async (page, limit) => {
+    const totalCategories = await Category.countDocuments()
+
+    const totalPages = Math.ceil(totalCategories / limit)
+    const skip = (page - 1) * limit
+
+    const categories = await Category.find().sort({ createdAt: -1 }).skip(skip).limit(limit)
     if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    return categories
+    return {
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalCategories,
+        itemsPerPage: limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      },
+      data: categories
+    }
   },
 
   getCategoryById: async (id) => {

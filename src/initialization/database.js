@@ -15,7 +15,7 @@ const dropAllCollections = async () => {
 
 const checkForLocalDB = async () => {
   if (process.env.NODE_ENV === 'development') {
-    await dropAllCollections()
+    // await dropAllCollections()
   }
 }
 

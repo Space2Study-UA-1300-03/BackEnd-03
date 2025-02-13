@@ -9,10 +9,13 @@ import { createCategoryValidationSchema } from '#validation/schemas/createCatego
 import { dataValidation } from '#middlewares/dataValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
+import { authMiddleware } from '#middlewares/auth.js'
 
 import express from 'express'
 
 export const router = express.Router()
+
+router.use(asyncWrapper(authMiddleware))
 
 router.get('/', asyncWrapper(getAllCategories))
 router.get('/names', asyncWrapper(getCategoryNames))

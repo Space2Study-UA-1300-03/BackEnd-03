@@ -1,8 +1,11 @@
 import { categoriesService } from '#services/category.js'
 import { subjectsService } from '#services/subject.js'
 
-export const getAllCategories = async (_req, res) => {
-  const categories = await categoriesService.getAllCategories()
+export const getAllCategories = async (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
+
+  const categories = await categoriesService.getAllCategories(page, limit)
 
   res.status(200).json(categories)
 }
