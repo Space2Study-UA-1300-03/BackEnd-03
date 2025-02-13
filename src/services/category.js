@@ -6,6 +6,13 @@ import Subject from '#models/subject.js'
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
 export const categoriesService = {
+  /**
+   * Retrieves all categories with pagination.
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of categories.
+   * @throws {Error} If no categories are found.
+   */
   getAllCategories: async (page, limit) => {
     const totalCategories = await Category.countDocuments()
 
@@ -27,7 +34,13 @@ export const categoriesService = {
       data: categories
     }
   },
-
+  /**
+   * Retrieves category names with pagination.
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of category names.
+   * @throws {Error} If no categories are found.
+   */
   getCategoryNames: async (page, limit) => {
     const totalCategories = await Category.countDocuments()
 
