@@ -12,5 +12,5 @@ export const tokenNames = {
   CONFIRM_TOKEN: 'confirmToken'
 }
 
-export const SALT_ROUNDS = 10;
+export const SALT_ROUNDS = 10
 export const oneDayInMs = 86400000

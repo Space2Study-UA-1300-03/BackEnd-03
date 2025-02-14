@@ -7,10 +7,11 @@ import {
   createCategory
 } from '#controllers/category.js'
 import { createCategoryValidationSchema } from '#validation/schemas/createCategory.js'
+import { authMiddleware, restrictTo } from '#middlewares/auth.js'
 import { dataValidation } from '#middlewares/dataValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
-import { authMiddleware } from '#middlewares/auth.js'
+import { roles } from '#consts/auth.js'
 
 import express from 'express'
 
@@ -29,4 +30,5 @@ router.get('/:id?/subjects/names', asyncWrapper(getSubjectNamesByCategoryId))
 /**
  * @description Create a new category only for admin
  */
+router.use(asyncWrapper(restrictTo(roles.ADMIN, roles.SUPERADMIN)))
 router.post('/', dataValidation(createCategoryValidationSchema), asyncWrapper(createCategory))

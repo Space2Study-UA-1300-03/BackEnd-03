@@ -11,11 +11,11 @@ export const authMiddleware = async (req, _res, next) => {
   next()
 }
 
-export const restrictTo = (...roles) => {
+export const restrictTo = (...allowedRoles) => {
   return (req, _res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return next(createForbiddenError())
-    }
+    const hasAllowedRole = req.user.role.some((userRole) => allowedRoles.includes(userRole))
+    if (!hasAllowedRole) return next(createForbiddenError())
+
     next()
   }
 }
