@@ -8,6 +8,14 @@ export const getAllSubjects = async (req, res) => {
 
   res.status(200).json(subjects)
 }
+export const getAllSubjectsNames = async (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
+
+  const subjects = await subjectsService.getAllSubjectsNames(page, limit)
+
+  res.status(200).json(subjects)
+}
 
 export const createSubjects = async (req, res) => {
   const newSubject = await subjectsService.createSubject(req.body)
