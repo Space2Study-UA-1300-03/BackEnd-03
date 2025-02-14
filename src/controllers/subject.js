@@ -1,7 +1,10 @@
 import { subjectsService } from '#services/subject.js'
 
-export const getAllSubjects = async (_req, res) => {
-  const subjects = await subjectsService.getAllSubjects()
+export const getAllSubjects = async (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
+
+  const subjects = await subjectsService.getAllSubjects(page, limit)
 
   res.status(200).json(subjects)
 }

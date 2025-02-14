@@ -7,11 +7,26 @@ import mongoose from 'mongoose'
 const { CATEGORY_NOT_FOUND, SUBJECT_NOT_FOUND, INVALID_ID } = error
 
 export const subjectsService = {
-  getAllSubjects: async () => {
-    const subjects = await Subject.find()
+  getAllSubjects: async (page, limit) => {
+    const totalCategories = await Subject.countDocuments()
+
+    const totalPages = Math.ceil(totalCategories / limit)
+    const skip = (page - 1) * limit
+
+    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(limit)
     if (!subjects.length === 0) throw createError(404, SUBJECT_NOT_FOUND)
 
-    return subjects
+    return {
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalCategories,
+        itemsPerPage: limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      },
+      data: subjects
+    }
   },
 
   createSubject: async (subjectData) => {
