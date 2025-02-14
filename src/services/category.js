@@ -70,6 +70,51 @@ export const categoriesService = {
     return category
   },
 
+  getSubjectByCategoryId: async (id, page, limit) => {
+    const totalSubjects = await Subject.countDocuments({ categoryId: id })
+
+    const totalPages = Math.ceil(totalSubjects / limit)
+    const skip = (page - 1) * limit
+
+    const allSubjectNames = await Subject.find({ categoryId: id }).sort({ createdAt: -1 }).skip(skip).limit(limit)
+
+    return {
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalSubjects,
+        itemsPerPage: limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      },
+      data: allSubjectNames
+    }
+  },
+
+  getSubjectNamesByCategoryId: async (id, page, limit) => {
+    const totalSubjects = await Subject.countDocuments({ categoryId: id })
+
+    const totalPages = Math.ceil(totalSubjects / limit)
+    const skip = (page - 1) * limit
+
+    const allSubjectNames = await Subject.find({ categoryId: id }, 'subjectName categoryId')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+
+    return {
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalSubjects,
+        itemsPerPage: limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      },
+      data: allSubjectNames
+    }
+  },
+
   createCategory: async (categoryData) => {
     const { categoryName, ...data } = categoryData
 
@@ -79,11 +124,5 @@ export const categoriesService = {
     const newCategory = await Category.create({ categoryName, appearance: { ...data } })
 
     return newCategory
-  },
-
-  getSubjectNamesByCategoryId: async (id) => {
-    const allSubjectNames = await Subject.find({ categoryId: id })
-
-    return allSubjectNames
   }
 }

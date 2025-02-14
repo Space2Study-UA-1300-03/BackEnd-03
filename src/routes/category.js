@@ -1,5 +1,6 @@
 import {
   getSubjectNamesByCategoryId,
+  getSubjectByCategoryId,
   getCategoryNames,
   getAllCategories,
   getCategoryById,
@@ -22,6 +23,7 @@ router.get('/names', asyncWrapper(getCategoryNames))
 
 router.param('id', idValidation)
 router.get('/:id', asyncWrapper(getCategoryById))
+router.get('/:id?/subjects', asyncWrapper(getSubjectByCategoryId))
 router.get('/:id?/subjects/names', asyncWrapper(getSubjectNamesByCategoryId))
 
 /**

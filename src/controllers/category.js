@@ -31,11 +31,27 @@ export const createCategory = async (req, res) => {
   res.status(201).json(newCategory)
 }
 
-export const getSubjectNamesByCategoryId = async (req, res) => {
+export const getSubjectByCategoryId = async (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
   const { id } = req.params
 
   const subjectsNames =
-    id !== ':id' ? await categoriesService.getSubjectNamesByCategoryId(id) : await subjectsService.getAllSubjects()
+    id !== ':id'
+      ? await categoriesService.getSubjectByCategoryId(id, page, limit)
+      : await subjectsService.getAllSubjects(page, limit)
+
+  res.status(200).json(subjectsNames)
+}
+export const getSubjectNamesByCategoryId = async (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
+  const { id } = req.params
+
+  const subjectsNames =
+    id !== ':id'
+      ? await categoriesService.getSubjectNamesByCategoryId(id, page, limit)
+      : await subjectsService.getAllSubjects(page, limit)
 
   res.status(200).json(subjectsNames)
 }
