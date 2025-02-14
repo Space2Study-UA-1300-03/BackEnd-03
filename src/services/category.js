@@ -5,6 +5,9 @@ import Subject from '#models/subject.js'
 
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
+/**
+ * Service for managing categories and related subjects.
+ */
 export const categoriesService = {
   /**
    * Retrieves all categories with pagination.
@@ -34,6 +37,7 @@ export const categoriesService = {
       data: categories
     }
   },
+
   /**
    * Retrieves category names with pagination.
    * @param {number} page - The current page number.
@@ -70,6 +74,13 @@ export const categoriesService = {
     return category
   },
 
+  /**
+   * Retrieves subjects by category ID with pagination.
+   * @param {string} id - The ID of the category.
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
+   */
   getSubjectByCategoryId: async (id, page, limit) => {
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
 
@@ -91,6 +102,13 @@ export const categoriesService = {
     }
   },
 
+  /**
+   * Retrieves subject names by category ID with pagination.
+   * @param {string} id - The ID of the category.
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
+   */
   getSubjectNamesByCategoryId: async (id, page, limit) => {
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
 
