@@ -19,22 +19,26 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjects: async (page, limit) => {
-    const totalCategories = await Subject.countDocuments()
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    const totalPages = Math.ceil(totalCategories / limit)
-    const skip = (page - 1) * limit
+    const totalSubjects = await Subject.countDocuments()
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(limit)
-    if (!subjects.length === 0) throw createError(404, SUBJECT_NOT_FOUND)
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
-        totalItems: totalCategories,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        totalItems: totalSubjects,
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: subjects
     }
@@ -49,22 +53,29 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjectsNames: async (page, limit) => {
-    const totalCategories = await Subject.countDocuments()
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    const totalPages = Math.ceil(totalCategories / limit)
-    const skip = (page - 1) * limit
+    const totalSubjects = await Subject.countDocuments()
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const subjects = await Subject.find({}, 'subjectName categoryId').sort({ createdAt: -1 }).skip(skip).limit(limit)
-    if (!subjects.length === 0) throw createError(404, SUBJECT_NOT_FOUND)
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const subjects = await Subject.find({}, 'subjectName categoryId')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(normalizedLimit)
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
-        totalItems: totalCategories,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        totalItems: totalSubjects,
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: subjects
     }

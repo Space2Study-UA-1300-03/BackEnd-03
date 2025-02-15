@@ -17,22 +17,26 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getAllCategories: async (page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
+
     const totalCategories = await Category.countDocuments()
+    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const totalPages = Math.ceil(totalCategories / limit)
-    const skip = (page - 1) * limit
+    const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
 
-    const categories = await Category.find().sort({ createdAt: -1 }).skip(skip).limit(limit)
-    if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const categories = await Category.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
         totalItems: totalCategories,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: categories
     }
@@ -46,22 +50,26 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getCategoryNames: async (page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
+
     const totalCategories = await Category.countDocuments()
+    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const totalPages = Math.ceil(totalCategories / limit)
-    const skip = (page - 1) * limit
+    const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
 
-    const categories = await Category.find({}, 'categoryName').sort({ createdAt: -1 }).skip(skip).limit(limit)
-    if (categories.length === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const categories = await Category.find({}, 'categoryName').sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
         totalItems: totalCategories,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: categories
     }
@@ -82,21 +90,29 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
    */
   getSubjectByCategoryId: async (id, page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
+
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
-    const totalPages = Math.ceil(totalSubjects / limit)
-    const skip = (page - 1) * limit
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
 
-    const allSubjectNames = await Subject.find({ categoryId: id }).sort({ createdAt: -1 }).skip(skip).limit(limit)
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const allSubjectNames = await Subject.find({ categoryId: id })
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(normalizedLimit)
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
         totalItems: totalSubjects,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: allSubjectNames
     }
@@ -110,10 +126,15 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
    */
   getSubjectNamesByCategoryId: async (id, page, limit) => {
-    const totalSubjects = await Subject.countDocuments({ categoryId: id })
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    const totalPages = Math.ceil(totalSubjects / limit)
-    const skip = (page - 1) * limit
+    const totalSubjects = await Subject.countDocuments({ categoryId: id })
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
 
     const allSubjectNames = await Subject.find({ categoryId: id }, 'subjectName categoryId')
       .sort({ createdAt: -1 })
@@ -122,12 +143,12 @@ export const categoriesService = {
 
     return {
       pagination: {
-        currentPage: page,
+        currentPage: normalizedPage,
         totalPages,
         totalItems: totalSubjects,
-        itemsPerPage: limit,
-        hasNextPage: page < totalPages,
-        hasPrevPage: page > 1
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
       },
       data: allSubjectNames
     }
