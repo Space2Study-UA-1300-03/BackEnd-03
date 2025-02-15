@@ -4,26 +4,51 @@ import { refs } from '#consts/models.js'
 import { Schema, model } from 'mongoose'
 
 const { MAIN_ROLE_ENUM, SPOKEN_LANG_ENUM, PROFICIENCY_LEVEL_ENUM, OFFER_STATUS_ENUM } = enums
+const { OFFER, USER, SUBJECT, CATEGORY } = refs
 const { ENUM_CAN_BE_ONE_OF } = errors
-const { OFFER, USER } = refs
 
 const offerSchema = new Schema(
   {
+    title: {
+      type: String
+    },
+    description: {
+      type: String
+    },
     price: {
       type: Number
     },
+
+    aboutAuthor: {
+      author: {
+        type: Schema.Types.ObjectId,
+        ref: USER
+      },
+      authorRole: {
+        type: String,
+        enum: {
+          values: MAIN_ROLE_ENUM,
+          message: ENUM_CAN_BE_ONE_OF('author role', MAIN_ROLE_ENUM)
+        }
+      }
+    },
+    aboutInterests: {
+      categoryInfo: {
+        type: Schema.Types.ObjectId,
+        ref: CATEGORY
+      },
+      subjectInfo: {
+        type: Schema.Types.ObjectId,
+        ref: SUBJECT
+      }
+    },
+
     proficiencyLevel: {
       type: String,
       enum: {
         values: PROFICIENCY_LEVEL_ENUM,
         message: ENUM_CAN_BE_ONE_OF('proficiency level', PROFICIENCY_LEVEL_ENUM)
       }
-    },
-    title: {
-      type: String
-    },
-    description: {
-      type: String
     },
     languages: {
       type: [String],
@@ -32,17 +57,7 @@ const offerSchema = new Schema(
         message: ENUM_CAN_BE_ONE_OF('language', SPOKEN_LANG_ENUM)
       }
     },
-    authorRole: {
-      type: String,
-      enum: {
-        values: MAIN_ROLE_ENUM,
-        message: ENUM_CAN_BE_ONE_OF('author role', MAIN_ROLE_ENUM)
-      }
-    },
-    author: {
-      type: Schema.Types.ObjectId,
-      ref: USER
-    },
+
     status: {
       type: String,
       enum: {
@@ -51,17 +66,15 @@ const offerSchema = new Schema(
       },
       default: OFFER_STATUS_ENUM[0]
     },
+
     FAQ: {
       type: [
         {
-          question: {
-            type: String
-          },
-          answer: {
-            type: String
-          }
+          question: { type: String },
+          answer: { type: String }
         }
-      ]
+      ],
+      default: []
     }
   },
   {
