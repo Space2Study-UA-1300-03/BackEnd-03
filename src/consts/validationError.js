@@ -59,6 +59,9 @@ export const error = {
 }
 
 export const errorMassages = {
+  UNIQUE_LANGUAGES: () => ({
+    message: 'Languages in an array must be unique'
+  }),
   FIELD_IS_SHORTER_THAN_MIN: (length) => ({
     message: `Field is shorter than min length in: ${length}.`
   }),
@@ -70,5 +73,8 @@ export const errorMassages = {
   }),
   INVALID_MIMETYPE: (mimetype) => ({
     message: `The mimetype should only be [${mimetype}].`
+  }),
+  INVALID_ENUM_TYPE: (enumType) => ({
+    message: `Field does not match type enum [${enumType}].`
   })
 }
