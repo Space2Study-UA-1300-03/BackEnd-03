@@ -58,22 +58,7 @@ export const offerService = {
 
   getOfferById: async (id) => {
     const offer = await Offer.findById(id)
-      .populate([
-        {
-          path: 'author',
-          select: ['firstName', 'lastName', 'totalReviews', 'averageRating', 'photo', 'professionalSummary', 'FAQ']
-        },
-        { path: 'subject', select: 'name' },
-        { path: 'category', select: 'appearance' }
-      ])
-      .lean()
-      .exec()
-
-    if (offer.author.FAQ && offer.authorRole in offer.author.FAQ) {
-      offer.author.FAQ = offer.author.FAQ[offer.authorRole]
-    } else {
-      delete offer.author.FAQ
-    }
+    if (!offer) throw createError(404, CATEGORY_NOT_FOUND)
 
     return offer
   },

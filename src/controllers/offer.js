@@ -17,7 +17,6 @@ export const getOffers = async (req, res) => {
 
 export const getOfferById = async (req, res) => {
   const { id } = req.params
-
   const offer = await offerService.getOfferById(id)
 
   res.status(200).json(offer)
