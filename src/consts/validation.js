@@ -30,7 +30,7 @@ export const enums = {
   PROFICIENCY_LEVEL_ENUM: ['Beginner', 'Intermediate', 'Advanced', 'Test Preparation', 'Professional', 'Specialized'],
   ROLE_ENUM: ['student', 'tutor', 'admin', 'superadmin'],
   LOGIN_ROLE_ENUM: ['student', 'tutor', 'admin'],
-  MAIN_ROLE_ENUM: ['student', 'tutor'],
+  MAIN_ROLE_ENUM: ['student', 'tutor', 'admin', 'superadmin'],
   STATUS_ENUM: ['active', 'blocked'],
   QUESTION_TYPE_ENUM: ['multipleChoice', 'openAnswer', 'oneAnswer'],
   QUIZ_VIEW_ENUM: ['Stepper', 'Scroll'],

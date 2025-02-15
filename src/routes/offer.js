@@ -8,18 +8,12 @@ import express from 'express'
 
 export const router = express.Router({ mergeParams: true })
 
-const body = [
-  { model: Offer, idName: 'categoryId' },
-  { model: Offer, idName: 'subjectId' }
-]
+router.use(asyncWrapper(authMiddleware))
+router.post('/', asyncWrapper(createOffer))
+
 const params = [{ model: Offer, idName: 'id' }]
-
-router.use(authMiddleware)
-
 router.param('id', idValidation)
-
 router.get('/', asyncWrapper(getOffers))
-router.post('/', isEntityValid({ body }), asyncWrapper(createOffer))
 router.get('/:id', isEntityValid({ params }), asyncWrapper(getOfferById))
 router.patch('/:id', isEntityValid({ params }), asyncWrapper(updateOffer))
 router.delete('/:id', isEntityValid({ params }), asyncWrapper(deleteOffer))

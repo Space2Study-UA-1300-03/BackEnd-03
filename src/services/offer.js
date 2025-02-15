@@ -3,6 +3,29 @@ import { filterAllowedFields } from '#utils/filterAllowedFields.js'
 import Offer from '#models/offer.js'
 
 export const offerService = {
+  createOffer: async (user, data) => {
+    const updatedOffer = {
+      title: data.title,
+      description: data.description,
+      price: data.price,
+      aboutAuthor: {
+        author: user._id,
+        authorRole: user.role[0]
+      },
+      aboutInterests: {
+        categoryInfo: data.categoryId,
+        subjectInfo: data.subjectId
+      },
+      proficiencyLevel: data.proficiencyLevel,
+      languages: data.languages,
+      FAQ: data.faq
+    }
+
+    const newOffer = await Offer.create(updatedOffer)
+
+    return newOffer
+  },
+
   getOffers: async (pipeline) => {
     const [response] = await Offer.aggregate(pipeline).exec()
     return response
@@ -28,24 +51,6 @@ export const offerService = {
     }
 
     return offer
-  },
-
-  createOffer: async (author, authorRole, data) => {
-    const { price, proficiencyLevel, title, description, languages, subject, category, status, FAQ } = data
-
-    return await Offer.create({
-      author,
-      authorRole,
-      price,
-      proficiencyLevel,
-      title,
-      description,
-      languages,
-      subject,
-      category,
-      status,
-      FAQ
-    })
   },
 
   updateOffer: async (id, currentUserId, updateData) => {
