@@ -1,6 +1,10 @@
 import { allowedOfferFieldsForUpdate } from '#validation/services/offer.js'
 import { filterAllowedFields } from '#utils/filterAllowedFields.js'
+import { createError } from '#utils/errorsHelper.js'
+import { error } from '#consts/validationError.js'
 import Offer from '#models/offer.js'
+
+const { CATEGORY_NOT_FOUND } = error
 
 export const offerService = {
   createOffer: async (user, data) => {
@@ -26,9 +30,30 @@ export const offerService = {
     return newOffer
   },
 
-  getOffers: async (pipeline) => {
-    const [response] = await Offer.aggregate(pipeline).exec()
-    return response
+  getOffers: async (page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(10, limit))
+
+    const totalCategories = await Offer.countDocuments()
+    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
+
+    const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const categories = await Offer.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+
+    return {
+      pagination: {
+        currentPage: normalizedPage,
+        totalPages,
+        totalItems: totalCategories,
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
+      },
+      data: categories
+    }
   },
 
   getOfferById: async (id) => {

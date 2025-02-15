@@ -1,4 +1,3 @@
-import { offerAggregateOptions } from '#utils/offers/offerAggregateOptions.js'
 import { offerService } from '#services/offer.js'
 
 export const createOffer = async (req, res) => {
@@ -8,9 +7,10 @@ export const createOffer = async (req, res) => {
 }
 
 export const getOffers = async (req, res) => {
-  const pipeline = offerAggregateOptions(req.query, req.params)
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 5
 
-  const offers = await offerService.getOffers(pipeline)
+  const offers = await offerService.getOffers(page, limit)
 
   res.status(200).json(offers)
 }
