@@ -1,6 +1,4 @@
-import { allowedOfferFieldsForUpdate } from '#validation/services/offer.js'
-import { filterAllowedFields } from '#utils/filterAllowedFields.js'
-import { createError } from '#utils/errorsHelper.js'
+import { createError, createForbiddenError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
 import Offer from '#models/offer.js'
 
@@ -63,20 +61,40 @@ export const offerService = {
     return offer
   },
 
-  updateOffer: async (id, currentUserId, updateData) => {
-    const filteredUpdateData = filterAllowedFields(updateData, allowedOfferFieldsForUpdate)
-
+  deleteOffer: async (id, user) => {
     const offer = await Offer.findById(id)
+    if (!offer) throw createError(404, CATEGORY_NOT_FOUND)
 
-    for (let field in filteredUpdateData) {
-      offer[field] = filteredUpdateData[field]
-    }
+    if (user._id !== offer.aboutAuthor.author) throw createForbiddenError()
 
-    await offer.validate()
-    await offer.save()
+    await Offer.findByIdAndRemove(id).exec()
   },
 
-  deleteOffer: async (id) => {
-    await Offer.findByIdAndRemove(id).exec()
+  updateOffer: async (id, user, data) => {
+    const offerExists = await Offer.findById(id)
+    if (!offerExists) throw createError(404, CATEGORY_NOT_FOUND)
+
+    if (user._id !== offerExists.aboutAuthor.author) throw createForbiddenError()
+
+    const updatedOffer = {
+      title: data.title,
+      description: data.description,
+      price: data.price,
+      aboutAuthor: {
+        author: user._id,
+        authorRole: user.role[0]
+      },
+      aboutInterests: {
+        categoryInfo: data.categoryId,
+        subjectInfo: data.subjectId
+      },
+      proficiencyLevel: data.proficiencyLevel,
+      languages: data.languages,
+      FAQ: data.faq
+    }
+
+    const offer = await Offer.findByIdAndUpdate(id, updatedOffer, { new: true })
+
+    return offer
   }
 }

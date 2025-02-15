@@ -22,20 +22,17 @@ export const getOfferById = async (req, res) => {
   res.status(200).json(offer)
 }
 
-export const updateOffer = async (req, res) => {
+export const deleteOffer = async (req, res) => {
   const { id } = req.params
-  const updateData = req.body
-  const { id: currentUserId } = req.user
 
-  await offerService.updateOffer(id, currentUserId, updateData)
+  await offerService.deleteOffer(id, req.user)
 
   res.status(204).end()
 }
 
-export const deleteOffer = async (req, res) => {
+export const updateOffer = async (req, res) => {
   const { id } = req.params
+  const updatedOffer = await offerService.updateOffer(id, req.user, req.body)
 
-  await offerService.deleteOffer(id)
-
-  res.status(204).end()
+  res.status(201).json(updatedOffer)
 }

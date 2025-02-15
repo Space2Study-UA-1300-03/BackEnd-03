@@ -14,5 +14,5 @@ router.get('/', asyncWrapper(getOffers))
 
 router.param('id', idValidation)
 router.get('/:id', asyncWrapper(getOfferById))
-router.patch('/:id', asyncWrapper(updateOffer))
 router.delete('/:id', asyncWrapper(deleteOffer))
+router.patch('/:id', dataValidation(createOfferValidationSchema), asyncWrapper(updateOffer))
