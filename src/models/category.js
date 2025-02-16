@@ -7,6 +7,8 @@ const { FIELD_CANNOT_BE_EMPTY } = errors
 const { icon, color } = appearances
 const { CATEGORY, OFFER } = refs
 
+const offerInfoSchema = new Schema({ offerId: { type: Schema.Types.ObjectId, ref: OFFER } }, { _id: false })
+
 const categorySchema = new Schema(
   {
     categoryName: {
@@ -20,11 +22,7 @@ const categorySchema = new Schema(
       color: { type: String, default: color, lowercase: true }
     },
     offerInfo: {
-      type: [
-        {
-          offerId: { type: Schema.Types.ObjectId, ref: OFFER }
-        }
-      ],
+      type: [offerInfoSchema],
       default: []
     }
   },
