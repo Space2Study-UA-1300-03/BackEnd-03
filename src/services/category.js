@@ -2,6 +2,7 @@ import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
 import Category from '#models/category.js'
 import Subject from '#models/subject.js'
+import Offer from '#models/offer.js'
 
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
 
@@ -17,18 +18,46 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getAllCategories: async (page, limit) => {
+    // 1. Нормалізація параметрів пагінації
     const normalizedLimit = Math.max(1, Math.min(10, limit))
-
     const totalCategories = await Category.countDocuments()
     if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
-
     const skip = (normalizedPage - 1) * normalizedLimit
 
+    // 2. Отримання категорій
     const categories = await Category.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
+    // 3. Отримання ID всіх категорій
+    const categoryIds = categories.map((cat) => cat._id)
+
+    // 4. Пошук всіх пропозицій для цих категорій
+    const relatedOffers = await Offer.find({
+      'aboutInterests.categoryInfo': { $in: categoryIds }
+    })
+      .select('_id aboutInterests.categoryInfo')
+      .lean()
+
+    // 5. Групування пропозицій за категоріями
+    const offersByCategory = {}
+    relatedOffers.forEach((offer) => {
+      const categoryId = offer.aboutInterests.categoryInfo.toString()
+      if (!offersByCategory[categoryId]) {
+        offersByCategory[categoryId] = []
+      }
+      offersByCategory[categoryId].push({ offerId: offer._id })
+    })
+
+    // 6. Додавання offerInfo до кожної категорії
+    const categoriesWithOffers = categories.map((category) => {
+      const categoryObj = category.toObject()
+      categoryObj.offerInfo = offersByCategory[category._id.toString()] || []
+      return categoryObj
+    })
+
+    // 7. Повернення результату
     return {
       pagination: {
         currentPage: normalizedPage,
@@ -38,7 +67,7 @@ export const categoriesService = {
         hasNextPage: normalizedPage < totalPages,
         hasPrevPage: normalizedPage > 1
       },
-      data: categories
+      data: categoriesWithOffers
     }
   },
 
