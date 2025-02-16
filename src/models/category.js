@@ -5,7 +5,7 @@ import { refs } from '#consts/models.js'
 
 const { FIELD_CANNOT_BE_EMPTY } = errors
 const { icon, color } = appearances
-const { CATEGORY } = refs
+const { CATEGORY, OFFER } = refs
 
 const categorySchema = new Schema(
   {
@@ -18,6 +18,14 @@ const categorySchema = new Schema(
     appearance: {
       icon: { type: String, default: icon, lowercase: true },
       color: { type: String, default: color, lowercase: true }
+    },
+    offerInfo: {
+      type: [
+        {
+          offerId: { type: Schema.Types.ObjectId, ref: OFFER }
+        }
+      ],
+      default: []
     }
   },
   {
