@@ -2,7 +2,7 @@ import { createError, createForbiddenError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
 import Offer from '#models/offer.js'
 
-const { CATEGORY_NOT_FOUND } = error
+const { OFFER_NOT_FOUND } = error
 
 export const offerService = {
   createOffer: async (user, data) => {
@@ -32,7 +32,7 @@ export const offerService = {
     const normalizedLimit = Math.max(1, Math.min(10, limit))
 
     const totalCategories = await Offer.countDocuments()
-    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalCategories === 0) throw createError(404, OFFER_NOT_FOUND)
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
@@ -56,14 +56,14 @@ export const offerService = {
 
   getOfferById: async (id) => {
     const offer = await Offer.findById(id)
-    if (!offer) throw createError(404, CATEGORY_NOT_FOUND)
+    if (!offer) throw createError(404, OFFER_NOT_FOUND)
 
     return offer
   },
 
   deleteOffer: async (id, user) => {
     const offer = await Offer.findById(id)
-    if (!offer) throw createError(404, CATEGORY_NOT_FOUND)
+    if (!offer) throw createError(404, OFFER_NOT_FOUND)
 
     if (user._id !== offer.aboutAuthor.author) throw createForbiddenError()
 
@@ -72,7 +72,7 @@ export const offerService = {
 
   updateOffer: async (id, user, data) => {
     const offerExists = await Offer.findById(id)
-    if (!offerExists) throw createError(404, CATEGORY_NOT_FOUND)
+    if (!offerExists) throw createError(404, OFFER_NOT_FOUND)
 
     if (user._id !== offerExists.aboutAuthor.author) throw createForbiddenError()
 

@@ -39,6 +39,10 @@ export const error = {
     code: 'CATEGORY_NOT_FOUND',
     message: 'Categories was not found.'
   },
+  OFFER_NOT_FOUND: {
+    code: 'OFFER_NOT_FOUND',
+    message: 'OFFERS was not found.'
+  },
   SUBJECT_NOT_FOUND: {
     code: 'SUBJECT_NOT_FOUND',
     message: 'Subject was not found.'
