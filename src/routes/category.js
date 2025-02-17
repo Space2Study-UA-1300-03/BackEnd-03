@@ -22,10 +22,9 @@ router.use(asyncWrapper(authMiddleware))
 router.get('/', asyncWrapper(getAllCategories))
 router.get('/names', asyncWrapper(getCategoryNames))
 
-router.param('id', idValidation)
-router.get('/:id', asyncWrapper(getCategoryById))
 router.get('/:id?/subjects', asyncWrapper(getSubjectByCategoryId))
 router.get('/:id?/subjects/names', asyncWrapper(getSubjectNamesByCategoryId))
+router.get('/:id', idValidation, asyncWrapper(getCategoryById))
 
 /**
  * @description Create a new category only for admin
