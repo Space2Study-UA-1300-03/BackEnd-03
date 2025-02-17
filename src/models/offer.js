@@ -22,24 +22,28 @@ const offerSchema = new Schema(
     aboutAuthor: {
       author: {
         type: Schema.Types.ObjectId,
-        ref: USER
+        ref: USER,
+        required: true
       },
       authorRole: {
         type: String,
         enum: {
           values: MAIN_ROLE_ENUM,
           message: ENUM_CAN_BE_ONE_OF('author role', MAIN_ROLE_ENUM)
-        }
+        },
+        required: true
       }
     },
     aboutInterests: {
       categoryInfo: {
         type: Schema.Types.ObjectId,
-        ref: CATEGORY
+        ref: CATEGORY,
+        required: true
       },
       subjectInfo: {
         type: Schema.Types.ObjectId,
-        ref: SUBJECT
+        ref: SUBJECT,
+        required: true
       }
     },
 
