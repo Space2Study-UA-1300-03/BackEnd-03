@@ -1,256 +1,258 @@
-[{
-  "_id": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
+[
+  {
+    "_id": {
+      "$oid": "67a4db5ed808eefbf6a4e404"
+    },
+    "categoryName": "computer science",
+    "appearance": {
+      "icon": "computer",
+      "color": "#462027"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:55:10.304Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:55:10.304Z"
+    }
   },
-  "categoryName": "computer science",
-  "appearance": {
-    "icon": "computer",
-    "color": "#462027"
+  {
+    "_id": {
+      "$oid": "67a4dba1d808eefbf6a4e407"
+    },
+    "categoryName": "finances",
+    "appearance": {
+      "icon": "legend_toggle",
+      "color": "#d0c59b"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:56:17.711Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:56:17.711Z"
+    }
   },
-  "createdAt": {
-    "$date": "2025-02-06T15:55:10.304Z"
+  {
+    "_id": {
+      "$oid": "67a4dba7d808eefbf6a4e40a"
+    },
+    "categoryName": "languages",
+    "appearance": {
+      "icon": "language",
+      "color": "#66c42c"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:56:23.577Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:56:23.577Z"
+    }
   },
-  "updatedAt": {
-    "$date": "2025-02-06T15:55:10.304Z"
+  {
+    "_id": {
+      "$oid": "67a4dbb9d808eefbf6a4e40d"
+    },
+    "categoryName": "design",
+    "appearance": {
+      "icon": "design_services",
+      "color": "#866606"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:56:41.668Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:56:41.668Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dbc0d808eefbf6a4e410"
+    },
+    "categoryName": "physics",
+    "appearance": {
+      "icon": "science",
+      "color": "#462027"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:56:48.258Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:56:48.258Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dbc7d808eefbf6a4e413"
+    },
+    "categoryName": "history",
+    "appearance": {
+      "icon": "history_edu",
+      "color": "#6ec050"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:56:55.249Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:56:55.249Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dbced808eefbf6a4e416"
+    },
+    "categoryName": "psychology",
+    "appearance": {
+      "icon": "star",
+      "color": "#d0c59b"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:57:02.692Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:57:02.692Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dbd5d808eefbf6a4e419"
+    },
+    "categoryName": "astronomy",
+    "appearance": {
+      "icon": "science",
+      "color": "#866606"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:57:09.351Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:57:09.351Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dbdad808eefbf6a4e41c"
+    },
+    "categoryName": "biology",
+    "appearance": {
+      "icon": "science",
+      "color": "#e3b21c"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:57:14.789Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:57:14.789Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc28d808eefbf6a4e41f"
+    },
+    "categoryName": "information technology",
+    "appearance": {
+      "icon": "account_tree",
+      "color": "#47b8b8"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:58:32.267Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:58:32.267Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc32d808eefbf6a4e422"
+    },
+    "categoryName": "audit",
+    "appearance": {
+      "icon": "stacked_bar_chart",
+      "color": "#ffd700"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:58:42.545Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:58:42.545Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc37d808eefbf6a4e425"
+    },
+    "categoryName": "marketing",
+    "appearance": {
+      "icon": "campaign",
+      "color": "#ffaaa5"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:58:47.853Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:58:47.853Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc3cd808eefbf6a4e428"
+    },
+    "categoryName": "mathematics",
+    "appearance": {
+      "icon": "tag",
+      "color": "#866606"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:58:52.441Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:58:52.441Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc42d808eefbf6a4e42b"
+    },
+    "categoryName": "music",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:58:58.794Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:58:58.794Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc4dd808eefbf6a4e42e"
+    },
+    "categoryName": "painting",
+    "appearance": {
+      "icon": "color_lens",
+      "color": "#5e0813"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:59:09.176Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:59:09.176Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67a4dc52d808eefbf6a4e431"
+    },
+    "categoryName": "chemistry",
+    "appearance": {
+      "icon": "science",
+      "color": "#66c42c"
+    },
+    "createdAt": {
+      "$date": "2025-02-06T15:59:14.104Z"
+    },
+    "updatedAt": {
+      "$date": "2025-02-06T15:59:14.104Z"
+    }
   }
-},
-{
-  "_id": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "categoryName": "finances",
-  "appearance": {
-    "icon": "legend_toggle",
-    "color": "#d0c59b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:56:17.711Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:56:17.711Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "categoryName": "languages",
-  "appearance": {
-    "icon": "language",
-    "color": "#66c42c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:56:23.577Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:56:23.577Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "categoryName": "design",
-  "appearance": {
-    "icon": "design_services",
-    "color": "#866606"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:56:41.668Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:56:41.668Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "categoryName": "physics",
-  "appearance": {
-    "icon": "science",
-    "color": "#462027"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:56:48.258Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:56:48.258Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "categoryName": "history",
-  "appearance": {
-    "icon": "history_edu",
-    "color": "#6ec050"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:56:55.249Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:56:55.249Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "categoryName": "psychology",
-  "appearance": {
-    "icon": "star",
-    "color": "#d0c59b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:57:02.692Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:57:02.692Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "categoryName": "astronomy",
-  "appearance": {
-    "icon": "science",
-    "color": "#866606"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:57:09.351Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:57:09.351Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "categoryName": "biology",
-  "appearance": {
-    "icon": "science",
-    "color": "#e3b21c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:57:14.789Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:57:14.789Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "categoryName": "information technology",
-  "appearance": {
-    "icon": "account_tree",
-    "color": "#47b8b8"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:58:32.267Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:58:32.267Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "categoryName": "audit",
-  "appearance": {
-    "icon": "stacked_bar_chart",
-    "color": "#ffd700"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:58:42.545Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:58:42.545Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "categoryName": "marketing",
-  "appearance": {
-    "icon": "campaign",
-    "color": "#ffaaa5"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:58:47.853Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:58:47.853Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "categoryName": "mathematics",
-  "appearance": {
-    "icon": "tag",
-    "color": "#866606"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:58:52.441Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:58:52.441Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "categoryName": "music",
-  "appearance": {
-    "icon": "music_note",
-    "color": "#f67c41"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:58:58.794Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:58:58.794Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "categoryName": "painting",
-  "appearance": {
-    "icon": "color_lens",
-    "color": "#5e0813"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:59:09.176Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:59:09.176Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "categoryName": "chemistry",
-  "appearance": {
-    "icon": "science",
-    "color": "#66c42c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T15:59:14.104Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T15:59:14.104Z"
-  }
-}]
+]
