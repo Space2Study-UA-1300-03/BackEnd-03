@@ -1,25 +1,18 @@
 import { getOffers, createOffer, updateOffer, deleteOffer, getOfferById } from '#controllers/offer.js'
-import { isEntityValid } from '#middlewares/entityValidation.js'
+import { createOfferValidationSchema } from '#validation/schemas/createOffer.js'
+import { dataValidation } from '#middlewares/dataValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
 import { authMiddleware } from '#middlewares/auth.js'
-import Offer from '#models/offer.js'
 import express from 'express'
 
 export const router = express.Router({ mergeParams: true })
 
-const body = [
-  { model: Offer, idName: 'categoryId' },
-  { model: Offer, idName: 'subjectId' }
-]
-const params = [{ model: Offer, idName: 'id' }]
-
-router.use(authMiddleware)
+router.use(asyncWrapper(authMiddleware))
+router.post('/', dataValidation(createOfferValidationSchema), asyncWrapper(createOffer))
+router.get('/', asyncWrapper(getOffers))
 
 router.param('id', idValidation)
-
-router.get('/', asyncWrapper(getOffers))
-router.post('/', isEntityValid({ body }), asyncWrapper(createOffer))
-router.get('/:id', isEntityValid({ params }), asyncWrapper(getOfferById))
-router.patch('/:id', isEntityValid({ params }), asyncWrapper(updateOffer))
-router.delete('/:id', isEntityValid({ params }), asyncWrapper(deleteOffer))
+router.get('/:id', asyncWrapper(getOfferById))
+router.delete('/:id', asyncWrapper(deleteOffer))
+router.patch('/:id', dataValidation(createOfferValidationSchema), asyncWrapper(updateOffer))
