@@ -1,4 +1,7 @@
 import { offerService } from '#services/offer.js'
+import { page } from '#consts/validation.js'
+
+const { perPageLimit, startPage } = page
 
 export const createOffer = async (req, res) => {
   const newOffer = await offerService.createOffer(req.user, req.body)
@@ -7,8 +10,8 @@ export const createOffer = async (req, res) => {
 }
 
 export const getOffers = async (req, res) => {
-  const page = parseInt(req.query.page) || 1
-  const limit = parseInt(req.query.limit) || 5
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
 
   const offers = await offerService.getOffers(page, limit)
 

@@ -1,3 +1,8 @@
+export const page = {
+  perPageLimit: 5,
+  startPage: 1
+}
+
 export const lengths = {
   MIN_PASSWORD_LENGTH: 8,
   MAX_PASSWORD_LENGTH: 25,
@@ -7,6 +12,7 @@ export const lengths = {
   MAX_OFFER_TITLE: 100,
   MIN_OFFER_DESC: 3,
   MAX_OFFER_DESC: 1000,
+  MIN_OFFER_PRISE: 1,
   MAX_OFFER_PRISE: 100 * 100 * 100,
   MIN_OFFER_FAQ_QUESTION: 3,
   MAX_OFFER_FAQ_QUESTION: 100,

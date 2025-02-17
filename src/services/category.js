@@ -164,7 +164,7 @@ export const categoriesService = {
     const allSubjectNames = await Subject.find({ categoryId: id }, 'subjectName categoryId')
       .sort({ createdAt: -1 })
       .skip(skip)
-      .limit(limit)
+      .limit(normalizedLimit)
 
     return {
       pagination: {

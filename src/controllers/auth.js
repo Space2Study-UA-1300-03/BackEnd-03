@@ -113,7 +113,7 @@ export const verifyIdToken = async (req, res) => {
   })
 
   const payload = ticket.getPayload()
-  const tokens = await authService.googleLogin(payload, type, role, lang);
+  const tokens = await authService.googleLogin(payload, type, role, lang)
 
   res.cookie(ACCESS_TOKEN, tokens.accessToken, COOKIE_OPTIONS)
   res.cookie(REFRESH_TOKEN, tokens.refreshToken, COOKIE_OPTIONS)
