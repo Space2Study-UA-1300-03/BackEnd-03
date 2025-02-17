@@ -40,21 +40,17 @@ export const categoriesService = {
       .select('_id aboutInterests.categoryInfo')
       .lean()
 
-    // 5. Групування пропозицій за категоріями
-    const offersByCategory = {}
-    relatedOffers.forEach((offer) => {
-      const categoryId = offer.aboutInterests.categoryInfo.toString()
-      if (!offersByCategory[categoryId]) {
-        offersByCategory[categoryId] = []
-      }
-      offersByCategory[categoryId].push({ offerId: offer._id })
-    })
-
-    // 6. Додавання offerInfo до кожної категорії
+    // 5-6. Групування пропозицій за категоріями та створення фінального масиву
     const categoriesWithOffers = categories.map((category) => {
       const categoryObj = category.toObject()
-      categoryObj.offerInfo = offersByCategory[category._id.toString()] || []
-      return categoryObj
+      const offers = relatedOffers.reduce((acc, offer) => {
+        if (offer.aboutInterests.categoryInfo.toString() === category._id.toString()) {
+          acc.push({ offerId: offer._id })
+        }
+        return acc
+      }, [])
+
+      return { ...categoryObj, offerInfo: offers }
     })
 
     // 7. Повернення результату
