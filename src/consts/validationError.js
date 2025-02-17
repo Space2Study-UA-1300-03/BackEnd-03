@@ -66,6 +66,9 @@ export const errorMassages = {
   UNIQUE_LANGUAGES: () => ({
     message: 'Languages in an array must be unique'
   }),
+  CORRECT_PRICE: (min, max) => ({
+    message: `The price must be in this range [${min} - ${max}] UAH.`
+  }),
   FIELD_IS_SHORTER_THAN_MIN: (length) => ({
     message: `Field is shorter than min length in: ${length}.`
   }),

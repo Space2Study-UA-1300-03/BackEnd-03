@@ -7,13 +7,15 @@ const {
   MIN_OFFER_TITLE,
   MAX_OFFER_DESC,
   MAX_OFFER_TITLE,
+  MIN_OFFER_PRISE,
   MAX_OFFER_PRISE,
   MIN_OFFER_FAQ_QUESTION,
   MAX_OFFER_FAQ_ANSWER,
   MAX_OFFER_FAQ_QUESTION,
   MIN_OFFER_FAQ_ANSWER
 } = lengths
-const { FIELD_IS_SHORTER_THAN_MIN, FIELD_IS_LONGER_THAN_MAX, INVALID_ENUM_TYPE, UNIQUE_LANGUAGES } = errorMassages
+const { FIELD_IS_SHORTER_THAN_MIN, FIELD_IS_LONGER_THAN_MAX, INVALID_ENUM_TYPE, UNIQUE_LANGUAGES, CORRECT_PRICE } =
+  errorMassages
 const { SPOKEN_LANG_ENUM, PROFICIENCY_LEVEL_ENUM } = enums
 
 const proficiencyLevelEnum = z.enum(PROFICIENCY_LEVEL_ENUM, INVALID_ENUM_TYPE(PROFICIENCY_LEVEL_ENUM))
@@ -47,7 +49,11 @@ export const createOfferValidationSchema = z.object({
     .toLowerCase()
     .trim(),
 
-  price: z.number().positive().lte(MAX_OFFER_PRISE, FIELD_IS_LONGER_THAN_MAX(MAX_OFFER_PRISE)),
+  price: z
+    .number()
+    .positive()
+    .min(MIN_OFFER_PRISE, CORRECT_PRICE(MIN_OFFER_PRISE, MAX_OFFER_PRISE))
+    .max(MAX_OFFER_PRISE, CORRECT_PRICE(MIN_OFFER_PRISE, MAX_OFFER_PRISE)),
 
   categoryId: z.string().toLowerCase().trim(),
   subjectId: z.string().toLowerCase().trim(),
