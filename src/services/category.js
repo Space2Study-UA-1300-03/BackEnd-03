@@ -25,35 +25,11 @@ export const categoriesService = {
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    // 2. Отримання категорій
     const categories = await Category.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
-    // 3. Отримання ID всіх категорій
-    const categoryIds = categories.map((cat) => cat._id)
-
-    // 4. Пошук всіх пропозицій для цих категорій
-    const relatedOffers = await Offer.find({
-      'aboutInterests.categoryInfo': { $in: categoryIds }
-    })
-      .select('_id aboutInterests.categoryInfo')
-      .lean()
-
-    // 5-6. Групування пропозицій за категоріями та створення фінального масиву
-    const categoriesWithOffers = categories.map((category) => {
-      const categoryObj = category.toObject()
-      const offers = relatedOffers.reduce((acc, offer) => {
-        if (offer.aboutInterests.categoryInfo.toString() === category._id.toString()) {
-          acc.push({ offerId: offer._id })
-        }
-        return acc
-      }, [])
-
-      return { ...categoryObj, offerInfo: offers }
-    })
-
-    // 7. Повернення результату
     return {
       pagination: {
         currentPage: normalizedPage,
@@ -63,7 +39,7 @@ export const categoriesService = {
         hasNextPage: normalizedPage < totalPages,
         hasPrevPage: normalizedPage > 1
       },
-      data: categoriesWithOffers
+      data: categories
     }
   },
 
