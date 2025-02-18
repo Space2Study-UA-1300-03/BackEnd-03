@@ -21,14 +21,13 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjects: async (page, limit, name) => {
-    console.log('getAllSubjects')
     const searchQuery = {}
     if (name) searchQuery.subjectName = { $regex: name, $options: 'i' }
 
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments(searchQuery)
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
@@ -65,7 +64,7 @@ export const subjectsService = {
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments(searchQuery)
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))

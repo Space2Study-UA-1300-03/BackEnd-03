@@ -25,7 +25,7 @@ export const categoriesService = {
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalCategories = await Category.countDocuments(searchQuery)
-    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalCategories === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
@@ -61,7 +61,7 @@ export const categoriesService = {
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalCategories = await Category.countDocuments(searchQuery)
-    if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalCategories === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
@@ -107,9 +107,7 @@ export const categoriesService = {
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments(searchQuery)
-    console.log(totalSubjects)
-
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
@@ -145,7 +143,7 @@ export const categoriesService = {
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments(searchQuery)
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
