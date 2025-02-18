@@ -4,13 +4,10 @@ import mongoose from 'mongoose'
 
 const { INVALID_ID } = error
 
-export const idValidation = (_req, _res, next, id) => {
-  /**
-   * @todo //TODO: temporary version
-   */
-  if (id === ':id') return next()
+export const idValidation = (req, _res, next) => {
+  const { id } = req.params
 
-  if (!mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)
+  if (!mongoose.Types.ObjectId.isValid(id)) return next(createError(400, INVALID_ID))
 
   next()
 }

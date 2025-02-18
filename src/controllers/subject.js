@@ -1,7 +1,21 @@
 import { subjectsService } from '#services/subject.js'
+import { page } from '#consts/validation.js'
 
-export const getAllSubjects = async (_req, res) => {
-  const subjects = await subjectsService.getAllSubjects()
+const { perPageLimit, startPage } = page
+
+export const getAllSubjects = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
+
+  const subjects = await subjectsService.getAllSubjects(page, limit)
+
+  res.status(200).json(subjects)
+}
+export const getAllSubjectsNames = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
+
+  const subjects = await subjectsService.getAllSubjectsNames(page, limit)
 
   res.status(200).json(subjects)
 }

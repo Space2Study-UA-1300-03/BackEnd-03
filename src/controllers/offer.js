@@ -1,45 +1,41 @@
-import { offerAggregateOptions } from '#utils/offers/offerAggregateOptions.js'
 import { offerService } from '#services/offer.js'
+import { page } from '#consts/validation.js'
+
+const { perPageLimit, startPage } = page
+
+export const createOffer = async (req, res) => {
+  const newOffer = await offerService.createOffer(req.user, req.body)
+
+  res.status(201).json(newOffer)
+}
 
 export const getOffers = async (req, res) => {
-  const pipeline = offerAggregateOptions(req.query, req.params)
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
 
-  const offers = await offerService.getOffers(pipeline)
+  const offers = await offerService.getOffers(page, limit)
 
   res.status(200).json(offers)
 }
 
 export const getOfferById = async (req, res) => {
   const { id } = req.params
-
   const offer = await offerService.getOfferById(id)
 
   res.status(200).json(offer)
 }
 
-export const createOffer = async (req, res) => {
-  const { id: authorId, role: authorRole } = req.user
-  const data = req.body
+export const deleteOffer = async (req, res) => {
+  const { id } = req.params
 
-  const newOffer = await offerService.createOffer(authorId, authorRole, data)
+  await offerService.deleteOffer(id, req.user)
 
-  res.status(201).json(newOffer)
+  res.status(204).end()
 }
 
 export const updateOffer = async (req, res) => {
   const { id } = req.params
-  const updateData = req.body
-  const { id: currentUserId } = req.user
+  const updatedOffer = await offerService.updateOffer(id, req.user, req.body)
 
-  await offerService.updateOffer(id, currentUserId, updateData)
-
-  res.status(204).end()
-}
-
-export const deleteOffer = async (req, res) => {
-  const { id } = req.params
-
-  await offerService.deleteOffer(id)
-
-  res.status(204).end()
+  res.status(201).json(updatedOffer)
 }

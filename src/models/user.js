@@ -3,9 +3,9 @@ import { errors } from '#consts/errors.js'
 import { Schema, model } from 'mongoose'
 import { refs } from '#consts/models.js'
 
-const { APP_LANG_ENUM, SPOKEN_LANG_ENUM, STATUS_ENUM, ROLE_ENUM, LOGIN_ROLE_ENUM } = enums
+const { APP_LANG_ENUM, STATUS_ENUM, ROLE_ENUM, LOGIN_ROLE_ENUM } = enums
 const { MIN_PASSWORD_LENGTH } = lengths
-const { SUBJECT, OFFER, USER } = refs
+const { OFFER, USER } = refs
 const {
   FIELD_CANNOT_BE_SHORTER,
   FIELD_CANNOT_BE_LONGER,
@@ -71,23 +71,20 @@ const userSchema = new Schema(
       select: false
     },
     address: {
-      country: { type: String },
-      city: { type: String }
+      country: { type: String, default: null },
+      city: { type: String, default: null }
     },
     photo: {
       url: { type: String },
       publicId: { type: String }
     },
-    professionalSummary: { type: String },
-    mainSubjects: {
-      student: {
-        type: [Schema.Types.ObjectId],
-        ref: SUBJECT
-      },
-      tutor: {
-        type: [Schema.Types.ObjectId],
-        ref: SUBJECT
-      }
+    professionalSummary: {
+      type: String,
+      default: null
+    },
+    mainInterests: {
+      type: Object,
+      default: {}
     },
     totalReviews: {
       student: { type: Number, default: 0 },
@@ -110,11 +107,8 @@ const userSchema = new Schema(
       }
     },
     nativeLanguage: {
-      type: String,
-      enum: {
-        values: SPOKEN_LANG_ENUM,
-        message: ENUM_CAN_BE_ONE_OF('native language', SPOKEN_LANG_ENUM)
-      }
+      type: [String],
+      default: []
     },
     isEmailConfirmed: {
       type: Boolean,

@@ -1,6 +1,4 @@
-import { allowedUserFieldsForUpdate } from '#validation/services/user.js'
-import { filterAllowedFields } from '#utils/filterAllowedFields.js'
-import { createError } from '#utils/errorsHelper.js'
+import { createError, createForbiddenError } from '#utils/errorsHelper.js'
 import { SALT_ROUNDS } from '#consts/auth.js'
 import { errors } from '#consts/errors.js'
 import User from '#models/user.js'
@@ -9,23 +7,6 @@ import bcrypt from 'bcrypt'
 const { DOCUMENT_NOT_FOUND, ALREADY_REGISTERED } = errors
 
 export const userService = {
-  getUsers: async ({ match, sort, skip, limit }) => {
-    const count = await User.countDocuments(match)
-
-    const items = await User.find(match)
-      .select('+status')
-      .sort(sort)
-      .collation({ locale: 'en_US', strength: 2, caseLevel: false })
-      .skip(skip)
-      .limit(limit)
-      .exec()
-
-    return {
-      items,
-      count
-    }
-  },
-
   getUserById: async (id, role) => {
     return await User.findOne({ _id: id, ...(role && { role }) })
       .select('+lastLoginAs +isEmailConfirmed +isFirstLogin')
@@ -77,18 +58,23 @@ export const userService = {
     await User.findByIdAndUpdate(id, { isEmailConfirmed: true }, { new: true }).exec()
   },
 
-  updateUser: async (id, role, updateData) => {
-    const filteredUpdateData = filterAllowedFields(updateData, allowedUserFieldsForUpdate)
-
-    const user = await User.findById(id).lean().exec()
-
-    if (!user) {
-      throw createError(404, DOCUMENT_NOT_FOUND([User.modelName]))
+  updateUser: async (user, data) => {
+    const updateData = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      address: {
+        country: data.country,
+        city: data.city
+      },
+      professionalSummary: data.professionalSummary,
+      mainInterests: data.interests,
+      nativeLanguage: data.languages
     }
 
-    filteredUpdateData.mainSubjects = { ...user.mainSubjects, [role]: updateData.mainSubjects }
+    const updatedUser = await User.findByIdAndUpdate(user._id, updateData, { new: true, runValidators: true })
+    if (!updatedUser) throw createForbiddenError()
 
-    await User.findByIdAndUpdate(id, filteredUpdateData, { new: true, runValidators: true }).lean().exec()
+    return updatedUser
   },
 
   updateStatus: async (id, updateStatus) => {

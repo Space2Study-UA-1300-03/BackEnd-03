@@ -6,12 +6,79 @@ import mongoose from 'mongoose'
 
 const { CATEGORY_NOT_FOUND, SUBJECT_NOT_FOUND, INVALID_ID } = error
 
+/**
+ * Service for managing subjects.
+ */
 export const subjectsService = {
-  getAllSubjects: async () => {
-    const subjects = await Subject.find()
-    if (!subjects.length === 0) throw createError(404, SUBJECT_NOT_FOUND)
+  /**
+   * Retrieves all subjects with pagination.
+   *
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
+   * @throws {Error} If no subjects are found.
+   */
+  getAllSubjects: async (page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
-    return subjects
+    const totalSubjects = await Subject.countDocuments()
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+
+    return {
+      pagination: {
+        currentPage: normalizedPage,
+        totalPages,
+        totalItems: totalSubjects,
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
+      },
+      data: subjects
+    }
+  },
+
+  /**
+   * Retrieves all subject names with pagination.
+   *
+   * @param {number} page - The current page number.
+   * @param {number} limit - The number of items per page.
+   * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
+   * @throws {Error} If no subjects are found.
+   */
+  getAllSubjectsNames: async (page, limit) => {
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+
+    const totalSubjects = await Subject.countDocuments()
+    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+
+    const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
+    const normalizedPage = Math.max(1, Math.min(page, totalPages))
+
+    const skip = (normalizedPage - 1) * normalizedLimit
+
+    const subjects = await Subject.find({}, 'subjectName categoryId')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(normalizedLimit)
+
+    return {
+      pagination: {
+        currentPage: normalizedPage,
+        totalPages,
+        totalItems: totalSubjects,
+        itemsPerPage: normalizedLimit,
+        hasNextPage: normalizedPage < totalPages,
+        hasPrevPage: normalizedPage > 1
+      },
+      data: subjects
+    }
   },
 
   createSubject: async (subjectData) => {

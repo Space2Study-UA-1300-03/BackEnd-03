@@ -1,26 +1,22 @@
-import { getUsers, getUserById, deleteUser, updateUser, updateStatus } from '#controllers/user.js'
+import { getMe, deleteUser, updateUser, updateStatus } from '#controllers/user.js'
 import { authMiddleware, restrictTo } from '#middlewares/auth.js'
-import { isEntityValid } from '#middlewares/entityValidation.js'
 import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
 import { roles } from '#consts/auth.js'
-import User from '#models/user.js'
 import express from 'express'
 
 const { ADMIN } = roles
 
 export const router = express.Router()
 
-const params = [{ model: User, idName: 'id' }]
+router.use(asyncWrapper(authMiddleware))
+router.patch('/', asyncWrapper(updateUser))
+router.get('/me', asyncWrapper(getMe))
 
-router.use(authMiddleware)
-
+/**
+ * @todo update this block
+ */
 router.param('id', idValidation)
-
-router.get('/', asyncWrapper(getUsers))
-router.get('/:id', isEntityValid({ params }), asyncWrapper(getUserById))
-router.patch('/:id', isEntityValid({ params }), asyncWrapper(updateUser))
-
 router.use(restrictTo(ADMIN))
-router.patch('/:id/change-status', isEntityValid({ params }), asyncWrapper(updateStatus))
-router.delete('/:id', isEntityValid({ params }), asyncWrapper(deleteUser))
+router.patch('/:id/change-status', asyncWrapper(updateStatus))
+router.delete('/:id', asyncWrapper(deleteUser))

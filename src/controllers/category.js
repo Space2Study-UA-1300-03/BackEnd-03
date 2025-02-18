@@ -1,8 +1,26 @@
 import { categoriesService } from '#services/category.js'
 import { subjectsService } from '#services/subject.js'
+import { createError } from '#utils/errorsHelper.js'
+import { error } from '#consts/validationError.js'
+import { page } from '#consts/validation.js'
+import mongoose from 'mongoose'
 
-export const getAllCategories = async (_req, res) => {
-  const categories = await categoriesService.getAllCategories()
+const { perPageLimit, startPage } = page
+const { INVALID_ID } = error
+
+export const getAllCategories = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
+
+  const categories = await categoriesService.getAllCategories(page, limit)
+
+  res.status(200).json(categories)
+}
+
+export const getCategoryNames = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
+  const categories = await categoriesService.getCategoryNames(page, limit)
 
   res.status(200).json(categories)
 }
@@ -13,11 +31,6 @@ export const getCategoryById = async (req, res) => {
 
   res.status(200).json(category)
 }
-export const getCategoryNames = async (_req, res) => {
-  const categories = await categoriesService.getCategoryNames()
-
-  res.status(200).json(categories)
-}
 
 export const createCategory = async (req, res) => {
   const newCategory = await categoriesService.createCategory(req.body)
@@ -25,11 +38,29 @@ export const createCategory = async (req, res) => {
   res.status(201).json(newCategory)
 }
 
-export const getSubjectNamesByCategoryId = async (req, res) => {
+export const getSubjectByCategoryId = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
   const { id } = req.params
 
-  const subjectsNames =
-    id !== ':id' ? await categoriesService.getSubjectNamesByCategoryId(id) : await subjectsService.getAllSubjects()
+  if (id && !mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)
+
+  const subjectsNames = id
+    ? await categoriesService.getSubjectByCategoryId(id, page, limit)
+    : await subjectsService.getAllSubjects(page, limit)
+
+  res.status(200).json(subjectsNames)
+}
+export const getSubjectNamesByCategoryId = async (req, res) => {
+  const page = parseInt(req.query.page) || startPage
+  const limit = parseInt(req.query.limit) || perPageLimit
+  const { id } = req.params
+
+  if (id && !mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)
+
+  const subjectsNames = id
+    ? await categoriesService.getSubjectNamesByCategoryId(id, page, limit)
+    : await subjectsService.getAllSubjects(page, limit)
 
   res.status(200).json(subjectsNames)
 }

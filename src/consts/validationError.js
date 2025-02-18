@@ -39,6 +39,10 @@ export const error = {
     code: 'CATEGORY_NOT_FOUND',
     message: 'Categories was not found.'
   },
+  OFFER_NOT_FOUND: {
+    code: 'OFFER_NOT_FOUND',
+    message: 'OFFERS was not found.'
+  },
   SUBJECT_NOT_FOUND: {
     code: 'SUBJECT_NOT_FOUND',
     message: 'Subject was not found.'
@@ -59,6 +63,12 @@ export const error = {
 }
 
 export const errorMassages = {
+  UNIQUE_LANGUAGES: () => ({
+    message: 'Languages in an array must be unique'
+  }),
+  CORRECT_PRICE: (min, max) => ({
+    message: `The price must be in this range [${min} - ${max}] UAH.`
+  }),
   FIELD_IS_SHORTER_THAN_MIN: (length) => ({
     message: `Field is shorter than min length in: ${length}.`
   }),
@@ -70,5 +80,8 @@ export const errorMassages = {
   }),
   INVALID_MIMETYPE: (mimetype) => ({
     message: `The mimetype should only be [${mimetype}].`
+  }),
+  INVALID_ENUM_TYPE: (enumType) => ({
+    message: `Field does not match type enum [${enumType}].`
   })
 }
