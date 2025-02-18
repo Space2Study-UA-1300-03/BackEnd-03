@@ -18,8 +18,8 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getAllCategories: async (page, limit) => {
-    // 1. Нормалізація параметрів пагінації
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+
     const totalCategories = await Category.countDocuments()
     if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
@@ -75,7 +75,7 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getCategoryNames: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
     const totalCategories = await Category.countDocuments()
     if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -115,7 +115,7 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
    */
   getSubjectByCategoryId: async (id, page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -151,7 +151,7 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
    */
   getSubjectNamesByCategoryId: async (id, page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)

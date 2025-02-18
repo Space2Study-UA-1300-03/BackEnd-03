@@ -1,3375 +1,2477 @@
-[{
-  "_id": {
-    "$oid": "67a4dcffd808eefbf6a4e434"
-  },
-  "subjectName": "organic chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:02:07.796Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:02:07.796Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4deb5d808eefbf6a4e437"
-  },
-  "subjectName": "physical chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:09:25.468Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:09:25.468Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4debed808eefbf6a4e43a"
-  },
-  "subjectName": "analytical chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:09:34.111Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:09:34.111Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dec3d808eefbf6a4e43d"
-  },
-  "subjectName": "biochemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:09:39.902Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:09:39.902Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dec9d808eefbf6a4e440"
-  },
-  "subjectName": "theoretical chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:09:45.883Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:09:45.883Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4ded3d808eefbf6a4e443"
-  },
-  "subjectName": "medicinal chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:09:55.114Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:09:55.114Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4deded808eefbf6a4e446"
-  },
-  "subjectName": "polymer chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:10:06.152Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:10:06.152Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dee4d808eefbf6a4e449"
-  },
-  "subjectName": "environmental chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:10:12.987Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:10:12.987Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4deecd808eefbf6a4e44c"
-  },
-  "subjectName": "nuclear chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:10:20.961Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:10:20.961Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4def6d808eefbf6a4e44f"
-  },
-  "subjectName": "quantum chemistry",
-  "categoryId": {
-    "$oid": "67a4dc52d808eefbf6a4e431"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:10:30.923Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:10:30.923Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dff27b78a3e781748675"
-  },
-  "subjectName": "database management systems",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:14:42.553Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:14:42.553Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4dffc7b78a3e781748678"
-  },
-  "subjectName": "computer networks",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:14:52.666Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:14:52.666Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0077b78a3e78174867b"
-  },
-  "subjectName": "operating systems",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:15:03.951Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:15:03.951Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0197b78a3e78174867e"
-  },
-  "subjectName": "software engineering",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:15:21.769Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:15:21.769Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0237b78a3e781748681"
-  },
-  "subjectName": "data structures and algorithms",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:15:31.892Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:15:31.892Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0317b78a3e781748684"
-  },
-  "subjectName": "cybersecurity",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:15:45.353Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:15:45.353Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e03b7b78a3e781748687"
-  },
-  "subjectName": "introduction to programming",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:15:55.948Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:15:55.948Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0447b78a3e78174868a"
-  },
-  "subjectName": "machine learning",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:16:04.172Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:16:04.172Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e04c7b78a3e78174868d"
-  },
-  "subjectName": "artificial intelligence",
-  "categoryId": {
-    "$oid": "67a4db5ed808eefbf6a4e404"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:16:12.174Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:16:12.174Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e08c7b78a3e781748690"
-  },
-  "subjectName": "risk management",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:16.280Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:16.280Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e08bd808eefbf6a4e452"
-  },
-  "subjectName": "still life painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:15.744Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:15.744Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0937b78a3e781748693"
-  },
-  "subjectName": "financial markets",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:23.872Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:23.872Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e095d808eefbf6a4e455"
-  },
-  "subjectName": "watercolor painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:25.722Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:25.722Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e09b7b78a3e781748696"
-  },
-  "subjectName": "economics",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:31.452Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:31.452Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e09dd808eefbf6a4e458"
-  },
-  "subjectName": "acrylic painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:33.459Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:33.459Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0a27b78a3e781748699"
-  },
-  "subjectName": "international finance",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:38.922Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:38.922Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0a5d808eefbf6a4e45b"
-  },
-  "subjectName": "pastel painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:41.398Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:41.398Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0ab7b78a3e78174869c"
-  },
-  "subjectName": "corporate finance",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:47.488Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:47.488Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0add808eefbf6a4e45e"
-  },
-  "subjectName": "gouache painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:49.430Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:49.430Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0b57b78a3e78174869f"
-  },
-  "subjectName": "personal finance",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:57.463Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:57.463Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0b4d808eefbf6a4e461"
-  },
-  "subjectName": "fabric painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:17:56.955Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:17:56.955Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0bbd808eefbf6a4e464"
-  },
-  "subjectName": "body painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:03.786Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:03.786Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0be7b78a3e7817486a2"
-  },
-  "subjectName": "accounting",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:06.286Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:06.286Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0c2d808eefbf6a4e467"
-  },
-  "subjectName": "miniature painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:10.569Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:10.569Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0c67b78a3e7817486a5"
-  },
-  "subjectName": "financial analysis",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:14.237Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:14.237Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0c9d808eefbf6a4e46a"
-  },
-  "subjectName": "mural painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:17.365Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:17.365Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0cd7b78a3e7817486a8"
-  },
-  "subjectName": "investments",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:21.530Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:21.530Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0d0d808eefbf6a4e46d"
-  },
-  "subjectName": "portrait painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:24.709Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:24.709Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0d57b78a3e7817486ab"
-  },
-  "subjectName": "financial planning",
-  "categoryId": {
-    "$oid": "67a4dba1d808eefbf6a4e407"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:29.152Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:29.152Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0d7d808eefbf6a4e470"
-  },
-  "subjectName": "mixed media painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:31.787Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:31.787Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e0ded808eefbf6a4e473"
-  },
-  "subjectName": "landscape painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:18:38.719Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:18:38.719Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e105d808eefbf6a4e476"
-  },
-  "subjectName": "impressionist painting",
-  "categoryId": {
-    "$oid": "67a4dc4dd808eefbf6a4e42e"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:19:17.280Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:19:17.280Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e13f7b78a3e7817486ae"
-  },
-  "subjectName": "spanish",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:15.364Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:15.364Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1467b78a3e7817486b1"
-  },
-  "subjectName": "english",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:22.270Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:22.270Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e14b7b78a3e7817486b4"
-  },
-  "subjectName": "portuguese",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:27.208Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:27.208Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e14f7b78a3e7817486b7"
-  },
-  "subjectName": "french",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:31.797Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:31.797Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1547b78a3e7817486ba"
-  },
-  "subjectName": "ukrainian",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:36.217Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:36.217Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e15b7b78a3e7817486bd"
-  },
-  "subjectName": "chinese",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:43.843Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:43.843Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1607b78a3e7817486c0"
-  },
-  "subjectName": "german",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:48.093Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:48.093Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1657b78a3e7817486c3"
-  },
-  "subjectName": "japanese",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:53.041Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:53.041Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e16a7b78a3e7817486c6"
-  },
-  "subjectName": "italian",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:20:58.666Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:20:58.666Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e16f7b78a3e7817486c9"
-  },
-  "subjectName": "arabic",
-  "categoryId": {
-    "$oid": "67a4dba7d808eefbf6a4e40a"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:21:03.130Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:21:03.130Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e18d7b78a3e7817486cc"
-  },
-  "subjectName": "web design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:21:33.209Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:21:33.209Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1947b78a3e7817486cf"
-  },
-  "subjectName": "fashion design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:21:40.916Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:21:40.916Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e19b7b78a3e7817486d2"
-  },
-  "subjectName": "interior design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:21:47.950Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:21:47.950Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1a37b78a3e7817486d5"
-  },
-  "subjectName": "industrial design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:21:55.105Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:21:55.105Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1ad7b78a3e7817486d8"
-  },
-  "subjectName": "typography",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:22:05.564Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:22:05.564Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1b67b78a3e7817486db"
-  },
-  "subjectName": "motion design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:22:14.268Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:22:14.268Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1bd7b78a3e7817486de"
-  },
-  "subjectName": "design thinking",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:22:21.775Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:22:21.775Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e1fb7b78a3e7817486e1"
-  },
-  "subjectName": "user experience (ux) design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:23:23.254Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:23:23.254Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2037b78a3e7817486e4"
-  },
-  "subjectName": "product design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:23:31.543Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:23:31.543Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e20c7b78a3e7817486e7"
-  },
-  "subjectName": "graphic design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:23:40.406Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:23:40.406Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2137b78a3e7817486ea"
-  },
-  "subjectName": "game design",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:23:47.419Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:23:47.419Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2197b78a3e7817486ed"
-  },
-  "subjectName": "design management",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:23:53.835Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:23:53.835Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2217b78a3e7817486f0"
-  },
-  "subjectName": "design research",
-  "categoryId": {
-    "$oid": "67a4dbb9d808eefbf6a4e40d"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:24:01.552Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:24:01.552Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2c57b78a3e7817486f3"
-  },
-  "subjectName": "classical mechanics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:26:45.917Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:26:45.917Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2cd7b78a3e7817486f6"
-  },
-  "subjectName": "fluid dynamics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:26:53.984Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:26:53.984Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2d57b78a3e7817486f9"
-  },
-  "subjectName": "optics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:01.176Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:01.176Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2db7b78a3e7817486fc"
-  },
-  "subjectName": "nuclear physics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:07.928Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:07.928Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2e17b78a3e7817486ff"
-  },
-  "subjectName": "thermodynamics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:13.973Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:13.973Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2e87b78a3e781748702"
-  },
-  "subjectName": "quantum mechanics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:20.033Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:20.033Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2ef7b78a3e781748705"
-  },
-  "subjectName": "electromagnetism",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:27.346Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:27.346Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2f57b78a3e781748708"
-  },
-  "subjectName": "particle physics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:33.320Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:33.320Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e2fe7b78a3e78174870b"
-  },
-  "subjectName": "solid state physics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:42.112Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:42.112Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3067b78a3e78174870e"
-  },
-  "subjectName": "astrophysics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:50.629Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:50.629Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e30a7b78a3e781748711"
-  },
-  "subjectName": "relativity",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:27:54.844Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:27:54.844Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3157b78a3e781748714"
-  },
-  "subjectName": "quantum field theory",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:05.606Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:05.606Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e31d7b78a3e781748717"
-  },
-  "subjectName": "statistical mechanics",
-  "categoryId": {
-    "$oid": "67a4dbc0d808eefbf6a4e410"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:13.581Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:13.581Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3327b78a3e78174871a"
-  },
-  "subjectName": "medieval history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:34.819Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:34.819Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e33b7b78a3e78174871d"
-  },
-  "subjectName": "cultural history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:43.428Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:43.428Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3427b78a3e781748720"
-  },
-  "subjectName": "american history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:50.384Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:50.384Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3497b78a3e781748723"
-  },
-  "subjectName": "world history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:28:57.270Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:28:57.270Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e34f7b78a3e781748726"
-  },
-  "subjectName": "modern history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:03.816Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:03.816Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3577b78a3e781748729"
-  },
-  "subjectName": "african history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:11.491Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:11.491Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3607b78a3e78174872c"
-  },
-  "subjectName": "european history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:20.710Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:20.710Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3687b78a3e78174872f"
-  },
-  "subjectName": "military history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:28.355Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:28.355Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e36f7b78a3e781748732"
-  },
-  "subjectName": "ancient history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:35.830Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:35.830Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3767b78a3e781748735"
-  },
-  "subjectName": "asian history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:42.889Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:42.889Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3807b78a3e781748738"
-  },
-  "subjectName": "contemporary history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:29:52.719Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:29:52.719Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3897b78a3e78174873b"
-  },
-  "subjectName": "economic history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:01.013Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:01.013Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3917b78a3e78174873e"
-  },
-  "subjectName": "political history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:09.642Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:09.642Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3987b78a3e781748741"
-  },
-  "subjectName": "social history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:16.917Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:16.917Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e39f7b78a3e781748744"
-  },
-  "subjectName": "intellectual history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:23.557Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:23.557Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3a87b78a3e781748747"
-  },
-  "subjectName": "diplomatic history",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:32.501Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:32.501Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3b07b78a3e78174874a"
-  },
-  "subjectName": "history of science",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:40.149Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:40.149Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e3b77b78a3e78174874d"
-  },
-  "subjectName": "history of technology",
-  "categoryId": {
-    "$oid": "67a4dbc7d808eefbf6a4e413"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:30:47.985Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:30:47.985Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e41a7b78a3e781748750"
-  },
-  "subjectName": "experimental psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:32:26.577Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:32:26.577Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4217b78a3e781748753"
-  },
-  "subjectName": "neuropsychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:32:33.424Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:32:33.424Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4277b78a3e781748756"
-  },
-  "subjectName": "cognitive psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:32:39.405Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:32:39.405Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4317b78a3e781748759"
-  },
-  "subjectName": "educational psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:32:49.041Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:32:49.041Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4387b78a3e78174875c"
-  },
-  "subjectName": "clinical psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:32:56.900Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:32:56.900Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4427b78a3e78174875f"
-  },
-  "subjectName": "developmental psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:06.549Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:06.549Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4497b78a3e781748762"
-  },
-  "subjectName": "health psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:13.652Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:13.652Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4587b78a3e781748765"
-  },
-  "subjectName": "social psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:28.146Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:28.146Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e45f7b78a3e781748768"
-  },
-  "subjectName": "sports psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:35.665Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:35.665Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4667b78a3e78174876b"
-  },
-  "subjectName": "forensic psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:42.667Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:42.667Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e46e7b78a3e78174876e"
-  },
-  "subjectName": "quantitative psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:33:50.139Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:33:50.139Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4797b78a3e781748771"
-  },
-  "subjectName": "school psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:01.214Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:01.214Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e47f7b78a3e781748774"
-  },
-  "subjectName": "clinical neuropsychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:07.322Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:07.322Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4867b78a3e781748777"
-  },
-  "subjectName": "community psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:14.699Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:14.699Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e48d7b78a3e78174877a"
-  },
-  "subjectName": "environmental psychology",
-  "categoryId": {
-    "$oid": "67a4dbced808eefbf6a4e416"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:21.688Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:21.688Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4a37b78a3e78174877d"
-  },
-  "subjectName": "observational astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:43.144Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:43.144Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4ad7b78a3e781748780"
-  },
-  "subjectName": "galactic astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:53.657Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:53.657Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4b37b78a3e781748783"
-  },
-  "subjectName": "astrophotography",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:34:59.686Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:34:59.686Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4bb7b78a3e781748786"
-  },
-  "subjectName": "high-energy astrophysics",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:07.946Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:07.946Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4c37b78a3e781748789"
-  },
-  "subjectName": "astrobiology",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:15.172Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:15.172Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4c97b78a3e78174878c"
-  },
-  "subjectName": "solar astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:21.496Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:21.496Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4d07b78a3e78174878f"
-  },
-  "subjectName": "astrophysics",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:28.090Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:28.090Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4d57b78a3e781748792"
-  },
-  "subjectName": "stellar astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:33.890Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:33.890Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4df7b78a3e781748795"
-  },
-  "subjectName": "gravitational astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:43.616Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:43.616Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4ea7b78a3e781748798"
-  },
-  "subjectName": "planetary science",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:35:54.246Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:35:54.246Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4f57b78a3e78174879b"
-  },
-  "subjectName": "radio astronomy",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:05.668Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:05.668Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4fb7b78a3e78174879e"
-  },
-  "subjectName": "cosmology",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:11.051Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:11.051Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e4ff7b78a3e7817487a1"
-  },
-  "subjectName": "exoplanets",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:15.543Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:15.543Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5057b78a3e7817487a4"
-  },
-  "subjectName": "galaxies",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:21.188Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:21.188Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5097b78a3e7817487a7"
-  },
-  "subjectName": "mars",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:25.639Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:25.639Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e50e7b78a3e7817487aa"
-  },
-  "subjectName": "meteorites",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:30.207Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:30.207Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5137b78a3e7817487ad"
-  },
-  "subjectName": "moon",
-  "categoryId": {
-    "$oid": "67a4dbd5d808eefbf6a4e419"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:35.175Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:35.175Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5287b78a3e7817487b0"
-  },
-  "subjectName": "cell biology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:36:56.808Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:36:56.808Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e52f7b78a3e7817487b3"
-  },
-  "subjectName": "genetics",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:03.121Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:03.121Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5347b78a3e7817487b6"
-  },
-  "subjectName": "evolutionary biology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:08.593Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:08.593Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e53a7b78a3e7817487b9"
-  },
-  "subjectName": "ecology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:14.014Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:14.014Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e53e7b78a3e7817487bc"
-  },
-  "subjectName": "microbiology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:18.814Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:18.814Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5427b78a3e7817487bf"
-  },
-  "subjectName": "anatomy",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:22.985Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:22.985Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5477b78a3e7817487c2"
-  },
-  "subjectName": "physiology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:27.369Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:27.369Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e54d7b78a3e7817487c5"
-  },
-  "subjectName": "botany",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:33.159Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:33.159Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5527b78a3e7817487c8"
-  },
-  "subjectName": "zoology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:38.333Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:38.333Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5577b78a3e7817487cb"
-  },
-  "subjectName": "marine biology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:43.523Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:43.523Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e55e7b78a3e7817487ce"
-  },
-  "subjectName": "molecular biology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:50.273Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:50.273Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5667b78a3e7817487d1"
-  },
-  "subjectName": "biochemistry",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:37:58.192Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:37:58.192Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e56a7b78a3e7817487d4"
-  },
-  "subjectName": "biotechnology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:02.613Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:02.613Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e56f7b78a3e7817487d7"
-  },
-  "subjectName": "immunology",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:07.992Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:07.992Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5757b78a3e7817487da"
-  },
-  "subjectName": "neuroscience",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:13.968Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:13.968Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e57b7b78a3e7817487dd"
-  },
-  "subjectName": "evolution",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:19.273Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:19.273Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e57f7b78a3e7817487e0"
-  },
-  "subjectName": "biophysics",
-  "categoryId": {
-    "$oid": "67a4dbdad808eefbf6a4e41c"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:23.809Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:23.809Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e59b7b78a3e7817487e3"
-  },
-  "subjectName": "testing",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:51.719Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:51.719Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5a27b78a3e7817487e6"
-  },
-  "subjectName": "web development",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:38:58.393Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:38:58.393Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5aa7b78a3e7817487e9"
-  },
-  "subjectName": "ui/ux design",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:06.868Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:06.868Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5b27b78a3e7817487ec"
-  },
-  "subjectName": "game development",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:14.201Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:14.201Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5b97b78a3e7817487ef"
-  },
-  "subjectName": "mobile development",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:21.595Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:21.595Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5c07b78a3e7817487f2"
-  },
-  "subjectName": "data science",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:28.668Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:28.668Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5c77b78a3e7817487f5"
-  },
-  "subjectName": "devops",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:35.303Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:35.303Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5cc7b78a3e7817487f8"
-  },
-  "subjectName": "cybersecurity",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:40.741Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:40.741Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5d27b78a3e7817487fb"
-  },
-  "subjectName": "cloud computing",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:46.822Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:46.822Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5da7b78a3e7817487fe"
-  },
-  "subjectName": "machine learning",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:39:54.176Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:39:54.176Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5e17b78a3e781748801"
-  },
-  "subjectName": "artificial intelligence",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:01.674Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:01.674Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5e77b78a3e781748804"
-  },
-  "subjectName": "blockchain",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:07.267Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:07.267Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5ed7b78a3e781748807"
-  },
-  "subjectName": "big data",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:13.856Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:13.856Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5f37b78a3e78174880a"
-  },
-  "subjectName": "iot",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:19.598Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:19.598Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5f87b78a3e78174880d"
-  },
-  "subjectName": "ar/vr",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:24.348Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:24.348Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e5fe7b78a3e781748810"
-  },
-  "subjectName": "quantum computing",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:30.889Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:30.889Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e60b7b78a3e781748813"
-  },
-  "subjectName": "edge computing",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:43.455Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:43.455Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6127b78a3e781748816"
-  },
-  "subjectName": "digital transformation",
-  "categoryId": {
-    "$oid": "67a4dc28d808eefbf6a4e41f"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:40:50.794Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:40:50.794Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e62c7b78a3e781748819"
-  },
-  "subjectName": "it audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:16.761Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:16.761Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6337b78a3e78174881c"
-  },
-  "subjectName": "compliance audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:23.905Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:23.905Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e63c7b78a3e78174881f"
-  },
-  "subjectName": "financial audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:32.630Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:32.630Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6447b78a3e781748822"
-  },
-  "subjectName": "internal audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:40.677Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:40.677Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e64b7b78a3e781748825"
-  },
-  "subjectName": "external audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:47.991Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:47.991Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6537b78a3e781748828"
-  },
-  "subjectName": "operational audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:41:55.290Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:41:55.290Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e65a7b78a3e78174882b"
-  },
-  "subjectName": "compliance audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:02.748Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:02.748Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6617b78a3e78174882e"
-  },
-  "subjectName": "information systems audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:09.363Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:09.363Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6687b78a3e781748831"
-  },
-  "subjectName": "forensic audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:16.199Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:16.199Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e66e7b78a3e781748834"
-  },
-  "subjectName": "tax audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:22.367Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:22.367Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6757b78a3e781748837"
-  },
-  "subjectName": "performance audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:29.039Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:29.039Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e67c7b78a3e78174883a"
-  },
-  "subjectName": "environmental audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:36.360Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:36.360Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6837b78a3e78174883d"
-  },
-  "subjectName": "investigative audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:43.597Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:43.597Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6897b78a3e781748840"
-  },
-  "subjectName": "construction audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:49.983Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:49.983Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6917b78a3e781748843"
-  },
-  "subjectName": "energy audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:42:57.750Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:42:57.750Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e69a7b78a3e781748846"
-  },
-  "subjectName": "integrated audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:43:06.791Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:43:06.791Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6a17b78a3e781748849"
-  },
-  "subjectName": "quality audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:43:13.416Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:43:13.416Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6a87b78a3e78174884c"
-  },
-  "subjectName": "social audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:43:20.909Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:43:20.909Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6ae7b78a3e78174884f"
-  },
-  "subjectName": "safety audit",
-  "categoryId": {
-    "$oid": "67a4dc32d808eefbf6a4e422"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:43:26.311Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:43:26.311Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6df7b78a3e781748852"
-  },
-  "subjectName": "digital marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:44:15.130Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:44:15.130Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6e87b78a3e781748855"
-  },
-  "subjectName": "public relations",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:44:24.457Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:44:24.457Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6f17b78a3e781748858"
-  },
-  "subjectName": "content marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:44:33.267Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:44:33.267Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e6fe7b78a3e78174885b"
-  },
-  "subjectName": "social media marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:44:46.443Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:44:46.443Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7057b78a3e78174885e"
-  },
-  "subjectName": "email marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:44:53.599Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:44:53.599Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e70c7b78a3e781748861"
-  },
-  "subjectName": "influencer marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:00.334Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:00.334Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7137b78a3e781748864"
-  },
-  "subjectName": "affiliate marketing",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:07.961Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:07.961Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e71b7b78a3e781748867"
-  },
-  "subjectName": "brand management",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:15.875Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:15.875Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7227b78a3e78174886a"
-  },
-  "subjectName": "marketing analytics",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:22.316Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:22.316Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7297b78a3e78174886d"
-  },
-  "subjectName": "consumer behavior",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:29.047Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:29.047Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e72f7b78a3e781748870"
-  },
-  "subjectName": "advertising",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:35.939Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:35.939Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7367b78a3e781748873"
-  },
-  "subjectName": "market research",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:42.703Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:42.703Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e73d7b78a3e781748876"
-  },
-  "subjectName": "sales management",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:49.649Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:49.649Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7437b78a3e781748879"
-  },
-  "subjectName": "seo",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:45:55.166Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:45:55.166Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7497b78a3e78174887c"
-  },
-  "subjectName": "sem",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:01.486Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:01.486Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e74f7b78a3e78174887f"
-  },
-  "subjectName": "ppc",
-  "categoryId": {
-    "$oid": "67a4dc37d808eefbf6a4e425"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:07.522Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:07.522Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7627b78a3e781748882"
-  },
-  "subjectName": "algebra",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:26.979Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:26.979Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7677b78a3e781748885"
-  },
-  "subjectName": "geometry",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:31.078Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:31.078Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e76b7b78a3e781748888"
-  },
-  "subjectName": "trigonometry",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:35.645Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:35.645Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7717b78a3e78174888b"
-  },
-  "subjectName": "calculus",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:41.955Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:41.955Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7787b78a3e78174888e"
-  },
-  "subjectName": "differential equations",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:48.006Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:48.006Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e77e7b78a3e781748891"
-  },
-  "subjectName": "linear algebra",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:46:54.459Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:46:54.459Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7847b78a3e781748894"
-  },
-  "subjectName": "probability",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:00.406Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:00.406Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7887b78a3e781748897"
-  },
-  "subjectName": "statistics",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:04.392Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:04.392Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e78d7b78a3e78174889a"
-  },
-  "subjectName": "number theory",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:09.677Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:09.677Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7937b78a3e78174889d"
-  },
-  "subjectName": "topology",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:15.395Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:15.395Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7997b78a3e7817488a0"
-  },
-  "subjectName": "discrete mathematics",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:21.652Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:21.652Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7a47b78a3e7817488a3"
-  },
-  "subjectName": "mathematical logic",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:32.487Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:32.487Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7aa7b78a3e7817488a6"
-  },
-  "subjectName": "set theory",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:38.798Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:38.798Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7b27b78a3e7817488a9"
-  },
-  "subjectName": "combinatorics",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:46.488Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:46.488Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7b77b78a3e7817488ac"
-  },
-  "subjectName": "graph theory",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:51.969Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:51.969Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7bf7b78a3e7817488af"
-  },
-  "subjectName": "game theory",
-  "categoryId": {
-    "$oid": "67a4dc3cd808eefbf6a4e428"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:47:59.716Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:47:59.716Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7cf7b78a3e7817488b2"
-  },
-  "subjectName": "music theory",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:15.360Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:15.360Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7d97b78a3e7817488b5"
-  },
-  "subjectName": "music production",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:25.249Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:25.249Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7df7b78a3e7817488b8"
-  },
-  "subjectName": "music composition",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:31.452Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:31.452Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7e87b78a3e7817488bb"
-  },
-  "subjectName": "music history",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:40.577Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:40.577Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7ed7b78a3e7817488be"
-  },
-  "subjectName": "musicology",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:45.888Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:45.888Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7f27b78a3e7817488c1"
-  },
-  "subjectName": "piano",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:50.557Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:50.557Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7f67b78a3e7817488c4"
-  },
-  "subjectName": "guitar",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:48:54.806Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:48:54.806Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e7fc7b78a3e7817488c7"
-  },
-  "subjectName": "voice training",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:49:00.686Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:49:00.686Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e8027b78a3e7817488ca"
-  },
-  "subjectName": "ethnomusicology",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:49:06.592Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:49:06.592Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e8077b78a3e7817488cd"
-  },
-  "subjectName": "jazz studies",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:49:11.710Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:49:11.710Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a4e80c7b78a3e7817488d0"
-  },
-  "subjectName": "violin",
-  "categoryId": {
-    "$oid": "67a4dc42d808eefbf6a4e42b"
-  },
-  "createdAt": {
-    "$date": "2025-02-06T16:49:16.590Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T16:49:16.590Z"
-  }
-}]
+[
+  {
+    "_id": "67a4dcffd808eefbf6a4e434",
+    "subjectName": "organic chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:02:07.796Z",
+    "updatedAt": "2025-02-06T16:02:07.796Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4deb5d808eefbf6a4e437",
+    "subjectName": "physical chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:09:25.468Z",
+    "updatedAt": "2025-02-06T16:09:25.468Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4debed808eefbf6a4e43a",
+    "subjectName": "analytical chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:09:34.111Z",
+    "updatedAt": "2025-02-06T16:09:34.111Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4dec3d808eefbf6a4e43d",
+    "subjectName": "biochemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:09:39.902Z",
+    "updatedAt": "2025-02-06T16:09:39.902Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4dec9d808eefbf6a4e440",
+    "subjectName": "theoretical chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:09:45.883Z",
+    "updatedAt": "2025-02-06T16:09:45.883Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4ded3d808eefbf6a4e443",
+    "subjectName": "medicinal chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:09:55.114Z",
+    "updatedAt": "2025-02-06T16:09:55.114Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4deded808eefbf6a4e446",
+    "subjectName": "polymer chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:10:06.152Z",
+    "updatedAt": "2025-02-06T16:10:06.152Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4dee4d808eefbf6a4e449",
+    "subjectName": "environmental chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:10:12.987Z",
+    "updatedAt": "2025-02-06T16:10:12.987Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4deecd808eefbf6a4e44c",
+    "subjectName": "nuclear chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:10:20.961Z",
+    "updatedAt": "2025-02-06T16:10:20.961Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4def6d808eefbf6a4e44f",
+    "subjectName": "quantum chemistry",
+    "categoryId": "67a4dc52d808eefbf6a4e431",
+    "createdAt": "2025-02-06T16:10:30.923Z",
+    "updatedAt": "2025-02-06T16:10:30.923Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4dff27b78a3e781748675",
+    "subjectName": "database management systems",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:14:42.553Z",
+    "updatedAt": "2025-02-06T16:14:42.553Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4dffc7b78a3e781748678",
+    "subjectName": "computer networks",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:14:52.666Z",
+    "updatedAt": "2025-02-06T16:14:52.666Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e0077b78a3e78174867b",
+    "subjectName": "operating systems",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:15:03.951Z",
+    "updatedAt": "2025-02-06T16:15:03.951Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e0197b78a3e78174867e",
+    "subjectName": "software engineering",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:15:21.769Z",
+    "updatedAt": "2025-02-06T16:15:21.769Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e0237b78a3e781748681",
+    "subjectName": "data structures and algorithms",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:15:31.892Z",
+    "updatedAt": "2025-02-06T16:15:31.892Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e0317b78a3e781748684",
+    "subjectName": "cybersecurity",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:15:45.353Z",
+    "updatedAt": "2025-02-06T16:15:45.353Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e03b7b78a3e781748687",
+    "subjectName": "introduction to programming",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:15:55.948Z",
+    "updatedAt": "2025-02-06T16:15:55.948Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e0447b78a3e78174868a",
+    "subjectName": "machine learning",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:16:04.172Z",
+    "updatedAt": "2025-02-06T16:16:04.172Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e04c7b78a3e78174868d",
+    "subjectName": "artificial intelligence",
+    "categoryId": "67a4db5ed808eefbf6a4e404",
+    "createdAt": "2025-02-06T16:16:12.174Z",
+    "updatedAt": "2025-02-06T16:16:12.174Z",
+    "appearance": {
+      "icon": "computer", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e08c7b78a3e781748690",
+    "subjectName": "risk management",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:16.280Z",
+    "updatedAt": "2025-02-06T16:17:16.280Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e08bd808eefbf6a4e452",
+    "subjectName": "still life painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:15.744Z",
+    "updatedAt": "2025-02-06T16:17:15.744Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0937b78a3e781748693",
+    "subjectName": "financial markets",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:23.872Z",
+    "updatedAt": "2025-02-06T16:17:23.872Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e095d808eefbf6a4e455",
+    "subjectName": "watercolor painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:25.722Z",
+    "updatedAt": "2025-02-06T16:17:25.722Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e09b7b78a3e781748696",
+    "subjectName": "economics",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:31.452Z",
+    "updatedAt": "2025-02-06T16:17:31.452Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e09dd808eefbf6a4e458",
+    "subjectName": "acrylic painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:33.459Z",
+    "updatedAt": "2025-02-06T16:17:33.459Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0a27b78a3e781748699",
+    "subjectName": "international finance",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:38.922Z",
+    "updatedAt": "2025-02-06T16:17:38.922Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0a5d808eefbf6a4e45b",
+    "subjectName": "pastel painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:41.398Z",
+    "updatedAt": "2025-02-06T16:17:41.398Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0ab7b78a3e78174869c",
+    "subjectName": "corporate finance",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:47.488Z",
+    "updatedAt": "2025-02-06T16:17:47.488Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0add808eefbf6a4e45e",
+    "subjectName": "gouache painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:49.430Z",
+    "updatedAt": "2025-02-06T16:17:49.430Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0b57b78a3e78174869f",
+    "subjectName": "personal finance",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:17:57.463Z",
+    "updatedAt": "2025-02-06T16:17:57.463Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0b4d808eefbf6a4e461",
+    "subjectName": "fabric painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:17:56.955Z",
+    "updatedAt": "2025-02-06T16:17:56.955Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0bbd808eefbf6a4e464",
+    "subjectName": "body painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:03.786Z",
+    "updatedAt": "2025-02-06T16:18:03.786Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0be7b78a3e7817486a2",
+    "subjectName": "accounting",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:18:06.286Z",
+    "updatedAt": "2025-02-06T16:18:06.286Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0c2d808eefbf6a4e467",
+    "subjectName": "miniature painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:10.569Z",
+    "updatedAt": "2025-02-06T16:18:10.569Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0c67b78a3e7817486a5",
+    "subjectName": "financial analysis",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:18:14.237Z",
+    "updatedAt": "2025-02-06T16:18:14.237Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0c9d808eefbf6a4e46a",
+    "subjectName": "mural painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:17.365Z",
+    "updatedAt": "2025-02-06T16:18:17.365Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0cd7b78a3e7817486a8",
+    "subjectName": "investments",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:18:21.530Z",
+    "updatedAt": "2025-02-06T16:18:21.530Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0d0d808eefbf6a4e46d",
+    "subjectName": "portrait painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:24.709Z",
+    "updatedAt": "2025-02-06T16:18:24.709Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0d57b78a3e7817486ab",
+    "subjectName": "financial planning",
+    "categoryId": "67a4dba1d808eefbf6a4e407",
+    "createdAt": "2025-02-06T16:18:29.152Z",
+    "updatedAt": "2025-02-06T16:18:29.152Z",
+    "appearance": {
+      "icon": "legend_toggle", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e0d7d808eefbf6a4e470",
+    "subjectName": "mixed media painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:31.787Z",
+    "updatedAt": "2025-02-06T16:18:31.787Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e0ded808eefbf6a4e473",
+    "subjectName": "landscape painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:18:38.719Z",
+    "updatedAt": "2025-02-06T16:18:38.719Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e105d808eefbf6a4e476",
+    "subjectName": "impressionist painting",
+    "categoryId": "67a4dc4dd808eefbf6a4e42e",
+    "createdAt": "2025-02-06T16:19:17.280Z",
+    "updatedAt": "2025-02-06T16:19:17.280Z",
+    "appearance": {
+      "icon": "color_lens", 
+      "color": "#5e0813"
+    }
+  },
+  {
+    "_id": "67a4e13f7b78a3e7817486ae",
+    "subjectName": "spanish",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:15.364Z",
+    "updatedAt": "2025-02-06T16:20:15.364Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e1467b78a3e7817486b1",
+    "subjectName": "english",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:22.270Z",
+    "updatedAt": "2025-02-06T16:20:22.270Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e14b7b78a3e7817486b4",
+    "subjectName": "portuguese",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:27.208Z",
+    "updatedAt": "2025-02-06T16:20:27.208Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e14f7b78a3e7817486b7",
+    "subjectName": "french",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:31.797Z",
+    "updatedAt": "2025-02-06T16:20:31.797Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e1547b78a3e7817486ba",
+    "subjectName": "ukrainian",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:36.217Z",
+    "updatedAt": "2025-02-06T16:20:36.217Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e15b7b78a3e7817486bd",
+    "subjectName": "chinese",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:43.843Z",
+    "updatedAt": "2025-02-06T16:20:43.843Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e1607b78a3e7817486c0",
+    "subjectName": "german",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:48.093Z",
+    "updatedAt": "2025-02-06T16:20:48.093Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e1657b78a3e7817486c3",
+    "subjectName": "japanese",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:53.041Z",
+    "updatedAt": "2025-02-06T16:20:53.041Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e16a7b78a3e7817486c6",
+    "subjectName": "italian",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:20:58.666Z",
+    "updatedAt": "2025-02-06T16:20:58.666Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e16f7b78a3e7817486c9",
+    "subjectName": "arabic",
+    "categoryId": "67a4dba7d808eefbf6a4e40a",
+    "createdAt": "2025-02-06T16:21:03.130Z",
+    "updatedAt": "2025-02-06T16:21:03.130Z",
+    "appearance": {
+      "icon": "language", 
+      "color": "#66c42c"
+    }
+  },
+  {
+    "_id": "67a4e18d7b78a3e7817486cc",
+    "subjectName": "web design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:21:33.209Z",
+    "updatedAt": "2025-02-06T16:21:33.209Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1947b78a3e7817486cf",
+    "subjectName": "fashion design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:21:40.916Z",
+    "updatedAt": "2025-02-06T16:21:40.916Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e19b7b78a3e7817486d2",
+    "subjectName": "interior design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:21:47.950Z",
+    "updatedAt": "2025-02-06T16:21:47.950Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1a37b78a3e7817486d5",
+    "subjectName": "industrial design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:21:55.105Z",
+    "updatedAt": "2025-02-06T16:21:55.105Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1ad7b78a3e7817486d8",
+    "subjectName": "typography",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:22:05.564Z",
+    "updatedAt": "2025-02-06T16:22:05.564Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1b67b78a3e7817486db",
+    "subjectName": "motion design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:22:14.268Z",
+    "updatedAt": "2025-02-06T16:22:14.268Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1bd7b78a3e7817486de",
+    "subjectName": "design thinking",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:22:21.775Z",
+    "updatedAt": "2025-02-06T16:22:21.775Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e1fb7b78a3e7817486e1",
+    "subjectName": "user experience (ux) design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:23:23.254Z",
+    "updatedAt": "2025-02-06T16:23:23.254Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e2037b78a3e7817486e4",
+    "subjectName": "product design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:23:31.543Z",
+    "updatedAt": "2025-02-06T16:23:31.543Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e20c7b78a3e7817486e7",
+    "subjectName": "graphic design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:23:40.406Z",
+    "updatedAt": "2025-02-06T16:23:40.406Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e2137b78a3e7817486ea",
+    "subjectName": "game design",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:23:47.419Z",
+    "updatedAt": "2025-02-06T16:23:47.419Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e2197b78a3e7817486ed",
+    "subjectName": "design management",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:23:53.835Z",
+    "updatedAt": "2025-02-06T16:23:53.835Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e2217b78a3e7817486f0",
+    "subjectName": "design research",
+    "categoryId": "67a4dbb9d808eefbf6a4e40d",
+    "createdAt": "2025-02-06T16:24:01.552Z",
+    "updatedAt": "2025-02-06T16:24:01.552Z",
+    "appearance": {
+      "icon": "design_services", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e2c57b78a3e7817486f3",
+    "subjectName": "classical mechanics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:26:45.917Z",
+    "updatedAt": "2025-02-06T16:26:45.917Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2cd7b78a3e7817486f6",
+    "subjectName": "fluid dynamics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:26:53.984Z",
+    "updatedAt": "2025-02-06T16:26:53.984Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2d57b78a3e7817486f9",
+    "subjectName": "optics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:01.176Z",
+    "updatedAt": "2025-02-06T16:27:01.176Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2db7b78a3e7817486fc",
+    "subjectName": "nuclear physics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:07.928Z",
+    "updatedAt": "2025-02-06T16:27:07.928Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2e17b78a3e7817486ff",
+    "subjectName": "thermodynamics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:13.973Z",
+    "updatedAt": "2025-02-06T16:27:13.973Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2e87b78a3e781748702",
+    "subjectName": "quantum mechanics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:20.033Z",
+    "updatedAt": "2025-02-06T16:27:20.033Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2ef7b78a3e781748705",
+    "subjectName": "electromagnetism",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:27.346Z",
+    "updatedAt": "2025-02-06T16:27:27.346Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2f57b78a3e781748708",
+    "subjectName": "particle physics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:33.320Z",
+    "updatedAt": "2025-02-06T16:27:33.320Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e2fe7b78a3e78174870b",
+    "subjectName": "solid state physics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:42.112Z",
+    "updatedAt": "2025-02-06T16:27:42.112Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e3067b78a3e78174870e",
+    "subjectName": "astrophysics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:50.629Z",
+    "updatedAt": "2025-02-06T16:27:50.629Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e30a7b78a3e781748711",
+    "subjectName": "relativity",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:27:54.844Z",
+    "updatedAt": "2025-02-06T16:27:54.844Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e3157b78a3e781748714",
+    "subjectName": "quantum field theory",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:28:05.606Z",
+    "updatedAt": "2025-02-06T16:28:05.606Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e31d7b78a3e781748717",
+    "subjectName": "statistical mechanics",
+    "categoryId": "67a4dbc0d808eefbf6a4e410",
+    "createdAt": "2025-02-06T16:28:13.581Z",
+    "updatedAt": "2025-02-06T16:28:13.581Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#462027"
+    }
+  },
+  {
+    "_id": "67a4e3327b78a3e78174871a",
+    "subjectName": "medieval history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:28:34.819Z",
+    "updatedAt": "2025-02-06T16:28:34.819Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e33b7b78a3e78174871d",
+    "subjectName": "cultural history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:28:43.428Z",
+    "updatedAt": "2025-02-06T16:28:43.428Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3427b78a3e781748720",
+    "subjectName": "american history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:28:50.384Z",
+    "updatedAt": "2025-02-06T16:28:50.384Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3497b78a3e781748723",
+    "subjectName": "world history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:28:57.270Z",
+    "updatedAt": "2025-02-06T16:28:57.270Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e34f7b78a3e781748726",
+    "subjectName": "modern history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:03.816Z",
+    "updatedAt": "2025-02-06T16:29:03.816Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3577b78a3e781748729",
+    "subjectName": "african history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:11.491Z",
+    "updatedAt": "2025-02-06T16:29:11.491Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3607b78a3e78174872c",
+    "subjectName": "european history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:20.710Z",
+    "updatedAt": "2025-02-06T16:29:20.710Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3687b78a3e78174872f",
+    "subjectName": "military history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:28.355Z",
+    "updatedAt": "2025-02-06T16:29:28.355Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e36f7b78a3e781748732",
+    "subjectName": "ancient history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:35.830Z",
+    "updatedAt": "2025-02-06T16:29:35.830Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3767b78a3e781748735",
+    "subjectName": "asian history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:42.889Z",
+    "updatedAt": "2025-02-06T16:29:42.889Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3807b78a3e781748738",
+    "subjectName": "contemporary history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:29:52.719Z",
+    "updatedAt": "2025-02-06T16:29:52.719Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3897b78a3e78174873b",
+    "subjectName": "economic history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:01.013Z",
+    "updatedAt": "2025-02-06T16:30:01.013Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3917b78a3e78174873e",
+    "subjectName": "political history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:09.642Z",
+    "updatedAt": "2025-02-06T16:30:09.642Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3987b78a3e781748741",
+    "subjectName": "social history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:16.917Z",
+    "updatedAt": "2025-02-06T16:30:16.917Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e39f7b78a3e781748744",
+    "subjectName": "intellectual history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:23.557Z",
+    "updatedAt": "2025-02-06T16:30:23.557Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3a87b78a3e781748747",
+    "subjectName": "diplomatic history",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:32.501Z",
+    "updatedAt": "2025-02-06T16:30:32.501Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3b07b78a3e78174874a",
+    "subjectName": "history of science",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:40.149Z",
+    "updatedAt": "2025-02-06T16:30:40.149Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e3b77b78a3e78174874d",
+    "subjectName": "history of technology",
+    "categoryId": "67a4dbc7d808eefbf6a4e413",
+    "createdAt": "2025-02-06T16:30:47.985Z",
+    "updatedAt": "2025-02-06T16:30:47.985Z",
+    "appearance": {
+      "icon": "history_edu", 
+      "color": "#6ec050"
+    }
+  },
+  {
+    "_id": "67a4e41a7b78a3e781748750",
+    "subjectName": "experimental psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:32:26.577Z",
+    "updatedAt": "2025-02-06T16:32:26.577Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4217b78a3e781748753",
+    "subjectName": "neuropsychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:32:33.424Z",
+    "updatedAt": "2025-02-06T16:32:33.424Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4277b78a3e781748756",
+    "subjectName": "cognitive psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:32:39.405Z",
+    "updatedAt": "2025-02-06T16:32:39.405Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4317b78a3e781748759",
+    "subjectName": "educational psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:32:49.041Z",
+    "updatedAt": "2025-02-06T16:32:49.041Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4387b78a3e78174875c",
+    "subjectName": "clinical psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:32:56.900Z",
+    "updatedAt": "2025-02-06T16:32:56.900Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4427b78a3e78174875f",
+    "subjectName": "developmental psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:06.549Z",
+    "updatedAt": "2025-02-06T16:33:06.549Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4497b78a3e781748762",
+    "subjectName": "health psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:13.652Z",
+    "updatedAt": "2025-02-06T16:33:13.652Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4587b78a3e781748765",
+    "subjectName": "social psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:28.146Z",
+    "updatedAt": "2025-02-06T16:33:28.146Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e45f7b78a3e781748768",
+    "subjectName": "sports psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:35.665Z",
+    "updatedAt": "2025-02-06T16:33:35.665Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4667b78a3e78174876b",
+    "subjectName": "forensic psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:42.667Z",
+    "updatedAt": "2025-02-06T16:33:42.667Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e46e7b78a3e78174876e",
+    "subjectName": "quantitative psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:33:50.139Z",
+    "updatedAt": "2025-02-06T16:33:50.139Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4797b78a3e781748771",
+    "subjectName": "school psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:34:01.214Z",
+    "updatedAt": "2025-02-06T16:34:01.214Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e47f7b78a3e781748774",
+    "subjectName": "clinical neuropsychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:34:07.322Z",
+    "updatedAt": "2025-02-06T16:34:07.322Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4867b78a3e781748777",
+    "subjectName": "community psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:34:14.699Z",
+    "updatedAt": "2025-02-06T16:34:14.699Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e48d7b78a3e78174877a",
+    "subjectName": "environmental psychology",
+    "categoryId": "67a4dbced808eefbf6a4e416",
+    "createdAt": "2025-02-06T16:34:21.688Z",
+    "updatedAt": "2025-02-06T16:34:21.688Z",
+    "appearance": {
+      "icon": "star", 
+      "color": "#d0c59b"
+    }
+  },
+  {
+    "_id": "67a4e4a37b78a3e78174877d",
+    "subjectName": "observational astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:34:43.144Z",
+    "updatedAt": "2025-02-06T16:34:43.144Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4ad7b78a3e781748780",
+    "subjectName": "galactic astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:34:53.657Z",
+    "updatedAt": "2025-02-06T16:34:53.657Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4b37b78a3e781748783",
+    "subjectName": "astrophotography",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:34:59.686Z",
+    "updatedAt": "2025-02-06T16:34:59.686Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4bb7b78a3e781748786",
+    "subjectName": "high-energy astrophysics",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:07.946Z",
+    "updatedAt": "2025-02-06T16:35:07.946Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4c37b78a3e781748789",
+    "subjectName": "astrobiology",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:15.172Z",
+    "updatedAt": "2025-02-06T16:35:15.172Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4c97b78a3e78174878c",
+    "subjectName": "solar astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:21.496Z",
+    "updatedAt": "2025-02-06T16:35:21.496Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4d07b78a3e78174878f",
+    "subjectName": "astrophysics",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:28.090Z",
+    "updatedAt": "2025-02-06T16:35:28.090Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4d57b78a3e781748792",
+    "subjectName": "stellar astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:33.890Z",
+    "updatedAt": "2025-02-06T16:35:33.890Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4df7b78a3e781748795",
+    "subjectName": "gravitational astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:43.616Z",
+    "updatedAt": "2025-02-06T16:35:43.616Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4ea7b78a3e781748798",
+    "subjectName": "planetary science",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:35:54.246Z",
+    "updatedAt": "2025-02-06T16:35:54.246Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4f57b78a3e78174879b",
+    "subjectName": "radio astronomy",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:05.668Z",
+    "updatedAt": "2025-02-06T16:36:05.668Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4fb7b78a3e78174879e",
+    "subjectName": "cosmology",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:11.051Z",
+    "updatedAt": "2025-02-06T16:36:11.051Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e4ff7b78a3e7817487a1",
+    "subjectName": "exoplanets",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:15.543Z",
+    "updatedAt": "2025-02-06T16:36:15.543Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e5057b78a3e7817487a4",
+    "subjectName": "galaxies",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:21.188Z",
+    "updatedAt": "2025-02-06T16:36:21.188Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e5097b78a3e7817487a7",
+    "subjectName": "mars",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:25.639Z",
+    "updatedAt": "2025-02-06T16:36:25.639Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e50e7b78a3e7817487aa",
+    "subjectName": "meteorites",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:30.207Z",
+    "updatedAt": "2025-02-06T16:36:30.207Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e5137b78a3e7817487ad",
+    "subjectName": "moon",
+    "categoryId": "67a4dbd5d808eefbf6a4e419",
+    "createdAt": "2025-02-06T16:36:35.175Z",
+    "updatedAt": "2025-02-06T16:36:35.175Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e5287b78a3e7817487b0",
+    "subjectName": "cell biology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:36:56.808Z",
+    "updatedAt": "2025-02-06T16:36:56.808Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e52f7b78a3e7817487b3",
+    "subjectName": "genetics",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:03.121Z",
+    "updatedAt": "2025-02-06T16:37:03.121Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5347b78a3e7817487b6",
+    "subjectName": "evolutionary biology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:08.593Z",
+    "updatedAt": "2025-02-06T16:37:08.593Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e53a7b78a3e7817487b9",
+    "subjectName": "ecology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:14.014Z",
+    "updatedAt": "2025-02-06T16:37:14.014Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e53e7b78a3e7817487bc",
+    "subjectName": "microbiology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:18.814Z",
+    "updatedAt": "2025-02-06T16:37:18.814Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5427b78a3e7817487bf",
+    "subjectName": "anatomy",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:22.985Z",
+    "updatedAt": "2025-02-06T16:37:22.985Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5477b78a3e7817487c2",
+    "subjectName": "physiology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:27.369Z",
+    "updatedAt": "2025-02-06T16:37:27.369Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e54d7b78a3e7817487c5",
+    "subjectName": "botany",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:33.159Z",
+    "updatedAt": "2025-02-06T16:37:33.159Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5527b78a3e7817487c8",
+    "subjectName": "zoology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:38.333Z",
+    "updatedAt": "2025-02-06T16:37:38.333Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5577b78a3e7817487cb",
+    "subjectName": "marine biology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:43.523Z",
+    "updatedAt": "2025-02-06T16:37:43.523Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e55e7b78a3e7817487ce",
+    "subjectName": "molecular biology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:50.273Z",
+    "updatedAt": "2025-02-06T16:37:50.273Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5667b78a3e7817487d1",
+    "subjectName": "biochemistry",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:37:58.192Z",
+    "updatedAt": "2025-02-06T16:37:58.192Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e56a7b78a3e7817487d4",
+    "subjectName": "biotechnology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:38:02.613Z",
+    "updatedAt": "2025-02-06T16:38:02.613Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e56f7b78a3e7817487d7",
+    "subjectName": "immunology",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:38:07.992Z",
+    "updatedAt": "2025-02-06T16:38:07.992Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e5757b78a3e7817487da",
+    "subjectName": "neuroscience",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:38:13.968Z",
+    "updatedAt": "2025-02-06T16:38:13.968Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e57b7b78a3e7817487dd",
+    "subjectName": "evolution",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:38:19.273Z",
+    "updatedAt": "2025-02-06T16:38:19.273Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e57f7b78a3e7817487e0",
+    "subjectName": "biophysics",
+    "categoryId": "67a4dbdad808eefbf6a4e41c",
+    "createdAt": "2025-02-06T16:38:23.809Z",
+    "updatedAt": "2025-02-06T16:38:23.809Z",
+    "appearance": {
+      "icon": "science", 
+      "color": "#e3b21c"
+    }
+  },
+  {
+    "_id": "67a4e59b7b78a3e7817487e3",
+    "subjectName": "testing",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:38:51.719Z",
+    "updatedAt": "2025-02-06T16:38:51.719Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5a27b78a3e7817487e6",
+    "subjectName": "web development",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:38:58.393Z",
+    "updatedAt": "2025-02-06T16:38:58.393Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5aa7b78a3e7817487e9",
+    "subjectName": "ui/ux design",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:06.868Z",
+    "updatedAt": "2025-02-06T16:39:06.868Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5b27b78a3e7817487ec",
+    "subjectName": "game development",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:14.201Z",
+    "updatedAt": "2025-02-06T16:39:14.201Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5b97b78a3e7817487ef",
+    "subjectName": "mobile development",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:21.595Z",
+    "updatedAt": "2025-02-06T16:39:21.595Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5c07b78a3e7817487f2",
+    "subjectName": "data science",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:28.668Z",
+    "updatedAt": "2025-02-06T16:39:28.668Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5c77b78a3e7817487f5",
+    "subjectName": "devops",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:35.303Z",
+    "updatedAt": "2025-02-06T16:39:35.303Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5cc7b78a3e7817487f8",
+    "subjectName": "cybersecurity",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:40.741Z",
+    "updatedAt": "2025-02-06T16:39:40.741Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5d27b78a3e7817487fb",
+    "subjectName": "cloud computing",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:46.822Z",
+    "updatedAt": "2025-02-06T16:39:46.822Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5da7b78a3e7817487fe",
+    "subjectName": "machine learning",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:39:54.176Z",
+    "updatedAt": "2025-02-06T16:39:54.176Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5e17b78a3e781748801",
+    "subjectName": "artificial intelligence",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:01.674Z",
+    "updatedAt": "2025-02-06T16:40:01.674Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5e77b78a3e781748804",
+    "subjectName": "blockchain",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:07.267Z",
+    "updatedAt": "2025-02-06T16:40:07.267Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5ed7b78a3e781748807",
+    "subjectName": "big data",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:13.856Z",
+    "updatedAt": "2025-02-06T16:40:13.856Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5f37b78a3e78174880a",
+    "subjectName": "iot",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:19.598Z",
+    "updatedAt": "2025-02-06T16:40:19.598Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5f87b78a3e78174880d",
+    "subjectName": "ar/vr",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:24.348Z",
+    "updatedAt": "2025-02-06T16:40:24.348Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e5fe7b78a3e781748810",
+    "subjectName": "quantum computing",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:30.889Z",
+    "updatedAt": "2025-02-06T16:40:30.889Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e60b7b78a3e781748813",
+    "subjectName": "edge computing",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:43.455Z",
+    "updatedAt": "2025-02-06T16:40:43.455Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e6127b78a3e781748816",
+    "subjectName": "digital transformation",
+    "categoryId": "67a4dc28d808eefbf6a4e41f",
+    "createdAt": "2025-02-06T16:40:50.794Z",
+    "updatedAt": "2025-02-06T16:40:50.794Z",
+    "appearance": {
+      "icon": "account_tree", 
+      "color": "#47b8b8"
+    }
+  },
+  {
+    "_id": "67a4e62c7b78a3e781748819",
+    "subjectName": "it audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:16.761Z",
+    "updatedAt": "2025-02-06T16:41:16.761Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6337b78a3e78174881c",
+    "subjectName": "compliance audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:23.905Z",
+    "updatedAt": "2025-02-06T16:41:23.905Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e63c7b78a3e78174881f",
+    "subjectName": "financial audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:32.630Z",
+    "updatedAt": "2025-02-06T16:41:32.630Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6447b78a3e781748822",
+    "subjectName": "internal audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:40.677Z",
+    "updatedAt": "2025-02-06T16:41:40.677Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e64b7b78a3e781748825",
+    "subjectName": "external audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:47.991Z",
+    "updatedAt": "2025-02-06T16:41:47.991Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6537b78a3e781748828",
+    "subjectName": "operational audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:41:55.290Z",
+    "updatedAt": "2025-02-06T16:41:55.290Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e65a7b78a3e78174882b",
+    "subjectName": "compliance audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:02.748Z",
+    "updatedAt": "2025-02-06T16:42:02.748Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6617b78a3e78174882e",
+    "subjectName": "information systems audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:09.363Z",
+    "updatedAt": "2025-02-06T16:42:09.363Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6687b78a3e781748831",
+    "subjectName": "forensic audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:16.199Z",
+    "updatedAt": "2025-02-06T16:42:16.199Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e66e7b78a3e781748834",
+    "subjectName": "tax audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:22.367Z",
+    "updatedAt": "2025-02-06T16:42:22.367Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6757b78a3e781748837",
+    "subjectName": "performance audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:29.039Z",
+    "updatedAt": "2025-02-06T16:42:29.039Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e67c7b78a3e78174883a",
+    "subjectName": "environmental audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:36.360Z",
+    "updatedAt": "2025-02-06T16:42:36.360Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6837b78a3e78174883d",
+    "subjectName": "investigative audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:43.597Z",
+    "updatedAt": "2025-02-06T16:42:43.597Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6897b78a3e781748840",
+    "subjectName": "construction audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:49.983Z",
+    "updatedAt": "2025-02-06T16:42:49.983Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6917b78a3e781748843",
+    "subjectName": "energy audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:42:57.750Z",
+    "updatedAt": "2025-02-06T16:42:57.750Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e69a7b78a3e781748846",
+    "subjectName": "integrated audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:43:06.791Z",
+    "updatedAt": "2025-02-06T16:43:06.791Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6a17b78a3e781748849",
+    "subjectName": "quality audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:43:13.416Z",
+    "updatedAt": "2025-02-06T16:43:13.416Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6a87b78a3e78174884c",
+    "subjectName": "social audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:43:20.909Z",
+    "updatedAt": "2025-02-06T16:43:20.909Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6ae7b78a3e78174884f",
+    "subjectName": "safety audit",
+    "categoryId": "67a4dc32d808eefbf6a4e422",
+    "createdAt": "2025-02-06T16:43:26.311Z",
+    "updatedAt": "2025-02-06T16:43:26.311Z",
+    "appearance": {
+      "icon": "stacked_bar_chart", 
+      "color": "#ffd700"
+    }
+  },
+  {
+    "_id": "67a4e6df7b78a3e781748852",
+    "subjectName": "digital marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:44:15.130Z",
+    "updatedAt": "2025-02-06T16:44:15.130Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e6e87b78a3e781748855",
+    "subjectName": "public relations",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:44:24.457Z",
+    "updatedAt": "2025-02-06T16:44:24.457Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e6f17b78a3e781748858",
+    "subjectName": "content marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:44:33.267Z",
+    "updatedAt": "2025-02-06T16:44:33.267Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e6fe7b78a3e78174885b",
+    "subjectName": "social media marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:44:46.443Z",
+    "updatedAt": "2025-02-06T16:44:46.443Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7057b78a3e78174885e",
+    "subjectName": "email marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:44:53.599Z",
+    "updatedAt": "2025-02-06T16:44:53.599Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e70c7b78a3e781748861",
+    "subjectName": "influencer marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:00.334Z",
+    "updatedAt": "2025-02-06T16:45:00.334Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7137b78a3e781748864",
+    "subjectName": "affiliate marketing",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:07.961Z",
+    "updatedAt": "2025-02-06T16:45:07.961Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e71b7b78a3e781748867",
+    "subjectName": "brand management",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:15.875Z",
+    "updatedAt": "2025-02-06T16:45:15.875Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7227b78a3e78174886a",
+    "subjectName": "marketing analytics",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:22.316Z",
+    "updatedAt": "2025-02-06T16:45:22.316Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7297b78a3e78174886d",
+    "subjectName": "consumer behavior",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:29.047Z",
+    "updatedAt": "2025-02-06T16:45:29.047Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e72f7b78a3e781748870",
+    "subjectName": "advertising",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:35.939Z",
+    "updatedAt": "2025-02-06T16:45:35.939Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7367b78a3e781748873",
+    "subjectName": "market research",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:42.703Z",
+    "updatedAt": "2025-02-06T16:45:42.703Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e73d7b78a3e781748876",
+    "subjectName": "sales management",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:49.649Z",
+    "updatedAt": "2025-02-06T16:45:49.649Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7437b78a3e781748879",
+    "subjectName": "seo",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:45:55.166Z",
+    "updatedAt": "2025-02-06T16:45:55.166Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7497b78a3e78174887c",
+    "subjectName": "sem",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:46:01.486Z",
+    "updatedAt": "2025-02-06T16:46:01.486Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e74f7b78a3e78174887f",
+    "subjectName": "ppc",
+    "categoryId": "67a4dc37d808eefbf6a4e425",
+    "createdAt": "2025-02-06T16:46:07.522Z",
+    "updatedAt": "2025-02-06T16:46:07.522Z",
+    "appearance": {
+      "icon": "campaign", 
+      "color": "#ffaaa5"
+    }
+  },
+  {
+    "_id": "67a4e7627b78a3e781748882",
+    "subjectName": "algebra",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:26.979Z",
+    "updatedAt": "2025-02-06T16:46:26.979Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7677b78a3e781748885",
+    "subjectName": "geometry",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:31.078Z",
+    "updatedAt": "2025-02-06T16:46:31.078Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e76b7b78a3e781748888",
+    "subjectName": "trigonometry",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:35.645Z",
+    "updatedAt": "2025-02-06T16:46:35.645Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7717b78a3e78174888b",
+    "subjectName": "calculus",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:41.955Z",
+    "updatedAt": "2025-02-06T16:46:41.955Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7787b78a3e78174888e",
+    "subjectName": "differential equations",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:48.006Z",
+    "updatedAt": "2025-02-06T16:46:48.006Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e77e7b78a3e781748891",
+    "subjectName": "linear algebra",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:46:54.459Z",
+    "updatedAt": "2025-02-06T16:46:54.459Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7847b78a3e781748894",
+    "subjectName": "probability",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:00.406Z",
+    "updatedAt": "2025-02-06T16:47:00.406Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7887b78a3e781748897",
+    "subjectName": "statistics",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:04.392Z",
+    "updatedAt": "2025-02-06T16:47:04.392Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e78d7b78a3e78174889a",
+    "subjectName": "number theory",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:09.677Z",
+    "updatedAt": "2025-02-06T16:47:09.677Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7937b78a3e78174889d",
+    "subjectName": "topology",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:15.395Z",
+    "updatedAt": "2025-02-06T16:47:15.395Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7997b78a3e7817488a0",
+    "subjectName": "discrete mathematics",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:21.652Z",
+    "updatedAt": "2025-02-06T16:47:21.652Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7a47b78a3e7817488a3",
+    "subjectName": "mathematical logic",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:32.487Z",
+    "updatedAt": "2025-02-06T16:47:32.487Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7aa7b78a3e7817488a6",
+    "subjectName": "set theory",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:38.798Z",
+    "updatedAt": "2025-02-06T16:47:38.798Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7b27b78a3e7817488a9",
+    "subjectName": "combinatorics",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:46.488Z",
+    "updatedAt": "2025-02-06T16:47:46.488Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7b77b78a3e7817488ac",
+    "subjectName": "graph theory",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:51.969Z",
+    "updatedAt": "2025-02-06T16:47:51.969Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7bf7b78a3e7817488af",
+    "subjectName": "game theory",
+    "categoryId": "67a4dc3cd808eefbf6a4e428",
+    "createdAt": "2025-02-06T16:47:59.716Z",
+    "updatedAt": "2025-02-06T16:47:59.716Z",
+    "appearance": {
+      "icon": "tag", 
+      "color": "#866606"
+    }
+  },
+  {
+    "_id": "67a4e7cf7b78a3e7817488b2",
+    "subjectName": "music theory",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:15.360Z",
+    "updatedAt": "2025-02-06T16:48:15.360Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7d97b78a3e7817488b5",
+    "subjectName": "music production",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:25.249Z",
+    "updatedAt": "2025-02-06T16:48:25.249Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7df7b78a3e7817488b8",
+    "subjectName": "music composition",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:31.452Z",
+    "updatedAt": "2025-02-06T16:48:31.452Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7e87b78a3e7817488bb",
+    "subjectName": "music history",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:40.577Z",
+    "updatedAt": "2025-02-06T16:48:40.577Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7ed7b78a3e7817488be",
+    "subjectName": "musicology",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:45.888Z",
+    "updatedAt": "2025-02-06T16:48:45.888Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7f27b78a3e7817488c1",
+    "subjectName": "piano",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:50.557Z",
+    "updatedAt": "2025-02-06T16:48:50.557Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7f67b78a3e7817488c4",
+    "subjectName": "guitar",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:48:54.806Z",
+    "updatedAt": "2025-02-06T16:48:54.806Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e7fc7b78a3e7817488c7",
+    "subjectName": "voice training",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:49:00.686Z",
+    "updatedAt": "2025-02-06T16:49:00.686Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e8027b78a3e7817488ca",
+    "subjectName": "ethnomusicology",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:49:06.592Z",
+    "updatedAt": "2025-02-06T16:49:06.592Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e8077b78a3e7817488cd",
+    "subjectName": "jazz studies",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:49:11.710Z",
+    "updatedAt": "2025-02-06T16:49:11.710Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  },
+  {
+    "_id": "67a4e80c7b78a3e7817488d0",
+    "subjectName": "violin",
+    "categoryId": "67a4dc42d808eefbf6a4e42b",
+    "createdAt": "2025-02-06T16:49:16.590Z",
+    "updatedAt": "2025-02-06T16:49:16.590Z",
+    "appearance": {
+      "icon": "music_note",
+      "color": "#f67c41"
+    }
+  }
+]
