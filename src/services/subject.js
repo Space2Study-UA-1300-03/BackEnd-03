@@ -1,10 +1,12 @@
 import { categoriesService } from '#services/category.js'
 import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
+import { query } from '#consts/validation.js'
 import Subject from '#models/subject.js'
 import mongoose from 'mongoose'
 
 const { CATEGORY_NOT_FOUND, SUBJECT_NOT_FOUND, INVALID_ID } = error
+const { MAX_LIMIT } = query
 
 /**
  * Service for managing subjects.
@@ -19,7 +21,7 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjects: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments()
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -53,7 +55,7 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjectsNames: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments()
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)

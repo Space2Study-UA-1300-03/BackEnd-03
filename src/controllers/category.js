@@ -2,15 +2,15 @@ import { categoriesService } from '#services/category.js'
 import { subjectsService } from '#services/subject.js'
 import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
-import { page } from '#consts/validation.js'
+import { query } from '#consts/validation.js'
 import mongoose from 'mongoose'
 
-const { perPageLimit, startPage } = page
+const { PER_PAGE, START_PAGE } = query
 const { INVALID_ID } = error
 
 export const getAllCategories = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || PER_PAGE
+  const limit = parseInt(req.query.limit) || START_PAGE
 
   const categories = await categoriesService.getAllCategories(page, limit)
 
@@ -18,8 +18,8 @@ export const getAllCategories = async (req, res) => {
 }
 
 export const getCategoryNames = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || PER_PAGE
+  const limit = parseInt(req.query.limit) || START_PAGE
   const categories = await categoriesService.getCategoryNames(page, limit)
 
   res.status(200).json(categories)
@@ -39,8 +39,8 @@ export const createCategory = async (req, res) => {
 }
 
 export const getSubjectByCategoryId = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || PER_PAGE
+  const limit = parseInt(req.query.limit) || START_PAGE
   const { id } = req.params
 
   if (id && !mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)
@@ -52,8 +52,8 @@ export const getSubjectByCategoryId = async (req, res) => {
   res.status(200).json(subjectsNames)
 }
 export const getSubjectNamesByCategoryId = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || PER_PAGE
+  const limit = parseInt(req.query.limit) || START_PAGE
   const { id } = req.params
 
   if (id && !mongoose.Types.ObjectId.isValid(id)) throw createError(400, INVALID_ID)

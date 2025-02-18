@@ -1,10 +1,11 @@
 import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
+import { query } from '#consts/validation.js'
 import Category from '#models/category.js'
 import Subject from '#models/subject.js'
-import Offer from '#models/offer.js'
 
 const { CATEGORY_NOT_FOUND, CATEGORY_ALREADY_EXISTS } = error
+const { MAX_LIMIT } = query
 
 /**
  * Service for managing categories and related subjects.
@@ -18,7 +19,7 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getAllCategories: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalCategories = await Category.countDocuments()
     if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -51,7 +52,7 @@ export const categoriesService = {
    * @throws {Error} If no categories are found.
    */
   getCategoryNames: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalCategories = await Category.countDocuments()
     if (totalCategories === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -91,7 +92,7 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
    */
   getSubjectByCategoryId: async (id, page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -127,7 +128,7 @@ export const categoriesService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
    */
   getSubjectNamesByCategoryId: async (id, page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
     const totalSubjects = await Subject.countDocuments({ categoryId: id })
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
