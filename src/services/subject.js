@@ -19,7 +19,7 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjects: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
     const totalSubjects = await Subject.countDocuments()
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
@@ -53,7 +53,7 @@ export const subjectsService = {
    * @throws {Error} If no subjects are found.
    */
   getAllSubjectsNames: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(10, limit))
+    const normalizedLimit = Math.max(1, Math.min(1000, limit))
 
     const totalSubjects = await Subject.countDocuments()
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
