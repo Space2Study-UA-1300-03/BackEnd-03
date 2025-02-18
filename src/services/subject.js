@@ -20,10 +20,14 @@ export const subjectsService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
    * @throws {Error} If no subjects are found.
    */
-  getAllSubjects: async (page, limit) => {
+  getAllSubjects: async (page, limit, name) => {
+    console.log('getAllSubjects')
+    const searchQuery = {}
+    if (name) searchQuery.subjectName = { $regex: name, $options: 'i' }
+
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
-    const totalSubjects = await Subject.countDocuments()
+    const totalSubjects = await Subject.countDocuments(searchQuery)
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
@@ -31,7 +35,7 @@ export const subjectsService = {
 
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+    const subjects = await Subject.find(searchQuery).sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
     return {
       pagination: {
@@ -54,10 +58,13 @@ export const subjectsService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
    * @throws {Error} If no subjects are found.
    */
-  getAllSubjectsNames: async (page, limit) => {
+  getAllSubjectsNames: async (page, limit, name) => {
+    const searchQuery = {}
+    if (name) searchQuery.subjectName = { $regex: name, $options: 'i' }
+
     const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
 
-    const totalSubjects = await Subject.countDocuments()
+    const totalSubjects = await Subject.countDocuments(searchQuery)
     if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
@@ -65,7 +72,7 @@ export const subjectsService = {
 
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const subjects = await Subject.find({}, 'subjectName categoryId')
+    const subjects = await Subject.find(searchQuery, 'subjectName categoryId')
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(normalizedLimit)

@@ -1,19 +1,19 @@
 import { subjectsService } from '#services/subject.js'
-import { page } from '#consts/validation.js'
+import { query } from '#consts/validation.js'
 
-const { perPageLimit, startPage } = page
+const { PER_PAGE, START_PAGE } = query
 
 export const getAllSubjects = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
 
   const subjects = await subjectsService.getAllSubjects(page, limit)
 
   res.status(200).json(subjects)
 }
 export const getAllSubjectsNames = async (req, res) => {
-  const page = parseInt(req.query.page) || startPage
-  const limit = parseInt(req.query.limit) || perPageLimit
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
 
   const subjects = await subjectsService.getAllSubjectsNames(page, limit)
 
