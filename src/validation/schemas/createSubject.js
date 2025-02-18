@@ -12,5 +12,7 @@ export const createSubjectValidationSchema = z.object({
     .max(MAX_NAME_LENGTH, FIELD_IS_LONGER_THAN_MAX(MAX_NAME_LENGTH))
     .toLowerCase()
     .trim(),
-  categoryId: z.string().toLowerCase().trim()
+  categoryId: z.string().toLowerCase().trim(),
+  icon: z.string().optional(),
+  color: z.string().optional()
 })
