@@ -9,8 +9,8 @@ const { PER_PAGE, START_PAGE } = query
 const { INVALID_ID } = error
 
 export const getAllCategories = async (req, res) => {
-  const page = parseInt(req.query.page) || PER_PAGE
-  const limit = parseInt(req.query.limit) || START_PAGE
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
   const { name } = req.query
 
   const categories = await categoriesService.getAllCategories(page, limit, name)
@@ -19,8 +19,8 @@ export const getAllCategories = async (req, res) => {
 }
 
 export const getCategoryNames = async (req, res) => {
-  const page = parseInt(req.query.page) || PER_PAGE
-  const limit = parseInt(req.query.limit) || START_PAGE
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
   const { name } = req.query
 
   const categories = await categoriesService.getCategoryNames(page, limit, name)
@@ -42,8 +42,8 @@ export const createCategory = async (req, res) => {
 }
 
 export const getSubjectByCategoryId = async (req, res) => {
-  const page = parseInt(req.query.page) || PER_PAGE
-  const limit = parseInt(req.query.limit) || START_PAGE
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
   const { name } = req.query
   const { id } = req.params
 
@@ -56,8 +56,8 @@ export const getSubjectByCategoryId = async (req, res) => {
   res.status(200).json(subjectsNames)
 }
 export const getSubjectNamesByCategoryId = async (req, res) => {
-  const page = parseInt(req.query.page) || PER_PAGE
-  const limit = parseInt(req.query.limit) || START_PAGE
+  const page = parseInt(req.query.page) || START_PAGE
+  const limit = parseInt(req.query.limit) || PER_PAGE
   const { name } = req.query
   const { id } = req.params
 
