@@ -28,18 +28,38 @@ export const offerService = {
     return newOffer
   },
 
-  getOffers: async (page, limit) => {
+  getOffers: async (page, limit, queries) => {
     const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    const totalCategories = await Offer.countDocuments()
-    if (totalCategories === 0) throw createError(404, OFFER_NOT_FOUND)
+    const filter = {}
+
+    if (queries.role) filter['aboutAuthor.authorRole'] = queries.role
+
+    if (queries.search) filter['aboutAuthor.author.firstName'] = queries.search
+
+    if (queries.language) filter.languages = queries.language
+
+    if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
+
+    if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
+
+    const totalCategories = await Offer.countDocuments(filter)
+    if (totalCategories === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
-
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const categories = await Offer.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+    const categories = await Offer.find(filter)
+      .populate({
+        path: 'aboutAuthor.author',
+        select: 'firstName email photo role'
+      })
+      .populate('aboutInterests.categoryInfo')
+      .populate('aboutInterests.subjectInfo')
+      .sort(queries.sort || { createdAt: -1 })
+      .skip(skip)
+      .limit(normalizedLimit)
 
     return {
       pagination: {
