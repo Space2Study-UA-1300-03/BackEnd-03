@@ -1,6 +1,7 @@
-export const page = {
-  perPageLimit: 5,
-  startPage: 1
+export const query = {
+  PER_PAGE: 5,
+  START_PAGE: 1,
+  MAX_LIMIT: 1000
 }
 
 export const lengths = {

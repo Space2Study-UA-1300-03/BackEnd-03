@@ -1,10 +1,12 @@
 import { categoriesService } from '#services/category.js'
 import { createError } from '#utils/errorsHelper.js'
 import { error } from '#consts/validationError.js'
+import { query } from '#consts/validation.js'
 import Subject from '#models/subject.js'
 import mongoose from 'mongoose'
 
 const { CATEGORY_NOT_FOUND, SUBJECT_NOT_FOUND, INVALID_ID } = error
+const { MAX_LIMIT } = query
 
 /**
  * Service for managing subjects.
@@ -18,18 +20,21 @@ export const subjectsService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subjects.
    * @throws {Error} If no subjects are found.
    */
-  getAllSubjects: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+  getAllSubjects: async (page, limit, name) => {
+    const searchQuery = {}
+    if (name) searchQuery.subjectName = { $regex: name, $options: 'i' }
 
-    const totalSubjects = await Subject.countDocuments()
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
+
+    const totalSubjects = await Subject.countDocuments(searchQuery)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
 
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const subjects = await Subject.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+    const subjects = await Subject.find(searchQuery).sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
 
     return {
       pagination: {
@@ -52,18 +57,21 @@ export const subjectsService = {
    * @returns {Promise<Object>} An object containing pagination info and the list of subject names.
    * @throws {Error} If no subjects are found.
    */
-  getAllSubjectsNames: async (page, limit) => {
-    const normalizedLimit = Math.max(1, Math.min(1000, limit))
+  getAllSubjectsNames: async (page, limit, name) => {
+    const searchQuery = {}
+    if (name) searchQuery.subjectName = { $regex: name, $options: 'i' }
 
-    const totalSubjects = await Subject.countDocuments()
-    if (totalSubjects === 0) throw createError(404, CATEGORY_NOT_FOUND)
+    const normalizedLimit = Math.max(1, Math.min(MAX_LIMIT, limit))
+
+    const totalSubjects = await Subject.countDocuments(searchQuery)
+    if (totalSubjects === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalSubjects / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
 
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const subjects = await Subject.find({}, 'subjectName categoryId')
+    const subjects = await Subject.find(searchQuery, 'subjectName categoryId')
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(normalizedLimit)
