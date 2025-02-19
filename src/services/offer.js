@@ -28,18 +28,48 @@ export const offerService = {
     return newOffer
   },
 
-  getOffers: async (page, limit) => {
+  getOffers: async (page, limit, queries) => {
     const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    const totalCategories = await Offer.countDocuments()
-    if (totalCategories === 0) throw createError(404, OFFER_NOT_FOUND)
+    // Створюємо фільтр на основі queries
+    const filter = {}
+
+    // Додаємо фільтр по ролі якщо вона є
+    if (queries.role) filter['aboutAuthor.authorRole'] = queries.role
+
+    // Додаємо пошук по імені автора
+    if (queries.search) filter['aboutAuthor.author.firstName'] = queries.search
+
+    // Додаємо фільтр по мові
+    if (queries.language) filter.languages = queries.language
+
+    // Додаємо фільтр по категорії
+    if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
+
+    // Додаємо фільтр по предмету
+    if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
+
+    // Рахуємо загальну кількість документів з урахуванням фільтрів
+    console.log(filter, 'filter')
+
+    const totalCategories = await Offer.countDocuments(filter)
+    if (totalCategories === 0) return { data: [] }
 
     const totalPages = Math.max(1, Math.ceil(totalCategories / normalizedLimit))
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
-
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    const categories = await Offer.find().sort({ createdAt: -1 }).skip(skip).limit(normalizedLimit)
+    // Виконуємо запит з фільтрами та сортуванням
+    const categories = await Offer.find(filter)
+      .populate({
+        path: 'aboutAuthor.author',
+        select: 'firstName email photo role'
+      })
+      .populate('aboutInterests.categoryInfo')
+      .populate('aboutInterests.subjectInfo')
+      .sort(queries.sort || { createdAt: -1 })
+      .skip(skip)
+      .limit(normalizedLimit)
 
     return {
       pagination: {

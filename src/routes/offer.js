@@ -5,12 +5,13 @@ import { asyncWrapper } from '#middlewares/asyncWrapper.js'
 import { idValidation } from '#middlewares/idValidation.js'
 import { authMiddleware } from '#middlewares/auth.js'
 import express from 'express'
+import { offerQuery } from '#middlewares/queryValidation.js'
 
 export const router = express.Router({ mergeParams: true })
 
 router.use(asyncWrapper(authMiddleware))
 router.post('/', dataValidation(createOfferValidationSchema), asyncWrapper(createOffer))
-router.get('/', asyncWrapper(getOffers))
+router.get('/', asyncWrapper(offerQuery), asyncWrapper(getOffers))
 
 router.param('id', idValidation)
 router.get('/:id', asyncWrapper(getOfferById))

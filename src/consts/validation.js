@@ -41,6 +41,7 @@ export const regex = {
 }
 
 export const enums = {
+  SORT: ['createdAt', 'priceAsc', 'priceDesc'],
   APP_LANG_ENUM: ['en', 'ua'],
   SPOKEN_LANG_ENUM: ['English', 'Ukrainian', 'Polish', 'German', 'French', 'Spanish', 'Arabic'],
   PROFICIENCY_LEVEL_ENUM: ['Beginner', 'Intermediate', 'Advanced', 'Test Preparation', 'Professional', 'Specialized'],

@@ -10,28 +10,35 @@ const { ENUM_CAN_BE_ONE_OF } = errors
 const offerSchema = new Schema(
   {
     title: {
-      type: String
+      type: String,
+      required: true,
+      trim: true
     },
     description: {
-      type: String
+      type: String,
+      required: true
     },
     price: {
-      type: Number
+      type: Number,
+      required: true,
+      min: 0
     },
 
     aboutAuthor: {
       author: {
         type: Schema.Types.ObjectId,
         ref: USER,
-        required: true
+        required: true,
+        index: true // Додаємо індекс для оптимізації пошуку
       },
       authorRole: {
         type: String,
         enum: {
-          values: MAIN_ROLE_ENUM,
+          values: MAIN_ROLE_ENUM, // Обмежуємо тільки потрібними ролями
           message: ENUM_CAN_BE_ONE_OF('author role', MAIN_ROLE_ENUM)
         },
-        required: true
+        required: true,
+        index: true // Додаємо індекс для оптимізації фільтрації
       }
     },
     aboutInterests: {
@@ -52,14 +59,17 @@ const offerSchema = new Schema(
       enum: {
         values: PROFICIENCY_LEVEL_ENUM,
         message: ENUM_CAN_BE_ONE_OF('proficiency level', PROFICIENCY_LEVEL_ENUM)
-      }
+      },
+      required: true
     },
     languages: {
       type: [String],
       enum: {
         values: SPOKEN_LANG_ENUM,
         message: ENUM_CAN_BE_ONE_OF('language', SPOKEN_LANG_ENUM)
-      }
+      },
+      required: true,
+      index: true // Додаємо індекс для оптимізації пошуку по мовах
     },
 
     status: {
@@ -68,26 +78,31 @@ const offerSchema = new Schema(
         values: OFFER_STATUS_ENUM,
         message: ENUM_CAN_BE_ONE_OF('offer status', OFFER_STATUS_ENUM)
       },
-      default: OFFER_STATUS_ENUM[0]
+      default: OFFER_STATUS_ENUM[0],
+      index: true // Додаємо індекс для статусу
     },
 
     FAQ: {
       type: [
         {
-          question: { type: String },
-          answer: { type: String }
+          question: { type: String, required: true },
+          answer: { type: String, required: true }
         }
       ],
       default: []
     }
   },
   {
-    timestamps: true,
-    versionKey: false,
-    id: false,
-    toJSON: { virtuals: true },
+    timestamps: true, // Додаємо автоматичне створення полів createdAt та updatedAt
+    toJSON: { virtuals: true }, // Дозволяємо використання віртуальних полів
     toObject: { virtuals: true }
   }
 )
+
+// Додаємо складений індекс для найчастіше використовуваних полів при фільтрації
+offerSchema.index({ 'aboutAuthor.authorRole': 1, languages: 1, status: 1 })
+
+// Додаємо індекс для сортування за ціною
+offerSchema.index({ price: 1 })
 
 export default model(OFFER, offerSchema)
