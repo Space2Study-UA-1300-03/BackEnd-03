@@ -11,32 +11,21 @@ export const offerQuery = (req, _res, next) => {
   const categoryId = req.query.categoryId
   if (categoryId && mongoose.Types.ObjectId.isValid(categoryId)) prettyQuery.categoryId = categoryId
 
-  const subjectId = req.query.subjectId // виправлено з categoryId на subjectId
+  const subjectId = req.query.subjectId
   if (subjectId && mongoose.Types.ObjectId.isValid(subjectId)) prettyQuery.subjectId = subjectId
 
-  // Отримуємо роль для фільтрації
   const role = sortByRole(req.query.role)
   if (role) prettyQuery.role = role
 
-  // Обробка пошуку
   const search = req.query.search?.trim()
-  if (search) {
-    prettyQuery.search = { $regex: search, $options: 'i' }
-  }
+  if (search) prettyQuery.search = { $regex: search, $options: 'i' }
 
-  // Обробка мови
   const language = req.query.language
-  if (language && SPOKEN_LANG_ENUM.includes(language)) {
-    prettyQuery.language = language
-  }
+  if (language && SPOKEN_LANG_ENUM.includes(language)) prettyQuery.language = language
 
-  // Обробка сортування
   const sort = req.query.sort
-  if (sort && SORT.includes(sort)) {
-    prettyQuery.sort = sortByType(sort)
-  }
+  if (sort && SORT.includes(sort)) prettyQuery.sort = sortByType(sort)
 
-  // Обробка пагінації
   const page = parseInt(req.query.page) || START_PAGE
   const limit = parseInt(req.query.limit) || PER_PAGE
 

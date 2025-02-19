@@ -31,26 +31,17 @@ export const offerService = {
   getOffers: async (page, limit, queries) => {
     const normalizedLimit = Math.max(1, Math.min(10, limit))
 
-    // Створюємо фільтр на основі queries
     const filter = {}
 
-    // Додаємо фільтр по ролі якщо вона є
     if (queries.role) filter['aboutAuthor.authorRole'] = queries.role
 
-    // Додаємо пошук по імені автора
     if (queries.search) filter['aboutAuthor.author.firstName'] = queries.search
 
-    // Додаємо фільтр по мові
     if (queries.language) filter.languages = queries.language
 
-    // Додаємо фільтр по категорії
     if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
 
-    // Додаємо фільтр по предмету
     if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
-
-    // Рахуємо загальну кількість документів з урахуванням фільтрів
-    console.log(filter, 'filter')
 
     const totalCategories = await Offer.countDocuments(filter)
     if (totalCategories === 0) return { data: [] }
@@ -59,7 +50,6 @@ export const offerService = {
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    // Виконуємо запит з фільтрами та сортуванням
     const categories = await Offer.find(filter)
       .populate({
         path: 'aboutAuthor.author',
