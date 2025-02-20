@@ -34,14 +34,10 @@ export const offerService = {
     const filter = {}
 
     if (queries.role) filter['aboutAuthor.authorRole'] = queries.role
-
-    if (queries.search) filter['aboutAuthor.author.firstName'] = queries.search
-
     if (queries.language) filter.languages = queries.language
-
     if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
-
     if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
+    if (queries.search) filter['aboutAuthor.author'] = { $ne: null }
 
     const totalCategories = await Offer.countDocuments(filter)
     if (totalCategories === 0) return { data: [] }
@@ -53,7 +49,8 @@ export const offerService = {
     const categories = await Offer.find(filter)
       .populate({
         path: 'aboutAuthor.author',
-        select: 'firstName email photo role'
+        select: 'firstName email photo role',
+        match: queries.search ? { firstName: { $regex: queries.search, $options: 'i' } } : {}
       })
       .populate('aboutInterests.categoryInfo')
       .populate('aboutInterests.subjectInfo')
@@ -61,16 +58,18 @@ export const offerService = {
       .skip(skip)
       .limit(normalizedLimit)
 
+    const filteredCategories = queries.search ? categories.filter((cat) => cat.aboutAuthor.author !== null) : categories
+
     return {
       pagination: {
         currentPage: normalizedPage,
         totalPages,
-        totalItems: totalCategories,
+        totalItems: filteredCategories.length,
         itemsPerPage: normalizedLimit,
         hasNextPage: normalizedPage < totalPages,
         hasPrevPage: normalizedPage > 1
       },
-      data: categories
+      data: filteredCategories
     }
   },
 
