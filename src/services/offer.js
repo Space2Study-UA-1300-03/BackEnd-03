@@ -33,13 +33,11 @@ export const offerService = {
 
     const filter = {}
 
-    // Базові фільтри
     if (queries.role) filter['aboutAuthor.authorRole'] = queries.role
     if (queries.language) filter.languages = queries.language
     if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
     if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
 
-    // Застосовуємо пошук після populate
     const totalCategories = await Offer.countDocuments(filter)
     if (totalCategories === 0) return { data: [] }
 
@@ -47,7 +45,6 @@ export const offerService = {
     const normalizedPage = Math.max(1, Math.min(page, totalPages))
     const skip = (normalizedPage - 1) * normalizedLimit
 
-    // Основний запит з populate
     const categories = await Offer.find(filter)
       .populate({
         path: 'aboutAuthor.author',
@@ -60,7 +57,6 @@ export const offerService = {
       .skip(skip)
       .limit(normalizedLimit)
 
-    // Фільтруємо результати, де populate повернув null через невідповідність пошуку
     const filteredCategories = queries.search ? categories.filter((cat) => cat.aboutAuthor.author !== null) : categories
 
     return {
