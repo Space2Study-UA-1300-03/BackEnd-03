@@ -73,6 +73,27 @@ export const offerService = {
     }
   },
 
+  getPopularOffer: async () => {
+    const offer = await Offer.aggregate([
+      {
+        $group: {
+          _id: '$aboutInterests.categoryInfo',
+          offerCount: { $sum: 1 }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          categoryId: '$_id',
+          offerCount: 1
+        }
+      },
+      { $sort: { offerCount: -1 } }
+    ])
+
+    return { data: offer }
+  },
+
   getOfferById: async (id) => {
     const offer = await Offer.findById(id)
     if (!offer) throw createError(404, OFFER_NOT_FOUND)

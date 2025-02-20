@@ -14,6 +14,12 @@ export const getOffers = async (req, res) => {
   res.status(200).json(offers)
 }
 
+export const getPopularOffers = async (_req, res) => {
+  const offers = await offerService.getPopularOffer()
+
+  res.status(200).json(offers)
+}
+
 export const getOfferById = async (req, res) => {
   const { id } = req.params
   const offer = await offerService.getOfferById(id)
