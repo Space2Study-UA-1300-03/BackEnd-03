@@ -18,10 +18,7 @@ export const offerQuery = (req, _res, next) => {
   if (role) prettyQuery.role = role
 
   const search = req.query.search?.trim()
-  if (search) {
-    prettyQuery.search = search
-    console.log('Search query received:', search) // Додаємо логування
-  }
+  if (search) prettyQuery.search = search
 
   const language = req.query.language
   if (language && SPOKEN_LANG_ENUM.includes(language)) prettyQuery.language = language
