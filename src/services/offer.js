@@ -74,7 +74,8 @@ export const offerService = {
   },
 
   getPopularOffer: async (limit) => {
-    console.log(limit, 'limit')
+    const normalizedLimit = Math.max(1, Math.min(9, limit))
+
     const offer = await Offer.aggregate([
       {
         $group: {
@@ -90,10 +91,13 @@ export const offerService = {
         }
       },
       { $sort: { offerCount: -1 } },
-      { $limit: limit }
+      { $limit: normalizedLimit }
     ])
 
-    return { data: offer }
+    return {
+      limit: normalizedLimit,
+      data: offer
+    }
   },
 
   getOfferById: async (id) => {

@@ -29,16 +29,16 @@ const offerSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: USER,
         required: true,
-        index: true // Додаємо індекс для оптимізації пошуку
+        index: true
       },
       authorRole: {
         type: String,
         enum: {
-          values: MAIN_ROLE_ENUM, // Обмежуємо тільки потрібними ролями
+          values: MAIN_ROLE_ENUM,
           message: ENUM_CAN_BE_ONE_OF('author role', MAIN_ROLE_ENUM)
         },
         required: true,
-        index: true // Додаємо індекс для оптимізації фільтрації
+        index: true
       }
     },
     aboutInterests: {
@@ -69,7 +69,7 @@ const offerSchema = new Schema(
         message: ENUM_CAN_BE_ONE_OF('language', SPOKEN_LANG_ENUM)
       },
       required: true,
-      index: true // Додаємо індекс для оптимізації пошуку по мовах
+      index: true
     },
 
     status: {
@@ -79,7 +79,7 @@ const offerSchema = new Schema(
         message: ENUM_CAN_BE_ONE_OF('offer status', OFFER_STATUS_ENUM)
       },
       default: OFFER_STATUS_ENUM[0],
-      index: true // Додаємо індекс для статусу
+      index: true
     },
 
     FAQ: {
@@ -93,16 +93,14 @@ const offerSchema = new Schema(
     }
   },
   {
-    timestamps: true, // Додаємо автоматичне створення полів createdAt та updatedAt
-    toJSON: { virtuals: true }, // Дозволяємо використання віртуальних полів
+    timestamps: true,
+    toJSON: { virtuals: true },
     toObject: { virtuals: true }
   }
 )
 
-// Додаємо складений індекс для найчастіше використовуваних полів при фільтрації
 offerSchema.index({ 'aboutAuthor.authorRole': 1, languages: 1, status: 1 })
 
-// Додаємо індекс для сортування за ціною
 offerSchema.index({ price: 1 })
 
 export default model(OFFER, offerSchema)
