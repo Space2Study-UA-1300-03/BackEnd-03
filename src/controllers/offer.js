@@ -14,8 +14,10 @@ export const getOffers = async (req, res) => {
   res.status(200).json(offers)
 }
 
-export const getPopularOffers = async (_req, res) => {
-  const offers = await offerService.getPopularOffer()
+export const getPopularOffers = async (req, res) => {
+  const limit = Number.parseInt(req.query.limit) || 9
+
+  const offers = await offerService.getPopularOffer(limit)
 
   res.status(200).json(offers)
 }

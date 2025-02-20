@@ -73,7 +73,8 @@ export const offerService = {
     }
   },
 
-  getPopularOffer: async () => {
+  getPopularOffer: async (limit) => {
+    console.log(limit, 'limit')
     const offer = await Offer.aggregate([
       {
         $group: {
@@ -88,7 +89,8 @@ export const offerService = {
           offerCount: 1
         }
       },
-      { $sort: { offerCount: -1 } }
+      { $sort: { offerCount: -1 } },
+      { $limit: limit }
     ])
 
     return { data: offer }
