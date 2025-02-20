@@ -37,6 +37,7 @@ export const offerService = {
     if (queries.language) filter.languages = queries.language
     if (queries.categoryId) filter['aboutInterests.categoryInfo'] = queries.categoryId
     if (queries.subjectId) filter['aboutInterests.subjectInfo'] = queries.subjectId
+    if (queries.search) filter['aboutAuthor.author'] = { $ne: null }
 
     const totalCategories = await Offer.countDocuments(filter)
     if (totalCategories === 0) return { data: [] }
