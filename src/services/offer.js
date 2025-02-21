@@ -60,11 +60,21 @@ export const offerService = {
 
     const filteredCategories = queries.search ? categories.filter((cat) => cat.aboutAuthor.author !== null) : categories
 
+    let totalItems = totalCategories
+    if (queries.search) {
+      const allCategories = await Offer.find(filter).populate({
+        path: 'aboutAuthor.author',
+        select: 'firstName email photo role',
+        match: { firstName: { $regex: queries.search, $options: 'i' } }
+      })
+      totalItems = allCategories.filter((cat) => cat.aboutAuthor.author !== null).length
+    }
+
     return {
       pagination: {
         currentPage: normalizedPage,
         totalPages,
-        totalItems: filteredCategories.length,
+        totalItems,
         itemsPerPage: normalizedLimit,
         hasNextPage: normalizedPage < totalPages,
         hasPrevPage: normalizedPage > 1
