@@ -4,10 +4,6 @@
 
 SpaceToStudy project is a platform where experts in various fields share their knowledge and students can learn from the best. Here you can find the proper training course, find a tutor, or find students and receive feedback from them.
 
-[![GitHub issues](insert your link here)]
-[![Pending Pull-Requests](insert your link here)]
-[![GitHub license](insert your link here)]
-
 ---
 
 - [Installation](#installation)
@@ -349,30 +345,12 @@ Only the release should merge into the main branch!!!
 
 ### Development team
 
-[![@Tolik170](https://avatars.githubusercontent.com/u/63456632?v=4)](https://github.com/Tolik170)
-[![@Mav-Ivan](https://avatars.githubusercontent.com/u/110425368?v=4)](https://github.com/Mav-Ivan)
-[![@dmtrth25](https://avatars.githubusercontent.com/u/56305508?v=4)](https://github.com/dmtrth25)
-[![@abalanovsky](https://avatars.githubusercontent.com/u/108689551?v=4)](https://github.com/abalanovsky)
-[![@OlyaKorchan](https://avatars.githubusercontent.com/u/17857767?v=4)](https://github.com/OlyaKorchan)
-[![@Marichka0406](https://avatars.githubusercontent.com/u/121502737?v=4)](https://github.com/Marichka0406)
-
-### DevOps team
-
-[![@abohatyrov](https://avatars.githubusercontent.com/u/52012169?v=4)](https://github.com/abohatyrov)
-[![@bdeputat](https://avatars.githubusercontent.com/u/36072762?v=4)](https://github.com/bdeputat)
-
-### Designer team
-
-[![@Nastia197](https://avatars.githubusercontent.com/u/76164279?v=4)](https://github.com/Nastia197)
-
-### BA team
-
-[![@IvannaSW](https://avatars.githubusercontent.com/u/24367409?v=4)](https://github.com/IvannaSW)
-
-### QC team
-
-[![@AntonOkun](https://avatars.githubusercontent.com/u/129941062?v=4)](https://github.com/AntonOkun)
-[![@Valent1n0o](https://avatars.githubusercontent.com/u/118978192?v=4)](https://github.com/Valent1n0o)
+[![@NataliaKilienko](https://avatars.githubusercontent.com/NataliaKilienko?v=4)](https://github.com/NataliaKilienko)
+[![@IrynaKhylchuk](https://avatars.githubusercontent.com/IrynaKhylchuk?v=4)](https://github.com/IrynaKhylchuk)
+[![@uncle-Yevhenii](https://avatars.githubusercontent.com/uncle-Yevhenii?v=4)](https://github.com/uncle-Yevhenii)
+[![@SanekOstapiuk](https://avatars.githubusercontent.com/SanekOstapiuk?v=4)](https://github.com/SanekOstapiuk)
+[![@bilets](https://avatars.githubusercontent.com/bilets?v=4)](https://github.com/bilets)
+[![@ANNA124kr](https://avatars.githubusercontent.com/ANNA124kr?v=4)](https://github.com/ANNA124kr)
 
 ---
 
