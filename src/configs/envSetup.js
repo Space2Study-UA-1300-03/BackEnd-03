@@ -11,6 +11,11 @@ export const loadEnvConfig = () => {
   const envPath = path.join(__dirname, '../..', envFile)
   const result = dotenv.config({ path: envPath })
 
+  console.log(NODE_ENV, 'NODE_ENV')
+  console.log(envFile, 'envFile')
+  console.log(envPath, 'envPath')
+  console.log(result, 'result')
+
   if (result.error) throw new Error(`Failed to load ${envFile}: ${result.error.message}`)
 
   console.log(`Environment loaded: ${envFile}`)
